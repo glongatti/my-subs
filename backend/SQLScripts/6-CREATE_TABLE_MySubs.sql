@@ -1,0 +1,11 @@
+CREATE TABLE "MySubs"
+(
+	Id INT IDENTITY(1,1) NOT NULL  PRIMARY KEY,
+	IdUser INT NOT NULL,
+	IdService INT NOT NULL,
+	IdPlanType INT NOT NULL,
+	Price FLOAT,
+	CancelRenewal BIT NOT NULL,
+	DateSignature DATETIME,
+	Active BIT NOT NULL,
+);

@@ -1,0 +1,8 @@
+CREATE TABLE "Service"
+(
+	Id INT IDENTITY(1,1) NOT NULL  PRIMARY KEY,
+	Name VARCHAR(250) NOT NULL,
+	SerivcePicture VARCHAR(MAX),
+	Active BIT NOT NULL,
+);
+
