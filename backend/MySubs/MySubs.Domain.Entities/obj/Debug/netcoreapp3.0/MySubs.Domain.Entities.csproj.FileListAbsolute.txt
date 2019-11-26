@@ -1,0 +1,8 @@
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\bin\Debug\netcoreapp3.0\MySubs.Domain.Entities.deps.json
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\bin\Debug\netcoreapp3.0\MySubs.Domain.Entities.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\bin\Debug\netcoreapp3.0\MySubs.Domain.Entities.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp3.0\MySubs.Domain.Entities.csprojAssemblyReference.cache
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp3.0\MySubs.Domain.Entities.AssemblyInfoInputs.cache
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp3.0\MySubs.Domain.Entities.AssemblyInfo.cs
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp3.0\MySubs.Domain.Entities.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp3.0\MySubs.Domain.Entities.pdb
