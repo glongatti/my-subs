@@ -1,0 +1,16 @@
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.deps.json
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.dll
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.pdb
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.dll
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.pdb
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp2.1\System.Data.SqlClient.xml
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.csprojAssemblyReference.cache
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.AssemblyInfo.cs
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.csproj.CopyComplete
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.dll
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp2.1\MySubs.Infra.CrossCutting.pdb
