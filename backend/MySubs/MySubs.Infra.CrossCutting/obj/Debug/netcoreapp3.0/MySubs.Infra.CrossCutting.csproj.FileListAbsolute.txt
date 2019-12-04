@@ -1,8 +1,0 @@
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.deps.json
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.dll
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\bin\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.pdb
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.csprojAssemblyReference.cache
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.AssemblyInfoInputs.cache
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.AssemblyInfo.cs
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.dll
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.CrossCutting\obj\Debug\netcoreapp3.0\MySubs.Infra.CrossCutting.pdb
