@@ -4788,10 +4788,35 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "MySubs.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "MySubs.Domain.Entities": "1.0.0",
+          "MySubs.Infra.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MySubs.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySubs.Domain.dll": {}
+        }
+      },
+      "MySubs.Domain.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        }
+      },
       "MySubs.Infra.CrossCutting/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "MySubs.Domain": "1.0.0",
           "MySubs.Infra.Data": "1.0.0"
         },
         "compile": {
@@ -4807,7 +4832,8 @@
         "dependencies": {
           "Dapper": "2.0.30",
           "Dapper.Contrib": "2.0.30",
-          "DapperExtensions": "1.6.3"
+          "DapperExtensions": "1.6.3",
+          "MySubs.Domain.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MySubs.Infra.Data.dll": {}
@@ -13014,6 +13040,16 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "MySubs.Domain/1.0.0": {
+      "type": "project",
+      "path": "../MySubs.Domain/MySubs.Domain.csproj",
+      "msbuildProject": "../MySubs.Domain/MySubs.Domain.csproj"
+    },
+    "MySubs.Domain.Entities/1.0.0": {
+      "type": "project",
+      "path": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj",
+      "msbuildProject": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj"
     },
     "MySubs.Infra.CrossCutting/1.0.0": {
       "type": "project",

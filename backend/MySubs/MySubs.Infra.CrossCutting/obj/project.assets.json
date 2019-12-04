@@ -273,13 +273,38 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "MySubs.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "MySubs.Domain.Entities": "1.0.0",
+          "MySubs.Infra.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MySubs.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySubs.Domain.dll": {}
+        }
+      },
+      "MySubs.Domain.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        }
+      },
       "MySubs.Infra.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Dapper": "2.0.30",
           "Dapper.Contrib": "2.0.30",
-          "DapperExtensions": "1.6.3"
+          "DapperExtensions": "1.6.3",
+          "MySubs.Domain.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MySubs.Infra.Data.dll": {}
@@ -979,6 +1004,16 @@
         "version.txt"
       ]
     },
+    "MySubs.Domain/1.0.0": {
+      "type": "project",
+      "path": "../MySubs.Domain/MySubs.Domain.csproj",
+      "msbuildProject": "../MySubs.Domain/MySubs.Domain.csproj"
+    },
+    "MySubs.Domain.Entities/1.0.0": {
+      "type": "project",
+      "path": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj",
+      "msbuildProject": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj"
+    },
     "MySubs.Infra.Data/1.0.0": {
       "type": "project",
       "path": "../MySubs.Infra.Data/MySubs.Infra.Data.csproj",
@@ -988,6 +1023,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.NETCore.App >= 2.1.0",
+      "MySubs.Domain >= 1.0.0",
       "MySubs.Infra.Data >= 1.0.0"
     ]
   },
@@ -1024,6 +1060,9 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
+            "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain\\MySubs.Domain.csproj": {
+              "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain\\MySubs.Domain.csproj"
+            },
             "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
               "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj"
             }

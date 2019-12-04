@@ -4,6 +4,60 @@
     "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Enviroment\\MySubs.Infra.Enviroment.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj",
+        "projectName": "MySubs.Domain.Entities",
+        "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj",
+        "packagesPath": "C:\\Users\\Kamila\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Kamila\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +85,11 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj": {
+                "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

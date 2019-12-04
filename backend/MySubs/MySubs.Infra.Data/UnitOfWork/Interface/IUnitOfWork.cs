@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySubs.Infra.Data.Repository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +8,7 @@ namespace MySubs.Infra.Data.UnitOfWork.Interface
     public interface IUnitOfWork : IDisposable
     {
         //TO-DO ARRUMAR
-        //IHistoricRepository HistoricRepository { get; set; }
+        IUserRepository UserRepository { get; set; }
         //IOriginAndDestinyRepository OriginAndDestinyRepository { get; set; }
         //IDayPeriodRepository DayPeriodRepository { get; set; }
         //IDaysWeekRepository DaysWeekRepository { get; set; }

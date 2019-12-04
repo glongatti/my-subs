@@ -273,13 +273,24 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "MySubs.Domain.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        }
+      },
       "MySubs.Infra.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Dapper": "2.0.30",
           "Dapper.Contrib": "2.0.30",
-          "DapperExtensions": "1.6.3"
+          "DapperExtensions": "1.6.3",
+          "MySubs.Domain.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MySubs.Infra.Data.dll": {}
@@ -978,6 +989,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "MySubs.Domain.Entities/1.0.0": {
+      "type": "project",
+      "path": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj",
+      "msbuildProject": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj"
     },
     "MySubs.Infra.Data/1.0.0": {
       "type": "project",

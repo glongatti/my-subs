@@ -272,6 +272,16 @@
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
         }
+      },
+      "MySubs.Domain.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySubs.Domain.Entities.dll": {}
+        }
       }
     }
   },
@@ -963,6 +973,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "MySubs.Domain.Entities/1.0.0": {
+      "type": "project",
+      "path": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj",
+      "msbuildProject": "../MySubs.Domain.Entities/MySubs.Domain.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -970,7 +985,8 @@
       "Dapper >= 2.0.30",
       "Dapper.Contrib >= 2.0.30",
       "DapperExtensions >= 1.6.3",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "MySubs.Domain.Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1005,7 +1021,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj": {
+              "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
