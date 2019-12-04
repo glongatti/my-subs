@@ -13,7 +13,7 @@ namespace MySubs.Infra.Enviroment
         {
             string schemaSQL = "";
             string connectionStringSQL = "DataSource=DESKTOP-E7VQJDV\\LOCAL;" +
-                                         "Initial Catalog=viagens;" +
+                                         "Initial Catalog=MySubs;" +
                                          "Userid=sa;" +
                                          "Password=legiao555;";
 

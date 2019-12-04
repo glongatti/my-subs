@@ -32,7 +32,7 @@ namespace MySubs.Infra.Enviroment
                     break;
                 case Enviroment.LOCAL:
                     {
-                        var conDev = EnviromentDev.Create();
+                        var conDev = EnviromentLocal.Create();
                         AppSettings = createSqlSchema ? conDev.AppSettings : AppSettings.Create();
                         //ApiEndpoint = "https://localhost:44312";
                     }

@@ -12,3 +12,16 @@ C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Deb
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.csproj.CopyComplete
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.dll
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.csprojAssemblyReference.cache
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.AssemblyInfoInputs.cache
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.AssemblyInfo.cs
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\bin\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.deps.json
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\bin\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\bin\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Enviroment\obj\Debug\netcoreapp2.1\MySubs.Infra.Enviroment.csproj.CopyComplete

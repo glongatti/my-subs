@@ -1,9 +1,11 @@
-﻿using MySubs.Domain.Entities.Entities;
+﻿using Dapper;
+using MySubs.Domain.Entities.Entities;
 using MySubs.Infra.Data.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MySubs.Infra.Data.Repository
 {
@@ -28,5 +30,11 @@ namespace MySubs.Infra.Data.Repository
             }
         }
 
+        public User FindByEmail(string email)
+        {
+            string sQuery = "SELECT * FROM Users WHERE Email = @Email";
+
+            return _connection.QueryFirstOrDefault<User>(sQuery, new { Email = email }, _transaction);
+        }
     }
 }

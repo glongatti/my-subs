@@ -7,6 +7,7 @@ using MySubs.Infra.Data.UnitOfWork.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MySubs.Domain.Services
 {
@@ -28,15 +29,53 @@ namespace MySubs.Domain.Services
             return method();
         }
 
-        public RegisterUserResponse Add(RegisterUserRequest entity)
+        public async Task<RegisterUserResponse> Add(RegisterUserRequest entity)
         {
             //TODO CRIPTOGRAFAR SENHA
-            var password = "";
-            var user = User.Create(entity.Name, entity.Email, password);
-            var id = _uow.UserRepository.Add(user);
-            return null;
-            throw new NotImplementedException();
+            
+            try
+            {
+
+                var emailCadastrado = await FindByEmail(entity.Email);
+                if (emailCadastrado != null) 
+                {
+                    var retorno = await RegisterUserResponse.Create(0, entity.Name, entity.Email);
+                    retorno.ResultType = ResultType.Error;
+                    retorno.Message = "E-mail já cadastrado.";
+                    return retorno;
+                }
+                
+                var user = await User.Create(entity.Name, entity.Email, Util.Hash(entity.Password), true, true, DateTime.Now);
+                var id = _uow.UserRepository.Add(user);
+                if (id > 0)
+                {
+                    _uow.Commit();
+                    var retorno = await RegisterUserResponse.Create(user.Id, user.Name, entity.Email);
+                    retorno.ResultType = ResultType.Success;
+                    retorno.Message = "Cadastro realizado com sucesso.";
+                    return retorno;
+                }
+                else 
+                {
+                    var retorno = await RegisterUserResponse.Create(user.Id, user.Name, user.Email);
+                    retorno.ResultType = ResultType.Error;
+                    retorno.Message = "Cadastro não realizado.";
+                    return retorno;
+                }
+            }
+            catch (Exception ex) 
+            {
+                var retorno = await RegisterUserResponse.Create(0, entity.Name, entity.Email);
+                retorno.ResultType = ResultType.Error;
+                retorno.Message = ex.Message;
+                return retorno;
+            }
         }
 
+        public async Task<User> FindByEmail(string email)
+        {
+            var bla = _uow.UserRepository.FindByEmail(email);
+            return  bla;
+        }
     }
 }

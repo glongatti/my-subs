@@ -25,7 +25,7 @@ namespace MySubs.API.Controllers
 
         [HttpPost]
         [EnableCors("AnotherPolicy")]
-        [Route("RegisterOringAndDestiny")]
+        [Route("RegisterUser")]
         public async Task<ActionResult<RegisterUserResponse>> RegisterUser([FromBody] RegisterUserRequest userRequest)
         {
             try
