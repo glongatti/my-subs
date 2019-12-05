@@ -5,8 +5,6 @@ import Home from './src/Home';
 const AppNavigator = createStackNavigator({
   Home: {
     screen: Home
-
-    
   },
 });
 
