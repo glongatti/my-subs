@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using MySubs.Domain.Services;
+using MySubs.Domain.Services.Interfaces;
 using MySubs.Infra.Data.Contesxt.Models;
 using MySubs.Infra.Data.Repository;
 using MySubs.Infra.Data.Repository.Interfaces;
@@ -12,8 +14,8 @@ namespace MySubs.Infra.CrossCutting
         public static void Register(IServiceCollection services, AppSettings appSettings)
         {
             //TO-DO ARRUMAR
-            //services.AddTransient(typeof(IHistoricService), typeof(HistoricService));
-            //services.AddTransient(typeof(IHistoricRepository), typeof(HistoricRepository));
+            services.AddTransient(typeof(IUserService), typeof(UserService));
+            services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
 
             //services.AddTransient(typeof(IOriginAndDestinyService), typeof(OriginAndDestinyService));
             //services.AddTransient(typeof(IOriginAndDestinyRepository), typeof(OriginAndDestinyRepository));

@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj": {}
+    "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj": {
+    "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj",
+        "projectUniqueName": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj",
         "projectName": "MySubs.API",
-        "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj",
-        "packagesPath": "C:\\Users\\Kamila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.API\\obj\\",
+        "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.API\\MySubs.API.csproj",
+        "packagesPath": "C:\\Users\\kamil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kamila\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -32,11 +27,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj": {
-                "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj"
+              "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj": {
+                "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj"
               },
-              "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj"
+              "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj"
               }
             }
           }
@@ -67,6 +62,7 @@
               "version": "[2.1.1, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
@@ -93,30 +89,86 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj": {
+    "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj",
-        "projectName": "MySubs.Infra.CrossCutting",
-        "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\Kamila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\obj\\",
+        "projectUniqueName": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj",
+        "projectName": "MySubs.Domain.Entities",
+        "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj",
+        "packagesPath": "C:\\Users\\kamil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kamila\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain\\MySubs.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain\\MySubs.Domain.csproj",
+        "projectName": "MySubs.Domain",
+        "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain\\MySubs.Domain.csproj",
+        "packagesPath": "C:\\Users\\kamil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -128,8 +180,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj"
+              "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj": {
+                "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj"
+              },
+              "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj"
               }
             }
           }
@@ -151,30 +206,31 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
+    "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj",
-        "projectName": "MySubs.Infra.Data",
-        "projectPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj",
-        "packagesPath": "C:\\Users\\Kamila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kamila\\Documents\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\obj\\",
+        "projectUniqueName": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj",
+        "projectName": "MySubs.Infra.CrossCutting",
+        "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\MySubs.Infra.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\kamil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kamila\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -185,7 +241,81 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain\\MySubs.Domain.csproj": {
+                "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain\\MySubs.Domain.csproj"
+              },
+              "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "SimpleInjector": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj",
+        "projectName": "MySubs.Infra.Data",
+        "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\MySubs.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\kamil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj": {
+                "projectPath": "C:\\Users\\kamil\\Documents\\GitHub\\my-subs\\backend\\MySubs\\MySubs.Domain.Entities\\MySubs.Domain.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -214,13 +344,23 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.0, )"
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

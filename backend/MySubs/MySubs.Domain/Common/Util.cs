@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MySubs.Domain.Common
 {
-    public class Common
+    public class Util
     {
         public const string KEY_ENCRYPT = "a6272c9b-eaae-41c0-938b-38dbd18df8a0";
         public const string JWT_KEY = "a29da9ac-882c-4f03-97a8-c36955681ff5";
@@ -116,7 +116,7 @@ namespace MySubs.Domain.Common
 
         public static IEnumerable<DateTime> GetDaysOfWeek()
         {
-            var now = Common.DateTimeBrazil();
+            var now = Util.DateTimeBrazil();
             var currentDay = now.DayOfWeek;
             int days = (int)currentDay;
             DateTime sunday = now.AddDays(-days);

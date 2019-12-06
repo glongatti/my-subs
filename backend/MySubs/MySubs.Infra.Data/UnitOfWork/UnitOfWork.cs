@@ -1,4 +1,6 @@
-﻿using MySubs.Infra.Data.UnitOfWork.Interface;
+﻿using MySubs.Infra.Data.Repository;
+using MySubs.Infra.Data.Repository.Interfaces;
+using MySubs.Infra.Data.UnitOfWork.Interface;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,17 +16,17 @@ namespace MySubs.Infra.Data.UnitOfWork
         private IDbTransaction _transaction;
 
         //TO-DO ARRUMAR
-        //private IHistoricRepository _historicRepository;
+        private IUserRepository _userRepository;
         //private IOriginAndDestinyRepository _originAndDestiny;
         //private IDayPeriodRepository _dayPeriodRepository;
         //private IDaysWeekRepository _daysWeekRepository;
         //private IWeeksMonthRepository _weeksMonthRepository;
 
-        //public IHistoricRepository HistoricRepository
-        //{
-        //    get => _historicRepository == null || _historicRepository.IsConnected() ? (_historicRepository = new HistoricRepository(_transaction)) : _historicRepository;
-        //    set => _historicRepository = value;
-        //}
+        public IUserRepository UserRepository
+        {
+            get => _userRepository == null || _userRepository.IsConnected() ? (_userRepository = new UserRepository(_transaction)) : _userRepository;
+            set => _userRepository = value;
+        }
         //public IOriginAndDestinyRepository OriginAndDestinyRepository
         //{
         //    get => _originAndDestiny == null || _originAndDestiny.IsConnected() ? (_originAndDestiny = new OriginAndDestinyRepository(_transaction)) : _originAndDestiny;
@@ -103,7 +105,7 @@ namespace MySubs.Infra.Data.UnitOfWork
         private void resetRepositories()
         {
             //TO-DO ARRUMAR
-            //_historicRepository = null;
+            _userRepository = null;
             //_originAndDestiny = null;
             //_dayPeriodRepository = null;
             //_daysWeekRepository = null;

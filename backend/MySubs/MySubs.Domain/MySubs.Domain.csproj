@@ -5,9 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Response\" />
-    <Folder Include="Models\Request\" />
-    <Folder Include="Services\Interfaces\" />
+    <ProjectReference Include="..\MySubs.Domain.Entities\MySubs.Domain.Entities.csproj" />
+    <ProjectReference Include="..\MySubs.Infra.Data\MySubs.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
