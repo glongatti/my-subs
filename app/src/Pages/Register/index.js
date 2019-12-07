@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconE from 'react-native-vector-icons/Entypo';
 import IconMA from 'react-native-vector-icons/MaterialIcons';
@@ -11,6 +11,12 @@ import {
 } from './styles';
 
 export default function Register() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [terms, setTerms] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <>
       <ScrollView contentContainerStyle>
@@ -31,6 +37,8 @@ export default function Register() {
                     color={colors.primaryGreen}
                   />
                 )}
+                value={name}
+                onChangeText={(text) => setName(text)}
               />
             </FormItem>
 
@@ -44,6 +52,8 @@ export default function Register() {
                     color={colors.primaryGreen}
                   />
                 )}
+                value={email}
+                onChangeText={(text) => setEmail(text)}
               />
             </FormItem>
 
@@ -58,6 +68,8 @@ export default function Register() {
                     color={colors.primaryGreen}
                   />
                 )}
+                value={password}
+                onChangeText={(text) => setPassword(text)}
               />
             </FormItem>
 
@@ -68,7 +80,8 @@ export default function Register() {
                 center
                 title="Ao utilizar o MySubs eu aceito os termos de condição e política de privacidade."
                 checkedColor={colors.primaryGreen}
-                checked
+                checked={terms}
+                onPress={() => setTerms(!terms)}
               />
             </FormItem>
 
@@ -77,7 +90,7 @@ export default function Register() {
             </TextTerms>
 
             <FormItem>
-              <ButtonDefault title="Cadastrar" />
+              <ButtonDefault title="Cadastrar" isLoading={isLoading} onPress={() => setIsLoading(true)} />
             </FormItem>
 
           </FormView>

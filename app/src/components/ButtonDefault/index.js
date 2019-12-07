@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 import colors from '../../utils/colors';
 
 export default function ButtonDefault({
-  title, color, styles, onPress
+  title, color, styles, onPress, isLoading
 }) {
   return (
 
@@ -17,6 +17,7 @@ export default function ButtonDefault({
         marginTop: 20
       }}
       onPress={onPress}
+      loading={isLoading}
     />
 
   );
