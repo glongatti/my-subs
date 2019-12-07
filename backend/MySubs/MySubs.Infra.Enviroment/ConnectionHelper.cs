@@ -7,7 +7,7 @@ namespace MySubs.Infra.Enviroment
 {
     public static class ConnectionHelper
     {
-        public static Enviroment ENVIROMENT_FLAG = Enviroment.DEV;
+        public static Enviroment ENVIROMENT_FLAG = Enviroment.PROD;
         public static AppSettings AppSettings { get; set; }
 
         public static string ApiEndpoint { get; set; }

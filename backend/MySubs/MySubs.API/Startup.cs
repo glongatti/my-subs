@@ -66,6 +66,7 @@ namespace MySubs.API
                 builder =>
                 {
                     builder.WithOrigins("https://localhost:44375",
+                                        "http://mysubs.azurewebsites.net",
                                         "https://localhost:3000")
                                         .AllowAnyOrigin()
                                         .AllowCredentials()

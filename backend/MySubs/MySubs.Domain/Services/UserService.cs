@@ -33,8 +33,8 @@ namespace MySubs.Domain.Services
         {
             //TODO CRIPTOGRAFAR SENHA
             
-            try
-            {
+            //try
+            //{
 
                 var emailCadastrado = await FindByEmail(entity.Email);
                 if (emailCadastrado != null) 
@@ -62,14 +62,14 @@ namespace MySubs.Domain.Services
                     retorno.Message = "Cadastro não realizado.";
                     return retorno;
                 }
-            }
-            catch (Exception ex) 
-            {
-                var retorno = await RegisterUserResponse.Create(0, entity.Name, entity.Email);
-                retorno.ResultType = ResultType.Error;
-                retorno.Message = ex.Message;
-                return retorno;
-            }
+            //}
+            //catch (Exception ex) 
+            //{
+            //    var retorno = await RegisterUserResponse.Create(0, entity.Name, entity.Email);
+            //    retorno.ResultType = ResultType.Error;
+            //    retorno.Message = ex.Message;
+            //    return retorno;
+            //}
         }
 
         public async Task<User> FindByEmail(string email)

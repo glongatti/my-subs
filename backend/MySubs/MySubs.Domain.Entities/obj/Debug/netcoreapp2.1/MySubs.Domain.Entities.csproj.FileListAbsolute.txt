@@ -7,7 +7,6 @@ C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debu
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.AssemblyInfo.cs
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.dll
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.pdb
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.csprojAssemblyReference.cache
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.AssemblyInfoInputs.cache
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.AssemblyInfo.cs
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.dll
@@ -15,3 +14,4 @@ C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\ob
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.deps.json
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.dll
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain.Entities\obj\Debug\netcoreapp2.1\MySubs.Domain.Entities.csprojAssemblyReference.cache
