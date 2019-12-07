@@ -1,17 +1,26 @@
 import styled from 'styled-components/native';
 import { CheckBox } from 'react-native-elements';
+import colors from '../../utils/colors';
 
 const SafeAreaView = styled.SafeAreaView`
     flex: 1;    
     flexDirection: column;  
     justifyContent: center; 
 `;
+const ScrollView = styled.ScrollView.attrs(() => ({
+  contentContainerStyle: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+}))``;
 
 const FormView = styled.View`
     display: flex;
     flexDirection: column;
     justifyContent: center;
     alignItems: center;   
+    marginTop:15;
 `;
 
 const FormItem = styled.View`
@@ -35,9 +44,16 @@ const LogoImage = styled.Image`
     marginBottom:10
 `;
 
-const CheckBoxTerms = styled(CheckBox)`
-
+const TextTerms = styled.Text`
+    color: ${colors.primaryGreen};
+    textDecoration: underline;
 `;
+
+const CheckBoxTerms = styled(CheckBox).attrs(() => ({
+  containerStyle: {
+    marginLeft: 30
+  },
+}))``;
 
 export {
   LogoView,
@@ -45,5 +61,7 @@ export {
   FormView,
   LogoImage,
   FormItem,
-  CheckBoxTerms
+  CheckBoxTerms,
+  TextTerms,
+  ScrollView
 };

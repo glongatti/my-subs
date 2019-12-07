@@ -7,80 +7,83 @@ import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
 import {
   SafeAreaView, FormView, LogoImage, FormItem, CheckBoxTerms,
+  TextTerms, ScrollView
 } from './styles';
 
 export default function Register() {
   return (
     <>
-      <SafeAreaView>
+      <ScrollView contentContainerStyle>
+        <SafeAreaView>
+          <FormView>
 
-        {/* <LogoView>
-          <LogoImage
-            source={require('../../assets/logo.png')}
-          />
-        </LogoView> */}
-
-        <FormView>
-
-          <LogoImage
-            source={require('../../assets/logo.png')}
-          />
-
-          <FormItem>
-            <Input
-              placeholder="Nome"
-              leftIcon={(
-                <IconFA
-                  name="user-o"
-                  size={24}
-                  color={colors.primaryGreen}
-                />
-              )}
+            <LogoImage
+              source={require('../../assets/logo.png')}
             />
-          </FormItem>
 
-          <FormItem>
-            <Input
-              placeholder="E-mail"
-              leftIcon={(
-                <IconE
-                  name="email"
-                  size={24}
-                  color={colors.primaryGreen}
-                />
-              )}
-            />
-          </FormItem>
+            <FormItem>
+              <Input
+                placeholder="Nome"
+                leftIcon={(
+                  <IconFA
+                    name="user-o"
+                    size={24}
+                    color={colors.primaryGreen}
+                  />
+                )}
+              />
+            </FormItem>
 
-          <FormItem>
-            <Input
-              placeholder="Senha"
-              secureTextEntry
-              leftIcon={(
-                <IconMA
-                  name="lock-outline"
-                  size={24}
-                  color={colors.primaryGreen}
-                />
-              )}
-            />
-          </FormItem>
+            <FormItem>
+              <Input
+                placeholder="E-mail"
+                leftIcon={(
+                  <IconE
+                    name="email"
+                    size={24}
+                    color={colors.primaryGreen}
+                  />
+                )}
+              />
+            </FormItem>
 
-          {/* <FormItem> */}
-          <CheckBoxTerms
-            center
-            title="Ao utilizar o MySubs eu aceito os termos de condição e política de privacidade."
-            checkedColor={colors.primaryGreen}
-            checked
-          />
-          {/* </FormItem> */}
+            <FormItem>
+              <Input
+                placeholder="Senha"
+                secureTextEntry
+                leftIcon={(
+                  <IconMA
+                    name="lock-outline"
+                    size={24}
+                    color={colors.primaryGreen}
+                  />
+                )}
+              />
+            </FormItem>
 
-          <FormItem>
-            <ButtonDefault title="Cadastrar" />
-          </FormItem>
 
-        </FormView>
-      </SafeAreaView>
+            <FormItem>
+
+              <CheckBoxTerms
+                center
+                title="Ao utilizar o MySubs eu aceito os termos de condição e política de privacidade."
+                checkedColor={colors.primaryGreen}
+                checked
+              />
+            </FormItem>
+
+            <TextTerms>
+              Termos de Uso
+            </TextTerms>
+
+            <FormItem>
+              <ButtonDefault title="Cadastrar" />
+            </FormItem>
+
+          </FormView>
+        </SafeAreaView>
+
+      </ScrollView>
     </>
   );
 }
