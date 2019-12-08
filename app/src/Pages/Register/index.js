@@ -1,14 +1,21 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
+import { Alert } from 'react-native';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconE from 'react-native-vector-icons/Entypo';
 import IconMA from 'react-native-vector-icons/MaterialIcons';
 import { Input } from 'react-native-elements';
+
 import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
 import {
   SafeAreaView, FormView, LogoImage, FormItem, CheckBoxTerms,
-  TextTerms, ScrollView
+  TextTerms, ScrollView, AlreadyAccountText, AlreadyAccountButton,
 } from './styles';
+
+import { createUser } from '../../controllers/user';
+import { isRegisterFormValid } from '../../utils/validators';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -17,9 +24,46 @@ export default function Register() {
   const [terms, setTerms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+
+  // const verifyEmail = async () => {};
+  const showAlert = (title, message, buttons = [{ text: 'Ok', onPress: () => {} }]) => {
+    Alert.alert(
+      title,
+      message,
+      buttons,
+      { cancelable: false },
+    );
+  };
+  const sendRequest = async () => {
+    setIsLoading(true);
+    const validateForm = await isRegisterFormValid({
+      name, email, password, terms
+    });
+
+    if (validateForm.isValid) {
+      try {
+        const { data } = await createUser({ name, email, password });
+        if (data.resultType) {
+          alert();
+          showAlert('Parabéns', 'Usuário criado com sucesso!');
+        } else {
+          showAlert('Erro!', 'O e-mail inserido já está sendo usado.');
+        }
+      } catch (error) {
+        showAlert('Erro!', 'Tente novamente mais tarde');
+        throw error;
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      showAlert('Erro!', validateForm.errorMessage);
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
-      <ScrollView contentContainerStyle>
+      <ScrollView>
         <SafeAreaView>
           <FormView>
 
@@ -90,8 +134,14 @@ export default function Register() {
             </TextTerms>
 
             <FormItem>
-              <ButtonDefault title="Cadastrar" isLoading={isLoading} onPress={() => setIsLoading(true)} />
+              <ButtonDefault title="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} />
             </FormItem>
+
+            <AlreadyAccountButton>
+              <AlreadyAccountText>
+                Já possui uma conta no MySubs? Então clique aqui
+              </AlreadyAccountText>
+            </AlreadyAccountButton>
 
           </FormView>
         </SafeAreaView>

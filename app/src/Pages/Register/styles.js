@@ -41,7 +41,7 @@ const LogoView = styled.View`
 const LogoImage = styled.Image`
     width: 120;
     height: 120;
-    marginBottom:10
+    marginBottom:20
 `;
 
 const TextTerms = styled.Text`
@@ -55,6 +55,17 @@ const CheckBoxTerms = styled(CheckBox).attrs(() => ({
   },
 }))``;
 
+const AlreadyAccountButton = styled.TouchableOpacity`
+  width:70%;
+`;
+
+const AlreadyAccountText = styled.Text`
+    marginTop:10;
+    color:${colors.primaryGreen};
+    textAlign: center
+    
+`;
+
 export {
   LogoView,
   SafeAreaView,
@@ -63,5 +74,7 @@ export {
   FormItem,
   CheckBoxTerms,
   TextTerms,
-  ScrollView
+  ScrollView,
+  AlreadyAccountButton,
+  AlreadyAccountText
 };
