@@ -11,7 +11,7 @@ import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
 import {
   SafeAreaView, FormView, LogoImage, FormItem, CheckBoxTerms,
-  TextTerms, ScrollView
+  TextTerms, ScrollView, AlreadyAccountText, AlreadyAccountButton,
 } from './styles';
 
 import { createUser } from '../../controllers/user';
@@ -26,7 +26,14 @@ export default function Register() {
 
 
   // const verifyEmail = async () => {};
-
+  const showAlert = (title, message, buttons = [{ text: 'Ok', onPress: () => {} }]) => {
+    Alert.alert(
+      title,
+      message,
+      buttons,
+      { cancelable: false },
+    );
+  };
   const sendRequest = async () => {
     setIsLoading(true);
     const validateForm = await isRegisterFormValid({
@@ -34,17 +41,22 @@ export default function Register() {
     });
 
     if (validateForm.isValid) {
-      alert(terms);
       try {
-        await createUser({ name, email, password });
+        const { data } = await createUser({ name, email, password });
+        if (data.resultType) {
+          alert();
+          showAlert('Parabéns', 'Usuário criado com sucesso!');
+        } else {
+          showAlert('Erro!', 'O e-mail inserido já está sendo usado.');
+        }
       } catch (error) {
-        Alert('Erro!');
+        showAlert('Erro!', 'Tente novamente mais tarde');
         throw error;
       } finally {
         setIsLoading(false);
       }
     } else {
-      alert(validateForm.errorMessage);
+      showAlert('Erro!', validateForm.errorMessage);
       setIsLoading(false);
     }
   };
@@ -124,6 +136,12 @@ export default function Register() {
             <FormItem>
               <ButtonDefault title="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} />
             </FormItem>
+
+            <AlreadyAccountButton>
+              <AlreadyAccountText>
+                Já possui uma conta no MySubs? Então clique aqui
+              </AlreadyAccountText>
+            </AlreadyAccountButton>
 
           </FormView>
         </SafeAreaView>

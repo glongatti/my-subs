@@ -1,33 +1,33 @@
-
+function isEmailValid(email) {
+  if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    return (true);
+  }
+  return (false);
+}
 async function isRegisterFormValid({
   name, email, password, terms
 }) {
-  if (!name) {
+  if (!name || !email || !password) {
     return {
       isValid: false,
-      errorMessage: 'name',
-    };
-  }
-  if (!email) {
-    return {
-      isValid: false,
-      errorMessage: 'email',
-    };
-  }
-  if (!password) {
-    return {
-      isValid: false,
-      errorMessage: 'password',
+      errorMessage: 'Por favor, preencha todos os campos!',
     };
   }
   if (!terms) {
     return {
       isValid: false,
-      errorMessage: 'terms',
+      errorMessage: 'É Necessário aceitar os termos de uso para continuar!',
+    };
+  }
+  if (!isEmailValid(email)) {
+    return {
+      isValid: false,
+      errorMessage: 'O e-mail inserido é inválido!',
     };
   }
   return {
-    isValid: true
+    isValid: true,
+    errorMessage: '',
   };
 }
 

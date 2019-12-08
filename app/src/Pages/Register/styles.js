@@ -55,6 +55,17 @@ const CheckBoxTerms = styled(CheckBox).attrs(() => ({
   },
 }))``;
 
+const AlreadyAccountButton = styled.TouchableOpacity`
+  width:70%;
+`;
+
+const AlreadyAccountText = styled.Text`
+    marginTop:10;
+    color:${colors.primaryGreen};
+    textAlign: center
+    
+`;
+
 export {
   LogoView,
   SafeAreaView,
@@ -63,5 +74,7 @@ export {
   FormItem,
   CheckBoxTerms,
   TextTerms,
-  ScrollView
+  ScrollView,
+  AlreadyAccountButton,
+  AlreadyAccountText
 };
