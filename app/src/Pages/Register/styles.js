@@ -41,7 +41,7 @@ const LogoView = styled.View`
 const LogoImage = styled.Image`
     width: 120;
     height: 120;
-    marginBottom:10
+    marginBottom:20
 `;
 
 const TextTerms = styled.Text`
