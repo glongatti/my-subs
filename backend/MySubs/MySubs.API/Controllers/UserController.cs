@@ -28,18 +28,37 @@ namespace MySubs.API.Controllers
         [Route("RegisterUser")]
         public async Task<ActionResult<RegisterUserResponse>> RegisterUser([FromBody] RegisterUserRequest userRequest)
         {
-            //try
-            //{s
-            //    if (!ModelState.IsValid)
-            //        return BadRequest(userRequest);
+            try
+            {
+                
+                if (!ModelState.IsValid)
+                    return BadRequest(userRequest);
 
                 return Ok(await _userService.Add(userRequest));
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
+        [HttpPost]
+        //[EnableCors("AnotherPolicy")]
+        [Route("FindByEmail")]
+        public async Task<ActionResult<RegisterUserResponse>> FindByEmail(string email)
+        {
+            try
+            {
+
+                //if (!ModelState.IsValid)
+                //    return BadRequest(userRequest);
+
+                return Ok(await _userService.FindByEmail(email));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
