@@ -45,7 +45,7 @@ namespace MySubs.API.Controllers
         [HttpPost]
         //[EnableCors("AnotherPolicy")]
         [Route("FindByEmail")]
-        public async Task<ActionResult<RegisterUserResponse>> FindByEmail(string email)
+        public async Task<ActionResult<CheckMailUserResponse>> FindByEmail(string email)
         {
             try
             {

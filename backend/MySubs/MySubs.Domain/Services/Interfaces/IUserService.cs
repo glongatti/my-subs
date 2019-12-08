@@ -10,7 +10,7 @@ namespace MySubs.Domain.Services.Interfaces
 {
     public interface IUserService
     {
-        Task<User> FindByEmail(string email);
+        Task<CheckMailUserResponse> FindByEmail(string email);
         Task<RegisterUserResponse> Add(RegisterUserRequest entity);
     }
 }

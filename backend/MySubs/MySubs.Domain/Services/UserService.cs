@@ -32,11 +32,11 @@ namespace MySubs.Domain.Services
         public async Task<RegisterUserResponse> Add(RegisterUserRequest entity)
         {
             //TODO CRIPTOGRAFAR SENHA
-            
-            //try
-            //{
 
-                var emailCadastrado = await FindByEmail(entity.Email);
+            try
+            {
+
+                var emailCadastrado = await CheckEmail(entity.Email);
                 if (emailCadastrado != null) 
                 {
                     var retorno = await RegisterUserResponse.Create(0, entity.Name, entity.Email);
@@ -62,20 +62,50 @@ namespace MySubs.Domain.Services
                     retorno.Message = "Cadastro não realizado.";
                     return retorno;
                 }
-            //}
-            //catch (Exception ex) 
-            //{
-            //    var retorno = await RegisterUserResponse.Create(0, entity.Name, entity.Email);
-            //    retorno.ResultType = ResultType.Error;
-            //    retorno.Message = ex.Message;
-            //    return retorno;
-            //}
+            }
+            catch (Exception ex)
+            {
+                var retorno = await RegisterUserResponse.Create(0, entity.Name, entity.Email);
+                retorno.ResultType = ResultType.Error;
+                retorno.Message = ex.Message;
+                return retorno;
+            }
         }
-
-        public async Task<User> FindByEmail(string email)
+        private async Task<User> CheckEmail(string email)
         {
             var bla = _uow.UserRepository.FindByEmail(email);
-            return  bla;
+            return bla;
+        }
+
+        public async Task<CheckMailUserResponse> FindByEmail(string email)
+        {
+            try
+            {
+                var bla = _uow.UserRepository.FindByEmail(email);
+                var retorno = await CheckMailUserResponse.Create(bla.Id, bla.Name, bla.Email);
+                if (!String.IsNullOrEmpty(retorno.Email))
+                {
+                    retorno.ResultType = ResultType.Error;
+                    retorno.Message = "O e-mail já está sendo utilizado";
+                }
+                else
+                {
+                    retorno.ResultType = ResultType.Success;
+                    retorno.Message = "O e-mail está disponivel";
+                }
+                return retorno;
+            }
+            catch (Exception ex) 
+            {
+                var retorno = await CheckMailUserResponse.Create(0, "", "");
+
+                retorno.ResultType = ResultType.Error;
+                retorno.Message = ex.Message;
+                retorno.Error = ex;
+
+                return retorno;
+            }
+           
         }
     }
 }
