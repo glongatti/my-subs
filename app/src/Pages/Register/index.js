@@ -51,7 +51,7 @@ export default function Register() {
 
   return (
     <>
-      <ScrollView contentContainerStyle>
+      <ScrollView>
         <SafeAreaView>
           <FormView>
 
