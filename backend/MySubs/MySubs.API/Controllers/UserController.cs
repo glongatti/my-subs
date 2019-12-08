@@ -60,5 +60,23 @@ namespace MySubs.API.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        [HttpPost]
+        //[EnableCors("AnotherPolicy")]
+        [Route("UpdateUser")]
+        public async Task<ActionResult<UpdateUserResponse>> UpdateUser(UpdateUserRequest user)
+        {
+            try
+            {
+
+                if (!ModelState.IsValid)
+                    return BadRequest(user);
+
+                return Ok(await _userService.Update(user));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

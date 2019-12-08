@@ -11,7 +11,7 @@ namespace MySubs.Domain.Models.Response
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public static async Task<CheckMailUserResponse> Create(int id, string name, string email) => new CheckMailUserResponse
+        public static async Task<CheckMailUserResponse> Create(int id=0, string name="", string email="") => new CheckMailUserResponse
         {
             Id = id,
             Name = name,

@@ -12,5 +12,6 @@ namespace MySubs.Domain.Services.Interfaces
     {
         Task<CheckMailUserResponse> FindByEmail(string email);
         Task<RegisterUserResponse> Add(RegisterUserRequest entity);
+        Task<UpdateUserResponse> Update(UpdateUserRequest entity);
     }
 }

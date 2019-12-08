@@ -25,5 +25,15 @@ namespace MySubs.Domain.Entities.Entities
             Active = active,
             DateAcceptTermsOfUse = data
         };
+        public static async Task<User> Create(int id, string name, string email, string password, bool accept, bool active, DateTime data) => new User
+        {
+            Id = id,
+            Name = name,
+            Email = email,
+            Password = password,
+            AcceptTermsOfUse = accept,
+            Active = active,
+            DateAcceptTermsOfUse = data
+        };
     }
 }
