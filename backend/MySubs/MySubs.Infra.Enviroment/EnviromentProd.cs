@@ -11,8 +11,8 @@ namespace MySubs.Infra.Enviroment
 
         public static EnviromentProd Create()
         {
-            string schemaSQL = "instamoredb";
-            string connectionStringSQL = "User ID=instamoreadmin;Password=jesussalva##1010;Host=mysql669.umbler.com;Port=41890;Database=instamoredb;default command timeout=360;";
+            string schemaSQL = "dbo";
+            string connectionStringSQL = "Data Source=inovebuild.database.windows.net;Initial Catalog=MySubs;User ID=kamila;Password=Legiao555@";
 
             var connectorSQL = SqlConnector.Create(
                                                     schema: schemaSQL,

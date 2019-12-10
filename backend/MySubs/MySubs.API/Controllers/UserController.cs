@@ -24,12 +24,13 @@ namespace MySubs.API.Controllers
         }
 
         [HttpPost]
-        [EnableCors("AnotherPolicy")]
+        //[EnableCors("AnotherPolicy")]
         [Route("RegisterUser")]
         public async Task<ActionResult<RegisterUserResponse>> RegisterUser([FromBody] RegisterUserRequest userRequest)
         {
             try
             {
+                
                 if (!ModelState.IsValid)
                     return BadRequest(userRequest);
 
@@ -37,9 +38,45 @@ namespace MySubs.API.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
         }
 
+        [HttpPost]
+        //[EnableCors("AnotherPolicy")]
+        [Route("FindByEmail")]
+        public async Task<ActionResult<CheckMailUserResponse>> FindByEmail(string email)
+        {
+            try
+            {
+
+                //if (!ModelState.IsValid)
+                //    return BadRequest(userRequest);
+
+                return Ok(await _userService.FindByEmail(email));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpPost]
+        //[EnableCors("AnotherPolicy")]
+        [Route("UpdateUser")]
+        public async Task<ActionResult<UpdateUserResponse>> UpdateUser(UpdateUserRequest user)
+        {
+            try
+            {
+
+                if (!ModelState.IsValid)
+                    return BadRequest(user);
+
+                return Ok(await _userService.Update(user));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

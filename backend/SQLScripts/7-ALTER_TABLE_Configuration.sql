@@ -1,2 +1,2 @@
 ALTER TABLE Configuration ADD CONSTRAINT FK_Configuration_ConfigurationType FOREIGN KEY (IdConfigurationType) REFERENCES ConfigurationType(Id);
-ALTER TABLE Configuration ADD CONSTRAINT FK_Configuration_User FOREIGN KEY (IdUser) REFERENCES "User"(Id);
+ALTER TABLE Configuration ADD CONSTRAINT FK_Configuration_User FOREIGN KEY (IdUser) REFERENCES "Users"(Id);

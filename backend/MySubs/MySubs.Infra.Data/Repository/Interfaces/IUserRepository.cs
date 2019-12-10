@@ -10,6 +10,8 @@ namespace MySubs.Infra.Data.Repository.Interfaces
     {
         long Add(User entity);
         User FindByEmail(string email);
+        User FindById(long id);
+        User Update(User entity);
         bool IsConnected();
     }
 }
