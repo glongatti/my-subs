@@ -17,17 +17,15 @@ namespace MySubs.Infra.CrossCutting
             services.AddTransient(typeof(IUserService), typeof(UserService));
             services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
 
-            //services.AddTransient(typeof(IOriginAndDestinyService), typeof(OriginAndDestinyService));
-            //services.AddTransient(typeof(IOriginAndDestinyRepository), typeof(OriginAndDestinyRepository));
 
-            //services.AddTransient(typeof(IDayPeriodService), typeof(DayPeriodService));
-            //services.AddTransient(typeof(IDayPeriodRepository), typeof(DayPeriodRepository));
+            services.AddTransient(typeof(IPlanTypeService), typeof(PlanTypeService));
+            services.AddTransient(typeof(IPlanTypeRepository), typeof(PlanTypeRepository));
 
-            //services.AddTransient(typeof(IDaysWeekService), typeof(DaysWeekService));
-            //services.AddTransient(typeof(IDaysWeekRepository), typeof(DaysWeekRepository));
+            services.AddTransient(typeof(IServiceService), typeof(ServiceService));
+            services.AddTransient(typeof(IServiceRepository), typeof(ServiceRepository));
 
-            //services.AddTransient(typeof(IWeeksMonthService), typeof(WeeksMonthService));
-            //services.AddTransient(typeof(IWeeksMonthRepository), typeof(WeeksMonthRepository));
+            services.AddTransient(typeof(ISubscriptionService), typeof(SubscriptionService));
+            services.AddTransient(typeof(ISubscriptionRepository), typeof(SubscriptionRepository));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>(service => new UnitOfWork(appSettings.ConnectionString));
             services.AddScoped(typeof(IRepository<>), typeof(AbstractRepository<>));

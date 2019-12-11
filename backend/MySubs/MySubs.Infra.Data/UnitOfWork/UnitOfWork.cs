@@ -17,39 +17,32 @@ namespace MySubs.Infra.Data.UnitOfWork
 
         //TO-DO ARRUMAR
         private IUserRepository _userRepository;
-        //private IOriginAndDestinyRepository _originAndDestiny;
-        //private IDayPeriodRepository _dayPeriodRepository;
-        //private IDaysWeekRepository _daysWeekRepository;
-        //private IWeeksMonthRepository _weeksMonthRepository;
+        private IPlanTypeRepository _planTypeRepository;
+        private IServiceRepository _serviceRepository;
+        private ISubscriptionRepository _subscriptionRepository;
 
         public IUserRepository UserRepository
         {
             get => _userRepository == null || _userRepository.IsConnected() ? (_userRepository = new UserRepository(_transaction)) : _userRepository;
             set => _userRepository = value;
         }
-        //public IOriginAndDestinyRepository OriginAndDestinyRepository
-        //{
-        //    get => _originAndDestiny == null || _originAndDestiny.IsConnected() ? (_originAndDestiny = new OriginAndDestinyRepository(_transaction)) : _originAndDestiny;
-        //    set => _originAndDestiny = value;
-        //}
+        public IPlanTypeRepository PlanTypeRepository
+        {
+            get => _planTypeRepository == null || _planTypeRepository.IsConnected() ? (_planTypeRepository = new PlanTypeRepository(_transaction)) : _planTypeRepository;
+            set => _planTypeRepository = value;
+        }
 
-        //public IDayPeriodRepository DayPeriodRepository
-        //{
-        //    get => _dayPeriodRepository == null || _dayPeriodRepository.IsConnected() ? (_dayPeriodRepository = new DayPeriodRepository(_transaction)) : _dayPeriodRepository;
-        //    set => _dayPeriodRepository = value;
-        //}
+        public IServiceRepository ServiceRepository
+        {
+            get => _serviceRepository == null || _serviceRepository.IsConnected() ? (_serviceRepository = new ServiceRepository(_transaction)) : _serviceRepository;
+            set => _serviceRepository = value;
+        }
+        public ISubscriptionRepository SubscriptionRepository
+        {
+            get => _subscriptionRepository == null || _subscriptionRepository.IsConnected() ? (_subscriptionRepository = new SubscriptionRepository(_transaction)) : _subscriptionRepository;
+            set => _subscriptionRepository = value;
+        }
 
-        //public IDaysWeekRepository DaysWeekRepository
-        //{
-        //    get => _daysWeekRepository == null || _daysWeekRepository.IsConnected() ? (_daysWeekRepository = new DaysWeekRepository(_transaction)) : _daysWeekRepository;
-        //    set => _daysWeekRepository = value;
-        //}
-
-        //public IWeeksMonthRepository WeeksMonthRepository
-        //{
-        //    get => _weeksMonthRepository == null || _weeksMonthRepository.IsConnected() ? (_weeksMonthRepository = new WeeksMonthRepository(_transaction)) : _weeksMonthRepository;
-        //    set => _weeksMonthRepository = value;
-        //}
         public UnitOfWork(string connectionString)
         {
             if (!string.IsNullOrEmpty(connectionString))
@@ -106,11 +99,9 @@ namespace MySubs.Infra.Data.UnitOfWork
         {
             //TO-DO ARRUMAR
             _userRepository = null;
-            //_originAndDestiny = null;
-            //_dayPeriodRepository = null;
-            //_daysWeekRepository = null;
-            //_weeksMonthRepository = null;
-
+            _planTypeRepository = null;
+            _serviceRepository = null;
+            _subscriptionRepository = null;
         }
 
         public void Dispose()
