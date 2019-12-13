@@ -14,7 +14,7 @@ export default function PickerDefault({
         value={value}
         onValueChange={(value) => onSelectItem(value)}
       >
-        {items && items.map((item) => (<Picker.Item label={item.label} value={item.value} />))}
+        {items && items.map((item) => (<Picker.Item key={item.id} label={item.label} value={item.value} />))}
       </Picker>
     </ViewPicker>
   );
