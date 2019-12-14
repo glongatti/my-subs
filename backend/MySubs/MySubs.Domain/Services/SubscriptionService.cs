@@ -30,7 +30,7 @@ namespace MySubs.Domain.Services
         {
             try
             {
-                var sub = await Subscription.Create(entity.IdUser, entity.IdPlanType, entity.IdService, true, entity.DateSignature, true, entity.Price);
+                var sub = await Subscription.Create(entity.IdUser, entity.IdPlanType, entity.IdService, entity.IdCurrency, true, entity.DateSignature, true, entity.Price);
                 var id = _uow.SubscriptionRepository.Add(sub);
                 if (id > 0)
                 {

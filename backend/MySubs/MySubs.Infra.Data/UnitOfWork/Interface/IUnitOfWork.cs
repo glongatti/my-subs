@@ -12,6 +12,7 @@ namespace MySubs.Infra.Data.UnitOfWork.Interface
         IPlanTypeRepository PlanTypeRepository { get; set; }
         IServiceRepository ServiceRepository { get; set; }
         ISubscriptionRepository SubscriptionRepository { get; set; }
+        ICurrencyRepository CurrencyRepository { get; set; }
         bool Commit();
         IDisposable CreateContext(string connectionString);
         string GetConnection();

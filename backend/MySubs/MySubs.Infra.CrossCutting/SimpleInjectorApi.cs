@@ -17,6 +17,9 @@ namespace MySubs.Infra.CrossCutting
             services.AddTransient(typeof(IUserService), typeof(UserService));
             services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
 
+            services.AddTransient(typeof(ICurrencyService), typeof(CurrencyService));
+            services.AddTransient(typeof(ICurrencyRepository), typeof(CurrencyRepository));
+
 
             services.AddTransient(typeof(IPlanTypeService), typeof(PlanTypeService));
             services.AddTransient(typeof(IPlanTypeRepository), typeof(PlanTypeRepository));

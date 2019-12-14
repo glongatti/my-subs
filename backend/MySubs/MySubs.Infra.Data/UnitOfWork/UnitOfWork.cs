@@ -20,6 +20,7 @@ namespace MySubs.Infra.Data.UnitOfWork
         private IPlanTypeRepository _planTypeRepository;
         private IServiceRepository _serviceRepository;
         private ISubscriptionRepository _subscriptionRepository;
+        private ICurrencyRepository _currencyRepository;
 
         public IUserRepository UserRepository
         {
@@ -41,6 +42,11 @@ namespace MySubs.Infra.Data.UnitOfWork
         {
             get => _subscriptionRepository == null || _subscriptionRepository.IsConnected() ? (_subscriptionRepository = new SubscriptionRepository(_transaction)) : _subscriptionRepository;
             set => _subscriptionRepository = value;
+        }
+        public ICurrencyRepository CurrencyRepository
+        {
+            get => _currencyRepository == null || _currencyRepository.IsConnected() ? (_currencyRepository = new CurrencyRepository(_transaction)) : _currencyRepository;
+            set => _currencyRepository = value;
         }
 
         public UnitOfWork(string connectionString)

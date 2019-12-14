@@ -6,9 +6,10 @@ namespace MySubs.Domain.Models.Request
 {
     public class RegisterSubRequest
     {
-        public int IdUser { get; set; }
-        public int IdPlanType { get; set; }
-        public int IdService { get; set; }
+        public long IdUser { get; set; }
+        public long IdPlanType { get; set; }
+        public long IdService { get; set; }
+        public long IdCurrency { get; set; }
         public double Price { get; set; }
         public bool CancelRenewal { get; set; }
         public DateTime DateSignature { get; set; }
