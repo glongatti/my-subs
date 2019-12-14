@@ -40,11 +40,12 @@ const LogoView = styled.View`
 
 const PageTitleText = styled.Text`
   color:${colors.primaryGreen};
-  fontSize:23;
+  fontSize:28;
   marginTop:10;
   marginLeft:15;
   borderBottomWidth:1;
-  borderBottomColor:${colors.primaryGreen}
+  borderBottomColor:${colors.primaryGreen};
+  paddingBottom:10
 `;
 export {
   LogoView,

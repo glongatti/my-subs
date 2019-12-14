@@ -1,8 +1,8 @@
 import React from 'react';
+import Icon from '../Icon';
 import {
   InputTextWithMask, ViewInput, LabelInput, DefaultInputText,
 } from './styles';
-import Icon from '../Icon';
 
 export default function TextInput({
   label, type, options, value, onTextChange, placeholder, icon

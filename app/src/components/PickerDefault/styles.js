@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import colors from '../../utils/colors';
 
 const Picker = styled.Picker`
-  width:100%;
-  marginRight;
+  width:90%;
+  marginLeft:32;
   color:${colors.primaryBlack}
 `;
 

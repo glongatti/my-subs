@@ -1,11 +1,8 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-alert */
 import React, { useState } from 'react';
-
+import moment from 'moment';
 import ButtonDefault from '../../components/ButtonDefault';
 import PickerDefault from '../../components/PickerDefault';
 import TextInputDefault from '../../components/TextInput';
-import Icon from '../../components/Icon';
 import {
   SafeAreaView, FormView, FormItem, ScrollView,
   PageTitleText
@@ -50,17 +47,20 @@ const options = [
     value: '5'
   },
 ];
+
 export default function NewSub() {
   const [isLoading] = useState(false);
   const [planName, setPlanName] = useState('');
   const [planType, setplanType] = useState(options[0].value);
+  const [date, setDate] = useState(moment(Date.now()).format('DD/MM/YYYY'));
+  const [planCost, setPlanCost] = useState('');
   const [currency, setCurrency] = useState(currencies[0].value);
 
   return (
     <>
       <ScrollView>
-        <PageTitleText>Cadastro de assinatura</PageTitleText>
         <SafeAreaView>
+          <PageTitleText>Cadastro de assinatura</PageTitleText>
           <FormView>
             <FormItem>
               <TextInputDefault
@@ -72,11 +72,11 @@ export default function NewSub() {
               />
             </FormItem>
             <FormItem>
-              <Icon name="RETWEET" />
               <PickerDefault
                 label="Tipo de cobrança"
                 value={planType}
                 items={options}
+                icon="RETWEET"
                 onSelectItem={(value) => setplanType(value)}
               />
             </FormItem>
@@ -84,30 +84,33 @@ export default function NewSub() {
               <TextInputDefault
                 label="Data da primeira cobrança"
                 type="datetime"
-                value="02/02/2019"
-                icon="RETWEET"
+                value={date}
+                icon="CALENDAR"
                 options={{
                   format: 'DD/MM/YYYY'
                 }}
+                onTextChange={(text) => setDate(text)}
               />
             </FormItem>
 
             <FormItem>
               <TextInputDefault
                 label="Valor"
-                value="28,90"
+                value={planCost}
                 icon="MONEY"
+                onTextChange={(text) => setPlanCost(text)}
               />
               <PickerDefault
                 label="Tipo de moeda"
                 value={currency}
                 items={currencies}
+                icon="COINS"
                 onSelectItem={(value) => setCurrency(value)}
               />
             </FormItem>
 
             <FormItem>
-              <ButtonDefault title="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} />
+              <ButtonDefault title="Cadastrar" isLoading={isLoading} />
             </FormItem>
 
           </FormView>
