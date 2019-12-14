@@ -1,0 +1,5 @@
+DELETE FROM MySubs;
+
+ALTER TABLE MySubs ADD IdCurrency INT NOT NULL;
+
+ALTER TABLE MySubs ADD CONSTRAINT FK_MySubs_Currency FOREIGN KEY (IdCurrency) REFERENCES Currency(Id);

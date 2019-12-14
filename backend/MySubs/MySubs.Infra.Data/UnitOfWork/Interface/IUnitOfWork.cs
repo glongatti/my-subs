@@ -9,10 +9,10 @@ namespace MySubs.Infra.Data.UnitOfWork.Interface
     {
         //TO-DO ARRUMAR
         IUserRepository UserRepository { get; set; }
-        //IOriginAndDestinyRepository OriginAndDestinyRepository { get; set; }
-        //IDayPeriodRepository DayPeriodRepository { get; set; }
-        //IDaysWeekRepository DaysWeekRepository { get; set; }
-        //IWeeksMonthRepository WeeksMonthRepository { get; set; }
+        IPlanTypeRepository PlanTypeRepository { get; set; }
+        IServiceRepository ServiceRepository { get; set; }
+        ISubscriptionRepository SubscriptionRepository { get; set; }
+        ICurrencyRepository CurrencyRepository { get; set; }
         bool Commit();
         IDisposable CreateContext(string connectionString);
         string GetConnection();
