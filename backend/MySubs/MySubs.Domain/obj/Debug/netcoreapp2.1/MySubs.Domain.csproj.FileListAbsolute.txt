@@ -10,8 +10,6 @@ C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcore
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.csprojAssemblyReference.cache
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.AssemblyInfoInputs.cache
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.AssemblyInfo.cs
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.dll
-C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.pdb
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\bin\Debug\netcoreapp2.1\MySubs.Domain.deps.json
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\bin\Debug\netcoreapp2.1\MySubs.Domain.dll
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\bin\Debug\netcoreapp2.1\MySubs.Domain.pdb
@@ -20,3 +18,5 @@ C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\bin\Debug\n
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.pdb
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.pdb
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.csproj.CopyComplete
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Domain\obj\Debug\netcoreapp2.1\MySubs.Domain.pdb
