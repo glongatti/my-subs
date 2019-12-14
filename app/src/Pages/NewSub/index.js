@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import ButtonDefault from '../../components/ButtonDefault';
 import PickerDefault from '../../components/PickerDefault';
 import TextInputDefault from '../../components/TextInput';
-
+import Icon from '../../components/Icon';
 import {
   SafeAreaView, FormView, FormItem, ScrollView,
   PageTitleText
@@ -68,9 +68,11 @@ export default function NewSub() {
                 placeholder="Ex: Spotify"
                 value={planName}
                 onTextChange={(text) => setPlanName(text)}
+                icon="CREDIT_CARD"
               />
             </FormItem>
             <FormItem>
+              <Icon name="RETWEET" />
               <PickerDefault
                 label="Tipo de cobrança"
                 value={planType}
@@ -83,6 +85,7 @@ export default function NewSub() {
                 label="Data da primeira cobrança"
                 type="datetime"
                 value="02/02/2019"
+                icon="RETWEET"
                 options={{
                   format: 'DD/MM/YYYY'
                 }}
@@ -93,6 +96,7 @@ export default function NewSub() {
               <TextInputDefault
                 label="Valor"
                 value="28,90"
+                icon="MONEY"
               />
               <PickerDefault
                 label="Tipo de moeda"

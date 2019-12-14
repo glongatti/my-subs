@@ -1,16 +1,18 @@
 import React from 'react';
 import {
-  InputTextWithMask, ViewInput, LabelInput, DefaultInputText
+  InputTextWithMask, ViewInput, LabelInput, DefaultInputText,
 } from './styles';
-
-// import { Container } from './styles';
+import Icon from '../Icon';
 
 export default function TextInput({
-  label, type, options, value, onTextChange, placeholder
+  label, type, options, value, onTextChange, placeholder, icon
 }) {
   return (
     <ViewInput>
       {label && (<LabelInput>{label}</LabelInput>)}
+
+      {icon && (<Icon name={icon} />)}
+
       {type ? (
         <InputTextWithMask
           type={type}

@@ -18,19 +18,20 @@ fontSize:16`;
 
 const InputTextWithMask = styled(TextInputMask)`
     color:${colors.primaryBlack};
-    marginLeft:5;
+    marginLeft:32;
     fontSize:16;
 `;
 
 const DefaultInputText = styled.TextInput`
-    color:${colors.primaryBlack};
-    marginLeft:5;
-    fontSize:16;
+color:${colors.primaryBlack};
+marginLeft:32;
+fontSize:16;
 `;
+
 
 export {
   InputTextWithMask,
   DefaultInputText,
   ViewInput,
-  LabelInput
+  LabelInput,
 };
