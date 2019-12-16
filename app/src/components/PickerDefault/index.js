@@ -4,12 +4,12 @@ import { Picker, ViewPicker, TextPicker } from './styles';
 import Icon from '../Icon';
 
 export default function PickerDefault({
-  label, items, onSelectItem, value, icon
+  label, items, onSelectItem, value, icon, iconTop, iconLeft, iconPosition
 }) {
   return (
     <ViewPicker>
       {label && (<TextPicker>{label}</TextPicker>)}
-      {icon && (<Icon name={icon} />)}
+      {icon && (<Icon name={icon} top={iconTop} left={iconLeft} position={iconPosition} />)}
       <Picker
         mode="dialog"
         selectedValue={value}

@@ -69,6 +69,7 @@ export default function NewSub() {
                 value={planName}
                 onTextChange={(text) => setPlanName(text)}
                 icon="CREDIT_CARD"
+                iconTop={40}
               />
             </FormItem>
             <FormItem>
@@ -77,6 +78,7 @@ export default function NewSub() {
                 value={planType}
                 items={options}
                 icon="RETWEET"
+                iconTop={40}
                 onSelectItem={(value) => setplanType(value)}
               />
             </FormItem>
@@ -89,6 +91,7 @@ export default function NewSub() {
                 options={{
                   format: 'DD/MM/YYYY'
                 }}
+                iconTop={36}
                 onTextChange={(text) => setDate(text)}
               />
             </FormItem>
@@ -98,6 +101,7 @@ export default function NewSub() {
                 label="Valor"
                 value={planCost}
                 icon="MONEY"
+                iconTop={40}
                 onTextChange={(text) => setPlanCost(text)}
               />
               <PickerDefault
@@ -105,6 +109,7 @@ export default function NewSub() {
                 value={currency}
                 items={currencies}
                 icon="COINS"
+                iconTop={40}
                 onSelectItem={(value) => setCurrency(value)}
               />
             </FormItem>

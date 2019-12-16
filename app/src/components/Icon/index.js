@@ -1,22 +1,39 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import {
-  FA5Icon, FAIcon, MAIcon, MACIcon, AIcon
+  FA5Icon, FAIcon, MAIcon, MACIcon, AIcon, IOIcon,
+  CircleView
 } from './styles';
 
-export default function Icon({ name, size }) {
+export default function Icon({
+  name, size, color, position, top, left
+}) {
+  const props = {
+    size,
+    color,
+    position,
+    top,
+    left
+  };
   switch (name) {
+    case 'ADD':
+      return <CircleView><IOIcon name="ios-add" {...props} /></CircleView>;
     case 'CREDIT_CARD':
-      return <MAIcon name="credit-card" size={size} />;
+      return <MAIcon name="credit-card" {...props} />;
     case 'CALENDAR':
-      return <FAIcon name="calendar" size={size} />;
+      return <FAIcon name="calendar" {...props} />;
     case 'RETWEET':
-      return <FAIcon name="retweet" size={size} />;
+      return <FAIcon name="retweet" {...props} />;
+    case 'LIST':
+      return <IOIcon name="md-menu" {...props} />;
     case 'MONEY':
-      return <FA5Icon name="money-bill-wave" size={size} />;
+      return <FA5Icon name="money-bill-wave" {...props} />;
     case 'COINS':
-      return <MACIcon name="coins" size={size} />;
+      return <MACIcon name="coins" {...props} />;
     case 'ARROW_LEFT':
-      return <AIcon name="left" size={size} />;
+      return <AIcon name="left" {...props} />;
+    case 'PROFILE':
+      return <AIcon name="user" {...props} />;
     default:
       return null;
   }
