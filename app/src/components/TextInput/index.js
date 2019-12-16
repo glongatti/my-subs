@@ -5,13 +5,13 @@ import {
 } from './styles';
 
 export default function TextInput({
-  label, type, options, value, onTextChange, placeholder, icon
+  label, type, options, value, onTextChange, placeholder, icon, iconTop, iconLeft, iconPosition
 }) {
   return (
     <ViewInput>
       {label && (<LabelInput>{label}</LabelInput>)}
 
-      {icon && (<Icon name={icon} />)}
+      {icon && (<Icon name={icon} top={iconTop} left={iconLeft} position={iconPosition} />)}
 
       {type ? (
         <InputTextWithMask
