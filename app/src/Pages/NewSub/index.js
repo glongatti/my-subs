@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import LinearGradient from 'react-native-linear-gradient';
 import moment from 'moment';
-import ButtonDefault from '../../components/ButtonDefault';
 import PickerDefault from '../../components/PickerDefault';
 import TextInputDefault from '../../components/TextInput';
+import Icon from '../../components/Icon';
 import {
   SafeAreaView, FormView, FormItem, ScrollView,
-  PageTitleText
+  PageTitleText, AddButton
 } from './styles';
+import colors from '../../utils/colors';
+
 
 const currencies = [
   {
@@ -49,7 +52,6 @@ const options = [
 ];
 
 export default function NewSub() {
-  const [isLoading] = useState(false);
   const [planName, setPlanName] = useState('');
   const [planType, setplanType] = useState(options[0].value);
   const [date, setDate] = useState(moment(Date.now()).format('DD/MM/YYYY'));
@@ -58,9 +60,22 @@ export default function NewSub() {
 
   return (
     <>
+      <LinearGradient
+        colors={['rgba(51,206,147,0.5)', 'rgba(51,206,147,1)']}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 1, y: 1 }}
+        useAngle
+        angle={180}
+        style={{
+          height: 120,
+          borderBottomColor: '#dadada',
+          borderBottomWidth: 1,
+        }}
+      >
+        <PageTitleText>Cadastro de assinatura</PageTitleText>
+      </LinearGradient>
       <ScrollView>
         <SafeAreaView>
-          <PageTitleText>Cadastro de assinatura</PageTitleText>
           <FormView>
             <FormItem>
               <TextInputDefault
@@ -69,7 +84,8 @@ export default function NewSub() {
                 value={planName}
                 onTextChange={(text) => setPlanName(text)}
                 icon="CREDIT_CARD"
-                iconTop={40}
+                iconTop={30}
+                iconPosition="absolute"
               />
             </FormItem>
             <FormItem>
@@ -78,7 +94,8 @@ export default function NewSub() {
                 value={planType}
                 items={options}
                 icon="RETWEET"
-                iconTop={40}
+                iconTop={32}
+                iconPosition="absolute"
                 onSelectItem={(value) => setplanType(value)}
               />
             </FormItem>
@@ -91,7 +108,8 @@ export default function NewSub() {
                 options={{
                   format: 'DD/MM/YYYY'
                 }}
-                iconTop={36}
+                iconTop={30}
+                iconPosition="absolute"
                 onTextChange={(text) => setDate(text)}
               />
             </FormItem>
@@ -101,7 +119,8 @@ export default function NewSub() {
                 label="Valor"
                 value={planCost}
                 icon="MONEY"
-                iconTop={40}
+                iconTop={32}
+                iconPosition="absolute"
                 onTextChange={(text) => setPlanCost(text)}
               />
               <PickerDefault
@@ -109,19 +128,18 @@ export default function NewSub() {
                 value={currency}
                 items={currencies}
                 icon="COINS"
-                iconTop={40}
+                iconTop={30}
+                iconPosition="absolute"
                 onSelectItem={(value) => setCurrency(value)}
               />
             </FormItem>
-
-            <FormItem>
-              <ButtonDefault title="Cadastrar" isLoading={isLoading} />
-            </FormItem>
-
           </FormView>
         </SafeAreaView>
 
       </ScrollView>
+      <AddButton>
+        <Icon name="CREATE" size={45} color={colors.primaryWhite} />
+      </AddButton>
     </>
   );
 }

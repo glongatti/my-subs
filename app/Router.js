@@ -51,7 +51,7 @@ const AppNavigator = createStackNavigator({
       NewSub: {
         screen: NewSub,
         navigationOptions: {
-          tabBarIcon: <Icon name="ADD" color={colors.primaryWhite} position="relative" top={1} left={1} size={26} />,
+          tabBarIcon: <Icon name="ADD_BUTTON" color={colors.primaryWhite} position="relative" top={1} left={1} size={26} />,
           tabBarLabel: 'Novo'
         }
       },

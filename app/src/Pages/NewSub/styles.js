@@ -19,7 +19,6 @@ const FormView = styled.View`
     flexDirection: column;
     justifyContent: center;
     alignItems: center;   
-    marginTop:15;
 `;
 
 const FormItem = styled.View`
@@ -39,14 +38,32 @@ const LogoView = styled.View`
 `;
 
 const PageTitleText = styled.Text`
-  color:${colors.primaryGreen};
-  fontSize:28;
-  marginTop:10;
+  color:${colors.primaryWhite};
+  fontSize:26;
+  marginTop:75;
   marginLeft:15;
-  borderBottomWidth:1;
-  borderBottomColor:${colors.primaryGreen};
-  paddingBottom:10
+  paddingBottom:10;
+  position:relative;
 `;
+
+const AddButton = styled.TouchableOpacity`
+shadowColor: ${'#000'};
+shadowOpacity: 0.55;
+shadowRadius: 14.78;
+elevation: 22;
+alignItems: center;
+justifyContent: center;
+width: 45;
+position: absolute;
+top: 100;
+right: 10;
+height: 45;
+backgroundColor: ${colors.secondGreen};
+borderRadius: 100;
+borderColor:${'#dadada'}
+borderWidth:1
+ `;
+
 export {
   LogoView,
   SafeAreaView,
@@ -54,5 +71,5 @@ export {
   FormItem,
   PageTitleText,
   ScrollView,
-
+  AddButton
 };

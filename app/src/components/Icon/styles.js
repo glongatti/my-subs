@@ -8,7 +8,7 @@ import IconIO from 'react-native-vector-icons/Ionicons';
 import colors from '../../utils/colors';
 
 export const CircleView = styled.View`
-    backgroundColor:${'#90CF7A'};
+    backgroundColor:${colors.secondGreen};
     width: 50;
     height: 50;
     borderRadius: 50; 
@@ -65,7 +65,7 @@ left:${(props) => props.left || '0'};
 export const IOIcon = styled(IconIO)`
 color:${(props) => props.color || colors.primaryGreen}
 fontSize:${(props) => props.size || '23'};
-position:${(props) => props.position || 'relaltive'};
+position:${(props) => props.position || 'relative'};
 top:${(props) => props.top || '0'};
 left:${(props) => props.left || '0'};
 `;

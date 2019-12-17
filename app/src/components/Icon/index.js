@@ -16,7 +16,9 @@ export default function Icon({
     left
   };
   switch (name) {
-    case 'ADD':
+    case 'CREATE':
+      return <IOIcon name="ios-checkmark" {...props} />;
+    case 'ADD_BUTTON':
       return <CircleView><IOIcon name="ios-add" {...props} /></CircleView>;
     case 'CREDIT_CARD':
       return <MAIcon name="credit-card" {...props} />;
