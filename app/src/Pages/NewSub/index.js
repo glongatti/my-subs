@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import LinearGradient from 'react-native-linear-gradient';
 import moment from 'moment';
 import PickerDefault from '../../components/PickerDefault';
 import TextInputDefault from '../../components/TextInput';
 import Icon from '../../components/Icon';
 import {
   SafeAreaView, FormView, FormItem, ScrollView,
-  PageTitleText, AddButton
+  AddButton
 } from './styles';
 import colors from '../../utils/colors';
-
+import HeaderDefault from '../../components/HeaderDefault';
 
 const currencies = [
   {
@@ -60,20 +59,7 @@ export default function NewSub() {
 
   return (
     <>
-      <LinearGradient
-        colors={['rgba(51,206,147,0.5)', 'rgba(51,206,147,1)']}
-        start={{ x: 0, y: 1 }}
-        end={{ x: 1, y: 1 }}
-        useAngle
-        angle={180}
-        style={{
-          height: 120,
-          borderBottomColor: '#dadada',
-          borderBottomWidth: 1,
-        }}
-      >
-        <PageTitleText>Cadastro de assinatura</PageTitleText>
-      </LinearGradient>
+      <HeaderDefault title="Cadastro de assinatura" />
       <ScrollView>
         <SafeAreaView>
           <FormView>

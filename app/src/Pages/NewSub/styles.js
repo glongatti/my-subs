@@ -37,15 +37,6 @@ const LogoView = styled.View`
     marginBottom: 20;   
 `;
 
-const PageTitleText = styled.Text`
-  color:${colors.primaryWhite};
-  fontSize:26;
-  marginTop:75;
-  marginLeft:15;
-  paddingBottom:10;
-  position:relative;
-`;
-
 const AddButton = styled.TouchableOpacity`
 shadowColor: ${'#000'};
 shadowOpacity: 0.55;
@@ -60,8 +51,7 @@ right: 10;
 height: 45;
 backgroundColor: ${colors.secondGreen};
 borderRadius: 100;
-borderColor:${'#dadada'}
-borderWidth:1
+
  `;
 
 export {
@@ -69,7 +59,6 @@ export {
   SafeAreaView,
   FormView,
   FormItem,
-  PageTitleText,
   ScrollView,
   AddButton
 };
