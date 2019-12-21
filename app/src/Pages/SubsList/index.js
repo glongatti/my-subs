@@ -1,12 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import { PageTitleText } from './styles';
-// import { Container } from './styles';
+import HeaderDefault from '../../components/HeaderDefault';
 
 export default function SubsList() {
   return (
     <View>
-      <PageTitleText>Minhas assinaturas</PageTitleText>
+      <HeaderDefault title="Minhas assinaturas" height={80} />
     </View>
   );
 }
