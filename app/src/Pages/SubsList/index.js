@@ -64,7 +64,7 @@ const DATA = [
 ];
 
 
-export default function SubsList() {
+export default function SubsList({ navigation }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   function Item({
     title, status, date, price
@@ -90,7 +90,11 @@ export default function SubsList() {
   return (
     <>
       <HeaderDefault title="Minhas assinaturas" height={60} />
-      <ModalOptions isVisible={isModalVisible} handleCloseModal={() => setIsModalVisible(!isModalVisible)} />
+      <ModalOptions
+        isVisible={isModalVisible}
+        handleCloseModal={() => setIsModalVisible(!isModalVisible)}
+        navigation={navigation}
+      />
       <SafeAreaView style={{
         maxHeight: '91%'
       }}

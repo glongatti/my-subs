@@ -50,7 +50,7 @@ const options = [
   },
 ];
 
-export default function NewSub() {
+export default function NewSub({ navigation }) {
   const [planName, setPlanName] = useState('');
   const [planType, setplanType] = useState(options[0].value);
   const [date, setDate] = useState(moment(Date.now()).format('DD/MM/YYYY'));
@@ -59,7 +59,7 @@ export default function NewSub() {
 
   return (
     <>
-      <HeaderDefault title="Cadastro de assinatura" />
+      <HeaderDefault title={navigation.getParam('subId') ? 'Edição de assinatura' : 'Cadastro de assinatura'} />
       <ScrollView>
         <SafeAreaView>
           <FormView>

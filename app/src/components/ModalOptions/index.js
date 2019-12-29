@@ -2,18 +2,24 @@ import React from 'react';
 import Modal from 'react-native-modal';
 import { ModalContainerView, Button, ButtonText } from './styles';
 
-export default function ModalOptions({ isVisible = false, handleCloseModal }) {
+export default function ModalOptions({ isVisible = false, handleCloseModal, navigation }) {
   return (
     <Modal isVisible={isVisible} onBackdropPress={() => handleCloseModal()}>
       <ModalContainerView>
-        <Button>
+        <Button onPress={() => {
+          handleCloseModal();
+          navigation.navigate('NewSub', {
+            subId: 13,
+          });
+        }}
+        >
           <ButtonText>
-                Editar
+            Editar
           </ButtonText>
         </Button>
         <Button>
           <ButtonText>
-                Excluir
+            Excluir
           </ButtonText>
         </Button>
       </ModalContainerView>

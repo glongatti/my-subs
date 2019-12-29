@@ -50,6 +50,9 @@ const AppNavigator = createStackNavigator({
       },
       NewSub: {
         screen: NewSub,
+        params: {
+          subId: null,
+        },
         navigationOptions: {
           tabBarIcon: ({ tintColor }) => <Icon name="ADD_BUTTON" color={tintColor} position="relative" top={0} left={0} size={25} />,
           tabBarLabel: 'Novo'
@@ -63,7 +66,7 @@ const AppNavigator = createStackNavigator({
         }
       }
     }, {
-      initialRouteName: 'NewSub',
+      initialRouteName: 'SubsList',
       tabBarOptions: {
         labelStyle: {
           color: colors.primaryWhite
