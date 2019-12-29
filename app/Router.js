@@ -43,7 +43,7 @@ const AppNavigator = createStackNavigator({
       SubsList: {
         screen: SubsList,
         navigationOptions: {
-          tabBarIcon: ({ tintColor }) => <Icon name="LIST" color={tintColor} position="relative" top={5} />,
+          tabBarIcon: ({ tintColor }) => <Icon name="LIST" color={tintColor} position="relative" top={3} size={25} />,
           tabBarLabel: 'Lista',
           headerShown: false,
         }
@@ -51,14 +51,14 @@ const AppNavigator = createStackNavigator({
       NewSub: {
         screen: NewSub,
         navigationOptions: {
-          tabBarIcon: ({ tintColor }) => <Icon name="ADD_BUTTON" color={tintColor} position="relative" top={1} left={1} size={26} />,
+          tabBarIcon: ({ tintColor }) => <Icon name="ADD_BUTTON" color={tintColor} position="relative" top={0} left={0} size={25} />,
           tabBarLabel: 'Novo'
         }
       },
       Register: {
         screen: Register,
         navigationOptions: {
-          tabBarIcon: ({ tintColor }) => <Icon name="PROFILE" color={tintColor} position="relative" top={3} left={0} size={26} />,
+          tabBarIcon: ({ tintColor }) => <Icon name="PROFILE" color={tintColor} position="relative" top={2} left={0} size={23} />,
           tabBarLabel: 'Registro'
         }
       }
@@ -74,7 +74,7 @@ const AppNavigator = createStackNavigator({
       tabBarComponent: (props) => (
         <BottomTabBar
           {...props}
-          style={{ backgroundColor: colors.primaryGreen }}
+          style={{ backgroundColor: colors.primaryGreen, paddingBottom: 7, height: 55 }}
         />
       ),
       headerShown: false,
