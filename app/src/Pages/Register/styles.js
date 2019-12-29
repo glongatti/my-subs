@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { CheckBox } from 'react-native-elements';
 import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
 
 const SafeAreaView = styled.SafeAreaView`
     flex: 1;    
@@ -47,7 +48,8 @@ const LogoImage = styled.Image`
 const TextTerms = styled.Text`
     color: ${colors.primaryGreen};
     textDecoration: underline;
-`;
+    fontFamily:${fonts.bold};
+    `;
 
 const CheckBoxTerms = styled(CheckBox).attrs(() => ({
   containerStyle: {
@@ -56,13 +58,14 @@ const CheckBoxTerms = styled(CheckBox).attrs(() => ({
 }))``;
 
 const AlreadyAccountButton = styled.TouchableOpacity`
-  width:70%;
+width:70%;
 `;
 
 const AlreadyAccountText = styled.Text`
-    marginTop:10;
-    color:${colors.primaryGreen};
-    textAlign: center
+marginTop:10;
+color:${colors.primaryGreen};
+textAlign: center
+fontFamily:${fonts.regular};
     
 `;
 

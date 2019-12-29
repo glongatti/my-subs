@@ -7,6 +7,7 @@ export const PageTitleText = styled.Text`
   fontSize:26;
   marginLeft:15;
   paddingBottom:10;
+  fontFamily: Roboto-Medium
 `;
 
 export const LinearGradientView = styled(LinearGradient)`

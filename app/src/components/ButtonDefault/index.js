@@ -14,7 +14,7 @@ export default function ButtonDefault({
         ...styles,
         backgroundColor: color || colors.primaryGreen,
         width: 180,
-        marginTop: 20
+        marginTop: 20,
       }}
       onPress={onPress}
       loading={isLoading}

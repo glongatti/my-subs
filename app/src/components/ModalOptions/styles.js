@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
 
 export const ModalContainerView = styled.View`
     background-color:${colors.primaryWhite}
@@ -17,4 +18,5 @@ export const Button = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
     font-size:20;
     text-align:center;
+    fontFamily: ${fonts.light}
 `;

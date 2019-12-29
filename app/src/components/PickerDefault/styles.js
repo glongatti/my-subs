@@ -1,10 +1,12 @@
 import styled from 'styled-components/native';
 import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
 
 const Picker = styled.Picker`
   width:90%;
   marginLeft:32;
-  color:${colors.primaryBlack}
+  color:${colors.primaryBlack};
+  fontFamily:${fonts.regular}
 `;
 
 const ViewPicker = styled.View`
@@ -18,8 +20,8 @@ marginLeft:10;
 
 const TextPicker = styled.Text`
 color:${colors.fontBolder};
-fontWeight:bold;
-fontSize:16
+fontSize:16;
+fontFamily:${fonts.bold}
 `;
 export {
   Picker,

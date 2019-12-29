@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
 
 export const CardContainer = styled.View`
   display:flex;
@@ -26,8 +27,8 @@ export const CardContainer = styled.View`
 export const CardTitle = styled.Text`
 font-family: Roboto;
 font-style: normal;
-font-weight: bold;
 font-size: 20;
+fontFamily:${fonts.medium};
 `;
 
 export const CardText = styled.Text`
@@ -35,6 +36,7 @@ font-family: Roboto;
 font-style: normal;
 font-weight: 500;
 font-size: 12;
+fontFamily: ${fonts.regular};
 `;
 
 export const SubInfosView = styled.View`

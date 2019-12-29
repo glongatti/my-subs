@@ -10,6 +10,7 @@ import NewSub from './src/Pages/NewSub';
 import SubsList from './src/Pages/SubsList';
 import Icon from './src/components/Icon';
 import colors from './src/utils/colors';
+import fonts from './src/utils/fonts';
 
 // const navigationOptions = ({ navigation }) => ({
 //   headerLeft:
@@ -69,7 +70,8 @@ const AppNavigator = createStackNavigator({
       initialRouteName: 'SubsList',
       tabBarOptions: {
         labelStyle: {
-          color: colors.primaryWhite
+          color: colors.primaryWhite,
+          fontFamily: fonts.regular
         },
         activeTintColor: colors.primaryWhite,
         inactiveTintColor: colors.primaryWhite
