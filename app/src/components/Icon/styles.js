@@ -15,7 +15,7 @@ export const CircleView = styled.View`
     justifyContent:center;
     alignItems:center;
     position:relative;
-    top:-13;
+    top:-10;
     shadowColor: ${'#000'};
     shadowOpacity: 0.55;
     shadowRadius: 14.78;
