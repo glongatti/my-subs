@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  View, FlatList, TouchableOpacity
+  FlatList, TouchableOpacity, SafeAreaView
 } from 'react-native';
 import ModalOptions from '../../components/ModalOptions';
 import HeaderDefault from '../../components/HeaderDefault';
@@ -27,7 +27,35 @@ const DATA = [
     date: '27/10/2019'
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    id: '58694a0f-3da1-471f-bd96-145571e29d723',
+    title: 'Amazon Unlimited',
+    status: 'ATIVO',
+    price: 'R$ 23,90',
+    date: '27/10/2019'
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d724',
+    title: 'Amazon Unlimited',
+    status: 'ATIVO',
+    price: 'R$ 23,90',
+    date: '27/10/2019'
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d725',
+    title: 'Amazon Unlimited',
+    status: 'ATIVO',
+    price: 'R$ 23,90',
+    date: '27/10/2019'
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d726',
+    title: 'Amazon Unlimited',
+    status: 'ATIVO',
+    price: 'R$ 23,90',
+    date: '27/10/2019'
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d727',
     title: 'Amazon Unlimited',
     status: 'ATIVO',
     price: 'R$ 23,90',
@@ -45,11 +73,11 @@ export default function SubsList() {
       <CardContainer>
         <SubInfosView>
           <CardTitle>{title}</CardTitle>
+          <CardText>{`${status}`}</CardText>
           <CardText>
             {'Renova em '}
             {date}
           </CardText>
-          <CardText>{`${status}`}</CardText>
           <CardText>{`${price}`}</CardText>
         </SubInfosView>
 
@@ -60,22 +88,26 @@ export default function SubsList() {
     );
   }
   return (
-    <View>
-      <ModalOptions isVisible={isModalVisible} handleCloseModal={() => setIsModalVisible(!isModalVisible)} />
-
+    <>
       <HeaderDefault title="Minhas assinaturas" height={60} />
-      <FlatList
-        data={DATA}
-        renderItem={({ item }) => (
-          <Item
-            title={item.title}
-            date={item.date}
-            status={item.status}
-            price={item.price}
-          />
-        )}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
+      <ModalOptions isVisible={isModalVisible} handleCloseModal={() => setIsModalVisible(!isModalVisible)} />
+      <SafeAreaView style={{
+        maxHeight: '91%'
+      }}
+      >
+        <FlatList
+          data={DATA}
+          renderItem={({ item }) => (
+            <Item
+              title={item.title}
+              date={item.date}
+              status={item.status}
+              price={item.price}
+            />
+          )}
+          keyExtractor={(item) => item.id}
+        />
+      </SafeAreaView>
+    </>
   );
 }

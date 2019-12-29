@@ -6,7 +6,7 @@ export const ModalContainerView = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    borderWidth:1;
+    borderWidth:0.5;
     borderColor:${colors.primaryGrey};
     height:50;
     display:flex;

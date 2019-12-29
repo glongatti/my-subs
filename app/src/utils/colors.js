@@ -6,6 +6,7 @@ const colors = {
   primaryGrey: '#909aa2',
   primaryBlack: 'black',
   fontBolder: '#8c9096',
+  secondGrey: '#ededed'
 };
 // https://www.color-hex.com/color/33ce93
 export default colors;
