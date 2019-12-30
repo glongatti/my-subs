@@ -34,12 +34,18 @@ right: 10;
 height: 45;
 backgroundColor: ${colors.secondGreen};
 borderRadius: 100;
+ `;
 
+const DeleteButton = styled.TouchableOpacity`
+position: absolute;
+top: 15;
+right: 20;
  `;
 
 export {
   LogoView,
   SafeAreaView,
   ScrollView,
-  AddButton
+  AddButton,
+  DeleteButton
 };

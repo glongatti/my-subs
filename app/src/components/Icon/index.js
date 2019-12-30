@@ -32,6 +32,8 @@ export default function Icon({
       return <IOIcon name="md-menu" {...props} />;
     case 'MONEY':
       return <FA5Icon name="money-bill-wave" {...props} />;
+    case 'TRASH':
+      return <FAIcon name="trash-o" {...props} />;
     case 'MENU_DOTS':
       return <MACIcon name="dots-vertical" {...props} />;
     case 'COINS':

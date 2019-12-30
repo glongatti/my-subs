@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from '../../components/Icon';
 import {
   SafeAreaView, ScrollView,
-  AddButton
+  AddButton, DeleteButton
 } from './styles';
 import colors from '../../utils/colors';
 import HeaderDefault from '../../components/HeaderDefault';
@@ -16,9 +16,14 @@ export default function NewSub({ navigation }) {
         title="Edição de assinatura"
         handleBack={() => navigation.goBack()}
         renderCtaButton={() => (
-          <AddButton>
-            <Icon name="CREATE" size={45} color={colors.primaryWhite} />
-          </AddButton>
+          <>
+            <DeleteButton>
+              <Icon name="TRASH" size={30} color={colors.primaryWhite} />
+            </DeleteButton>
+            <AddButton>
+              <Icon name="CREATE" size={45} color={colors.primaryWhite} />
+            </AddButton>
+          </>
         )}
       />
       <SafeAreaView>
