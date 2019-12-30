@@ -55,9 +55,10 @@ const AppNavigator = createStackNavigator({
           subId: null,
         },
         navigationOptions: {
+          tabBarVisible: false,
           tabBarIcon: ({ tintColor }) => <Icon name="ADD_BUTTON" color={tintColor} position="relative" top={0} left={0} size={25} />,
-          tabBarLabel: 'Novo'
-        }
+          tabBarLabel: ' '
+        },
       },
       Register: {
         screen: Register,

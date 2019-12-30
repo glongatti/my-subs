@@ -17,3 +17,9 @@ export const LinearGradientView = styled(LinearGradient)`
     height:120;
     height: ${(props) => props.height || 120};
 `;
+
+export const BackButton = styled.TouchableOpacity`
+position:relative;
+top:-30;
+left:10
+`;

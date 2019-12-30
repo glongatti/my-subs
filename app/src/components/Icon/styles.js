@@ -9,13 +9,13 @@ import colors from '../../utils/colors';
 
 export const CircleView = styled.View`
     backgroundColor:${colors.secondGreen};
-    width: 50;
-    height: 50;
+    width: 60;
+    height: 60;
     borderRadius: 50; 
     justifyContent:center;
     alignItems:center;
     position:relative;
-    top:-10;
+    top:-5;
     shadowColor: ${'#000'};
     shadowOpacity: 0.55;
     shadowRadius: 14.78;

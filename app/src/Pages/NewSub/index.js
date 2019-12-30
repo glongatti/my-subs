@@ -59,7 +59,10 @@ export default function NewSub({ navigation }) {
 
   return (
     <>
-      <HeaderDefault title={navigation.getParam('subId') ? 'Edição de assinatura' : 'Cadastro de assinatura'} />
+      <HeaderDefault
+        title={navigation.getParam('subId') ? 'Edição de assinatura' : 'Cadastro de assinatura'}
+        handleBack={() => navigation.goBack()}
+      />
       <ScrollView>
         <SafeAreaView>
           <FormView>
