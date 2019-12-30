@@ -83,7 +83,10 @@ export default function SubsList({ navigation }) {
           <CardText>{`${price}`}</CardText>
         </SubInfosView>
 
-        <TouchableOpacity onPress={() => setIsModalVisible(!isModalVisible)}>
+        <TouchableOpacity onPress={() => navigation.navigate('EditSub', {
+          subId: 13,
+        })}
+        >
           <Icon name="MENU_DOTS" size={35} color={colors.primaryGrey} />
         </TouchableOpacity>
       </CardContainer>

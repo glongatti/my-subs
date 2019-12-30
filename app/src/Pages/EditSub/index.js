@@ -13,7 +13,7 @@ export default function NewSub({ navigation }) {
   return (
     <>
       <HeaderDefault
-        title="Cadastro de assinatura"
+        title="Edição de assinatura"
         handleBack={() => navigation.goBack()}
       />
       <SafeAreaView>
