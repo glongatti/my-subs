@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import {
   FlatList, TouchableOpacity, SafeAreaView
 } from 'react-native';
+
 import ModalOptions from '../../components/ModalOptions';
 import HeaderDefault from '../../components/HeaderDefault';
+import SearchInputText from '../../components/SearchInputText';
+import Icon from '../../components/Icon';
+
 import {
   CardContainer, SubInfosView, CardText, CardTitle
 } from './styles';
-import Icon from '../../components/Icon';
 import colors from '../../utils/colors';
-
 
 const DATA = [
   {
@@ -95,6 +97,7 @@ export default function SubsList({ navigation }) {
         handleCloseModal={() => setIsModalVisible(!isModalVisible)}
         navigation={navigation}
       />
+      <SearchInputText />
       <SafeAreaView style={{
         maxHeight: '91%'
       }}

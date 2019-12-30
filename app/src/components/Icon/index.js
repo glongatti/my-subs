@@ -26,6 +26,8 @@ export default function Icon({
       return <FAIcon name="calendar" {...props} />;
     case 'RETWEET':
       return <FAIcon name="retweet" {...props} />;
+    case 'SEARCH':
+      return <FAIcon name="search" {...props} />;
     case 'LIST':
       return <IOIcon name="md-menu" {...props} />;
     case 'MONEY':
