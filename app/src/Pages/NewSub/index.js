@@ -63,8 +63,8 @@ export default function NewSub({ navigation }) {
         title={navigation.getParam('subId') ? 'Edição de assinatura' : 'Cadastro de assinatura'}
         handleBack={() => navigation.goBack()}
       />
-      <ScrollView>
-        <SafeAreaView>
+      <SafeAreaView>
+        <ScrollView>
           <FormView>
             <FormItem>
               <TextInputDefault
@@ -103,6 +103,7 @@ export default function NewSub({ navigation }) {
               />
             </FormItem>
 
+
             <FormItem>
               <TextInputDefault
                 label="Valor"
@@ -123,9 +124,9 @@ export default function NewSub({ navigation }) {
               />
             </FormItem>
           </FormView>
-        </SafeAreaView>
 
-      </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
       <AddButton>
         <Icon name="CREATE" size={45} color={colors.primaryWhite} />
       </AddButton>
