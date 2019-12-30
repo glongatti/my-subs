@@ -5,7 +5,9 @@ import {
   LinearGradientView, PageTitleText, BackButton
 } from './styles';
 
-export default function HeaderDefault({ title, height, handleBack }) {
+export default function HeaderDefault({
+  title, height, handleBack, renderCtaButton
+}) {
   return (
     <LinearGradientView
       colors={['rgba(51,206,147,0.5)', 'rgba(51,206,147,1)']}
@@ -21,6 +23,7 @@ export default function HeaderDefault({ title, height, handleBack }) {
         </BackButton>
       )}
       <PageTitleText>{title}</PageTitleText>
+      {renderCtaButton && renderCtaButton()}
     </LinearGradientView>
   );
 }

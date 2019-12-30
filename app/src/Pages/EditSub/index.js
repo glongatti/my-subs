@@ -15,15 +15,17 @@ export default function NewSub({ navigation }) {
       <HeaderDefault
         title="Edição de assinatura"
         handleBack={() => navigation.goBack()}
+        renderCtaButton={() => (
+          <AddButton>
+            <Icon name="CREATE" size={45} color={colors.primaryWhite} />
+          </AddButton>
+        )}
       />
       <SafeAreaView>
         <ScrollView>
           <SubForm />
         </ScrollView>
       </SafeAreaView>
-      <AddButton>
-        <Icon name="CREATE" size={45} color={colors.primaryWhite} />
-      </AddButton>
     </>
   );
 }
