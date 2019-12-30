@@ -5,7 +5,7 @@ import {
 } from './styles';
 
 export default function TextInput({
-  label, type, options, value, onTextChange, placeholder, icon, iconTop, iconLeft, iconPosition
+  label, type, options, value, onTextChange, placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType
 }) {
   return (
     <ViewInput>
@@ -29,6 +29,7 @@ export default function TextInput({
           onChangeText={(text) => {
             onTextChange(text);
           }}
+          keyboardType={keyboardType}
         />
       )}
     </ViewInput>

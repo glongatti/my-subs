@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { KeyboardAvoidingView } from 'react-native';
 import moment from 'moment';
 import PickerDefault from '../PickerDefault';
 import TextInputDefault from '../TextInput';
@@ -91,26 +92,28 @@ export default function SubForm() {
         />
       </FormItem>
 
-
-      <FormItem>
-        <TextInputDefault
-          label="Valor"
-          value={planCost}
-          icon="MONEY"
-          iconTop={32}
-          iconPosition="absolute"
-          onTextChange={(text) => setPlanCost(text)}
-        />
-        <PickerDefault
-          label="Tipo de moeda"
-          value={currency}
-          items={currencies}
-          icon="COINS"
-          iconTop={30}
-          iconPosition="absolute"
-          onSelectItem={(value) => setCurrency(value)}
-        />
-      </FormItem>
+      <KeyboardAvoidingView>
+        <FormItem>
+          <TextInputDefault
+            label="Valor"
+            value={planCost}
+            icon="MONEY"
+            iconTop={32}
+            iconPosition="absolute"
+            onTextChange={(text) => setPlanCost(text)}
+            keyboardType="numeric"
+          />
+          <PickerDefault
+            label="Tipo de moeda"
+            value={currency}
+            items={currencies}
+            icon="COINS"
+            iconTop={30}
+            iconPosition="absolute"
+            onSelectItem={(value) => setCurrency(value)}
+          />
+        </FormItem>
+      </KeyboardAvoidingView>
     </FormView>
   );
 }
