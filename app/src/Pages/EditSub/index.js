@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Alert } from 'react-native';
 import Icon from '../../components/Icon';
 import {
   SafeAreaView, ScrollView,
@@ -17,7 +17,21 @@ export default function NewSub({ navigation }) {
         handleBack={() => navigation.goBack()}
         renderCtaButton={() => (
           <>
-            <DeleteButton>
+            <DeleteButton onPress={() => {
+              Alert.alert(
+                'Atenção',
+                'Tem certeza que deseja excluir essa assinatura?',
+                [
+                  { text: 'SIM', onPress: () => console.log('OK Pressed') },
+                  {
+                    text: 'CANCELAR',
+                    onPress: () => console.log('Cancel Pressed'),
+                  },
+                ],
+                { cancelable: false },
+              );
+            }}
+            >
               <Icon name="TRASH" size={30} color={colors.primaryWhite} />
             </DeleteButton>
             <AddButton>
