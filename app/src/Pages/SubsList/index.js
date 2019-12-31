@@ -68,6 +68,15 @@ const DATA = [
 
 export default function SubsList({ navigation }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [searchText, setSearchText] = useState('');
+  const [subsList, setSubsList] = useState(DATA);
+
+  function handleTextChangeAndFilter(text) {
+    setSearchText(text);
+    const filteredArray = DATA.filter((subs) => subs.title.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
+    setSubsList(filteredArray);
+  }
+
   function Item({
     title, status, date, price
   }) {
@@ -100,13 +109,13 @@ export default function SubsList({ navigation }) {
         handleCloseModal={() => setIsModalVisible(!isModalVisible)}
         navigation={navigation}
       />
-      <SearchInputText />
+      <SearchInputText value={searchText} onTextChange={handleTextChangeAndFilter} />
       <SafeAreaView style={{
         maxHeight: '91%'
       }}
       >
         <FlatList
-          data={DATA}
+          data={subsList}
           renderItem={({ item }) => (
             <Item
               title={item.title}

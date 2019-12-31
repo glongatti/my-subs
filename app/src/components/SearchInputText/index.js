@@ -3,14 +3,14 @@ import React from 'react';
 import { InputView, SearchInput } from './styles';
 import Icon from '../Icon';
 
-export default function SearchInputText() {
+export default function SearchInputText({ value, onTextChange }) {
   return (
     <InputView>
       <Icon name="SEARCH" position="absolute" top={5} left={18} />
       <SearchInput
-        // onChangeText={(text) => onChangeText(text)}
-        value=""
-        placeholder="Procurar assinatura..."
+        onChangeText={(text) => onTextChange(text)}
+        value={value}
+        placeholder="Procurar assinatura pelo nome..."
       />
     </InputView>
   );
