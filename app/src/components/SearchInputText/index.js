@@ -10,7 +10,7 @@ export default function SearchInputText({ value, onTextChange }) {
       <SearchInput
         onChangeText={(text) => onTextChange(text)}
         value={value}
-        placeholder="Procurar assinatura pelo nome..."
+        placeholder="Procurar assinatura pelo nomen..."
       />
     </InputView>
   );

@@ -8,7 +8,6 @@ export const InputView = styled.View`
     border-bottom-width:0.5;
     border-color:${colors.primaryGrey};
     height:40;
-    margin-bottom:5
 `;
 
 export const SearchInput = styled.TextInput`

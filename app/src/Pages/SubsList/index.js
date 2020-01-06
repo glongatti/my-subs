@@ -83,8 +83,8 @@ export default function SubsList({ navigation }) {
     return (
       <CardContainer>
         <SubInfosView>
-          <CardTitle>{title}</CardTitle>
           <CardText>{`${status}`}</CardText>
+          <CardTitle>{title}</CardTitle>
           <CardText>
             {'Renova em '}
             {date}
