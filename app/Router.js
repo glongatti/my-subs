@@ -3,7 +3,7 @@ import * as React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
-// import { TouchableOpacity } from 'react-native';
+import Initial from './src/Pages/Initial';
 import Home from './src/Home';
 import Register from './src/Pages/Register';
 import NewSub from './src/Pages/NewSub';
@@ -15,6 +15,9 @@ import fonts from './src/utils/fonts';
 
 
 const AppNavigator = createStackNavigator({
+  Initial: {
+    screen: Initial,
+  },
   Home: {
     screen: Home,
   },
@@ -83,7 +86,7 @@ const AppNavigator = createStackNavigator({
   }
 },
 {
-  initialRouteName: 'TabsScreen',
+  initialRouteName: 'Initial',
   headerMode: 'none',
 });
 

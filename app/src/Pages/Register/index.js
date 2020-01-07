@@ -134,7 +134,7 @@ export default function Register() {
             </TextTerms>
 
             <FormItem>
-              <ButtonDefault title="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} />
+              <ButtonDefault text="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} type="second" />
             </FormItem>
 
             <AlreadyAccountButton>
