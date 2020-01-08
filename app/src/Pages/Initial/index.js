@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import * as NavigationActions from '../../app/actions/navigator';
 import ButtonDefault from '../../components/ButtonDefault';
 import LogoImage from '../../components/LogoImage';
 import {
   Container, ButtonContainer, MainText
 } from './styles';
 
-export default function Initial({ navigation }) {
+function Initial(props) {
   return (
     <Container>
 
@@ -18,7 +21,7 @@ export default function Initial({ navigation }) {
       <ButtonContainer>
         <ButtonDefault
           text="Quero me registrar"
-          onPress={() => navigation.navigate('Register')}
+          onPress={() => props.openRegisterScreen()}
         />
       </ButtonContainer>
 
@@ -31,3 +34,11 @@ export default function Initial({ navigation }) {
     </Container>
   );
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    openRegisterScreen: () => dispatch({ type: NavigationActions.ACTION_OPEN_REGISTER.action })
+  };
+}
+
+export default connect(null, mapDispatchToProps)(Initial);

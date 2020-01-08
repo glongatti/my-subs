@@ -1,25 +1,44 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import * as React from 'react';
-import { createAppContainer } from 'react-navigation';
+import React from 'react';
+
+
 import { createStackNavigator } from 'react-navigation-stack';
+import { createReduxContainer, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
+import { connect } from 'react-redux';
+
+
 import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
-import Initial from './src/Pages/Initial';
-import Home from './src/Home';
-import Register from './src/Pages/Register';
-import NewSub from './src/Pages/NewSub';
-import EditSub from './src/Pages/EditSub';
-import SubsList from './src/Pages/SubsList';
-import Icon from './src/components/Icon';
-import colors from './src/utils/colors';
-import fonts from './src/utils/fonts';
 
+import Initial from '../../Pages/Initial';
+import Register from '../../Pages/Register';
+import Login from '../../Pages/Login';
+import NewSub from '../../Pages/NewSub';
+import EditSub from '../../Pages/EditSub';
+import SubsList from '../../Pages/SubsList';
+import Icon from '../../components/Icon';
+import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
 
-const AppNavigator = createStackNavigator({
+export const ACTION_OPEN_REGISTER = {
+  action: 'ACTION_OPEN_REGISTER',
+  routeName: 'Register'
+};
+
+export const ACTION_OPEN_LOGIN = {
+  action: 'ACTION_OPEN_LOGIN',
+  routeName: 'Login'
+};
+
+export const ACTION_OPEN_INITIAL = {
+  action: 'ACTION_OPEN_INITIAL',
+  routeName: 'Initial'
+};
+
+const NavigationMiddleware = createReactNavigationReduxMiddleware((state) => state.navigation);
+
+const RootNavigator = createStackNavigator({
   Initial: {
     screen: Initial,
-  },
-  Home: {
-    screen: Home,
   },
   SubsList: {
     screen: SubsList,
@@ -29,6 +48,12 @@ const AppNavigator = createStackNavigator({
   },
   Register: {
     screen: Register,
+    navigationOptions: {
+      headerShown: false,
+    }
+  },
+  Login: {
+    screen: Login,
     navigationOptions: {
       headerShown: false,
     }
@@ -90,4 +115,12 @@ const AppNavigator = createStackNavigator({
   headerMode: 'none',
 });
 
-export default createAppContainer(AppNavigator);
+const AppWithNavigationState = createReduxContainer(RootNavigator, 'root');
+
+const mapStateToProps = (state) => ({
+  state: state.navigation
+});
+
+const AppNavigator = connect(mapStateToProps)(AppWithNavigationState);
+
+export { RootNavigator, AppNavigator, NavigationMiddleware };
