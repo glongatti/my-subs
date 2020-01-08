@@ -23,11 +23,3 @@ export const ButtonContainer = styled.View`
     margin-top:20
     margin-bottom:10
 `;
-
-export const LogoImage = styled.Image`
-    width: 120;
-    height: 120;
-    marginBottom:20
-    position:relative
-    top:-30
-`;

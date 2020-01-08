@@ -9,8 +9,9 @@ import { Input } from 'react-native-elements';
 
 import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
+import LogoImage from '../../components/LogoImage';
 import {
-  SafeAreaView, FormView, LogoImage, FormItem, CheckBoxTerms,
+  SafeAreaView, FormView, FormItem, CheckBoxTerms,
   TextTerms, ScrollView, AlreadyAccountText, AlreadyAccountButton,
 } from './styles';
 
@@ -67,9 +68,7 @@ export default function Register() {
         <SafeAreaView>
           <FormView>
 
-            <LogoImage
-              source={require('../../assets/logo.png')}
-            />
+            <LogoImage />
 
             <FormItem>
               <Input

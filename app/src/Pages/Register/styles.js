@@ -39,11 +39,6 @@ const LogoView = styled.View`
     justifyContent: center;
     marginBottom: 20;   
 `;
-const LogoImage = styled.Image`
-    width: 120;
-    height: 120;
-    marginBottom:20
-`;
 
 const TextTerms = styled.Text`
     color: ${colors.primaryGreen};
@@ -73,7 +68,6 @@ export {
   LogoView,
   SafeAreaView,
   FormView,
-  LogoImage,
   FormItem,
   CheckBoxTerms,
   TextTerms,

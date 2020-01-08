@@ -1,19 +1,18 @@
 import React from 'react';
 import ButtonDefault from '../../components/ButtonDefault';
+import LogoImage from '../../components/LogoImage';
 import {
-  Container, LogoImage, ButtonContainer, MainText
+  Container, ButtonContainer, MainText
 } from './styles';
 
 export default function Initial({ navigation }) {
   return (
     <Container>
 
-      <LogoImage
-        source={require('../../assets/logo.png')}
-      />
+      <LogoImage />
 
       <MainText>
-        Vamos começar a organizar suas assinaturas?
+        Bora começar a organizar suas assinaturas?
       </MainText>
 
       <ButtonContainer>
