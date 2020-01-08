@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import * as NavigationActions from '../../app/actions/navigator';
 import ButtonDefault from '../../components/ButtonDefault';
@@ -8,7 +8,8 @@ import {
   Container, ButtonContainer, MainText
 } from './styles';
 
-function Initial(props) {
+export default function Initial() {
+  const dispatch = useDispatch();
   return (
     <Container>
 
@@ -21,24 +22,17 @@ function Initial(props) {
       <ButtonContainer>
         <ButtonDefault
           text="Quero me registrar"
-          onPress={() => props.openRegisterScreen()}
+          onPress={() => dispatch({ type: NavigationActions.ACTION_OPEN_REGISTER.action })}
         />
       </ButtonContainer>
 
       <ButtonContainer>
         <ButtonDefault
           text="Já tenho uma conta!"
+          onPress={() => dispatch({ type: NavigationActions.ACTION_OPEN_LOGIN.action })}
         />
       </ButtonContainer>
 
     </Container>
   );
 }
-
-function mapDispatchToProps(dispatch) {
-  return {
-    openRegisterScreen: () => dispatch({ type: NavigationActions.ACTION_OPEN_REGISTER.action })
-  };
-}
-
-export default connect(null, mapDispatchToProps)(Initial);

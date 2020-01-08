@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import {
   FlatList, TouchableOpacity, SafeAreaView
 } from 'react-native';
+import { useDispatch } from 'react-redux';
 
-import ModalOptions from '../../components/ModalOptions';
 import HeaderDefault from '../../components/HeaderDefault';
 import SearchInputText from '../../components/SearchInputText';
 import Icon from '../../components/Icon';
-
+import { ACTION_OPEN_EDIT_SUBS } from '../../app/actions/navigator';
 import {
   CardContainer, SubInfosView, CardText, CardTitle
 } from './styles';
@@ -66,10 +66,11 @@ const DATA = [
 ];
 
 
-export default function SubsList({ navigation }) {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+export default function SubsList() {
   const [searchText, setSearchText] = useState('');
   const [subsList, setSubsList] = useState(DATA);
+
+  const dispatch = useDispatch();
 
   function handleTextChangeAndFilter(text) {
     setSearchText(text);
@@ -92,10 +93,7 @@ export default function SubsList({ navigation }) {
           <CardText>{`${price}`}</CardText>
         </SubInfosView>
 
-        <TouchableOpacity onPress={() => navigation.navigate('EditSub', {
-          subId: 13,
-        })}
-        >
+        <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_EDIT_SUBS.action })}>
           <Icon name="MENU_DOTS" size={35} color={colors.primaryGrey} />
         </TouchableOpacity>
       </CardContainer>
@@ -104,11 +102,6 @@ export default function SubsList({ navigation }) {
   return (
     <>
       <HeaderDefault title="Minhas assinaturas" height={60} />
-      <ModalOptions
-        isVisible={isModalVisible}
-        handleCloseModal={() => setIsModalVisible(!isModalVisible)}
-        navigation={navigation}
-      />
       <SearchInputText value={searchText} onTextChange={handleTextChangeAndFilter} />
       <SafeAreaView style={{
         maxHeight: '91%'

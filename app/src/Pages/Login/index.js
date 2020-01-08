@@ -4,8 +4,9 @@ import { Alert } from 'react-native';
 import IconE from 'react-native-vector-icons/Entypo';
 import IconMA from 'react-native-vector-icons/MaterialIcons';
 import { Input } from 'react-native-elements';
-
+import { useDispatch } from 'react-redux';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
 import LogoImage from '../../components/LogoImage';
 import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
@@ -15,12 +16,14 @@ import {
 } from './styles';
 
 import { authenticateUser } from '../../controllers/user';
+import { ACTION_OPEN_REGISTER } from '../../app/actions/navigator';
 
-export default function Login({ navigation }) {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const dispatch = useDispatch();
 
   // const verifyEmail = async () => {};
 
@@ -87,7 +90,7 @@ export default function Login({ navigation }) {
               <ButtonDefault text="Fazer Login" type="second" isLoading={isLoading} onPress={() => sendRequest()} />
             </FormItem>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+            <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_REGISTER.action })}>
               <NoAccountText>Ainda não possui uma conta? Clique aqui</NoAccountText>
             </TouchableOpacity>
 
