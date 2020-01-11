@@ -15,7 +15,10 @@ import Login from '../../view/pages/login';
 import NewSub from '../../view/pages/new-subs';
 import EditSub from '../../view/pages/edit-subs';
 import SubsList from '../../view/pages/subs-list';
+import Profile from '../../view/pages/profile';
+
 import Icon from '../../view/components/icon';
+
 import colors from '../../utils/colors';
 import fonts from '../../utils/fonts';
 
@@ -62,7 +65,6 @@ const TabNavigator = createBottomTabNavigator({
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => <Icon name="LIST" color={tintColor} position="relative" top={3} size={25} />,
       tabBarLabel: 'List',
-      headerShown: false,
     }
   },
   NewSub: {
@@ -73,8 +75,8 @@ const TabNavigator = createBottomTabNavigator({
       tabBarLabel: ' '
     },
   },
-  Register: {
-    screen: Register,
+  Profile: {
+    screen: Profile,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => <Icon name="PROFILE" color={tintColor} position="relative" top={2} left={0} size={23} />,
       tabBarLabel: 'Perfil'

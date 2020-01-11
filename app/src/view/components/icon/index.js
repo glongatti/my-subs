@@ -24,6 +24,8 @@ export default function Icon({
       return <MAIcon name="credit-card" {...props} />;
     case 'CALENDAR':
       return <FAIcon name="calendar" {...props} />;
+    case 'EDIT':
+      return <MACIcon name="pencil-outline" {...props} />;
     case 'RETWEET':
       return <FAIcon name="retweet" {...props} />;
     case 'SEARCH':
