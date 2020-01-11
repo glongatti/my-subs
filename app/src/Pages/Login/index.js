@@ -2,23 +2,23 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Alert } from 'react-native';
-import IconE from 'react-native-vector-icons/Entypo';
-import IconMA from 'react-native-vector-icons/MaterialIcons';
-import { Input } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackActions } from 'react-navigation';
 
 import LogoImage from '../../components/LogoImage';
-import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
 import BackHeader from '../../components/BackHeader';
-import {
-  SafeAreaView, FormView, FormItem, ScrollView,
-  NoAccountText
-} from './styles';
+import TextInput from '../../components/TextInput';
 
 import { authenticateUser } from '../../controllers/user';
 import { ACTION_OPEN_REGISTER } from '../../app/actions/navigator';
+
+import colors from '../../utils/colors';
+import {
+  SafeAreaView, FormView, FormItem, ScrollView,
+  NoAccountText, FormFooter
+} from './styles';
+
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -27,7 +27,6 @@ export default function Login() {
 
   const dispatch = useDispatch();
 
-  // const verifyEmail = async () => {};
 
   const sendRequest = async () => {
     setIsLoading(true);
@@ -43,7 +42,7 @@ export default function Login() {
       Alert('Erro!');
       throw error;
     } finally {
-      setIsLoading(false);
+      // setIsLoading(false);
     }
   };
 
@@ -64,43 +63,36 @@ export default function Login() {
 
 
             <FormItem>
-              <Input
+              <TextInput
                 placeholder="E-mail"
-                leftIcon={(
-                  <IconE
-                    name="email"
-                    size={24}
-                    color={colors.primaryGreen}
-                  />
-                                )}
                 value={email}
-                onChangeText={(text) => setEmail(text)}
+                onTextChange={(text) => setEmail(text)}
+                icon="EMAIL"
+                iconPosition="absolute"
+                iconTop={13}
+                iconSize={25}
               />
             </FormItem>
 
             <FormItem>
-              <Input
+              <TextInput
                 placeholder="Senha"
-                secureTextEntry
-                leftIcon={(
-                  <IconMA
-                    name="lock-outline"
-                    size={24}
-                    color={colors.primaryGreen}
-                  />
-                                )}
                 value={password}
-                onChangeText={(text) => setPassword(text)}
+                onTextChange={(text) => setPassword(text)}
+                icon="PASSWORD"
+                iconPosition="absolute"
+                iconTop={13}
+                iconSize={25}
+                secureTextEntry
               />
             </FormItem>
 
-
-            <FormItem>
-              <ButtonDefault text="Fazer Login" type="second" isLoading={isLoading} onPress={() => sendRequest()} />
-            </FormItem>
+            <FormFooter>
+              <ButtonDefault text="Fazer Login" color={colors.primaryGreen} isLoading={isLoading} onPress={() => sendRequest()} />
+            </FormFooter>
 
             <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_REGISTER.action })}>
-              <NoAccountText>Ainda não possui uma conta? Clique aqui</NoAccountText>
+              <NoAccountText>Ainda não tem uma conta? Clique aqui</NoAccountText>
             </TouchableOpacity>
 
           </FormView>

@@ -5,13 +5,14 @@ import {
 } from './styles';
 
 export default function TextInput({
-  label, type, options, value, onTextChange, placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType
+  label, type, options, value, onTextChange,
+  placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType, iconSize
 }) {
   return (
     <ViewInput>
       {label && (<LabelInput>{label}</LabelInput>)}
 
-      {icon && (<Icon name={icon} top={iconTop} left={iconLeft} position={iconPosition} />)}
+      {icon && (<Icon name={icon} top={iconTop} left={iconLeft} position={iconPosition} size={iconSize} />)}
 
       {type ? (
         <InputTextWithMask
@@ -30,6 +31,7 @@ export default function TextInput({
             onTextChange(text);
           }}
           keyboardType={keyboardType}
+          secureTextEntry
         />
       )}
     </ViewInput>

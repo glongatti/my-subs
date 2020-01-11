@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import {
-  FA5Icon, FAIcon, MAIcon, MACIcon, AIcon, IOIcon,
+  FA5Icon, FAIcon, MAIcon, MACIcon, AIcon, IOIcon, EIcon,
   CircleView
 } from './styles';
 
@@ -39,9 +39,13 @@ export default function Icon({
     case 'COINS':
       return <MACIcon name="coins" {...props} />;
     case 'ARROW_LEFT':
-      return <AIcon name="left" {...props} />;
+      return <IOIcon name="ios-arrow-back" {...props} />;
     case 'PROFILE':
       return <AIcon name="user" {...props} />;
+    case 'EMAIL':
+      return <EIcon name="email" {...props} />;
+    case 'PASSWORD':
+      return <MAIcon name="lock-outline" {...props} />;
     default:
       return null;
   }

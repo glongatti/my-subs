@@ -5,6 +5,7 @@ import IconFA5 from 'react-native-vector-icons/FontAwesome5';
 import IconMAC from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconA from 'react-native-vector-icons/AntDesign';
 import IconIO from 'react-native-vector-icons/Ionicons';
+import IconE from 'react-native-vector-icons/Entypo';
 import colors from '../../utils/colors';
 
 export const CircleView = styled.View`
@@ -30,6 +31,15 @@ position:${(props) => props.position || 'relative'};
 top:${(props) => props.top || '0'};
 left:${(props) => props.left || '0'};
 `;
+
+export const EIcon = styled(IconE)`
+color:${(props) => props.color || colors.primaryGreen}
+fontSize:${(props) => props.size || '32'};
+position:${(props) => props.position || 'relative'};
+top:${(props) => props.top || '0'};
+left:${(props) => props.left || '0'};
+`;
+
 export const MAIcon = styled(IconMA)`
 color:${(props) => props.color || colors.primaryGreen}
 fontSize:${(props) => props.size || '32'};

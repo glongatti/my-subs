@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
 
 const SafeAreaView = styled.SafeAreaView`
     flex: 1;    
@@ -11,6 +12,7 @@ const ScrollView = styled.ScrollView.attrs(() => ({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
+    paddingHorizontal: 20
   },
 }))``;
 
@@ -25,10 +27,18 @@ const FormView = styled.View`
 const FormItem = styled.View`
     marginTop:7;
     marginBottom:7;
-    width:90%;
     display: flex;
     flexDirection: row;
     justifyContent: center;
+    alignItems:center;
+    `;
+
+const FormFooter = styled.View`
+    marginTop:30;
+    marginBottom:15;
+    display:flex;
+    justify-content:center;
+    alignSelf:center;
 `;
 
 const LogoView = styled.View`
@@ -42,6 +52,7 @@ const LogoView = styled.View`
 const NoAccountText = styled.Text`
     marginTop:10
     color:${colors.primaryGreen}
+    fontFamily:${fonts.regular}
 `;
 
 
@@ -51,5 +62,6 @@ export {
   FormView,
   FormItem,
   ScrollView,
-  NoAccountText
+  NoAccountText,
+  FormFooter
 };
