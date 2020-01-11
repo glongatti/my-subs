@@ -2,7 +2,7 @@ import { NavigationActions } from 'react-navigation';
 import * as Actions from '../actions/navigator';
 
 const { router } = Actions.RootNavigator;
-const initialAction = router.getActionForPathAndParams(Actions.ACTION_OPEN_TABS_SCREEN.routeName);
+const initialAction = router.getActionForPathAndParams(Actions.ACTION_OPEN_INITIAL.routeName);
 const initialState = router.getStateForAction(initialAction);
 
 export default function navigation(state = initialState, action) {

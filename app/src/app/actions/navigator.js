@@ -64,7 +64,7 @@ const TabNavigator = createBottomTabNavigator({
     screen: SubsList,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => <Icon name="LIST" color={tintColor} position="relative" top={3} size={25} />,
-      tabBarLabel: 'List',
+      tabBarLabel: 'Lista',
     }
   },
   NewSub: {
