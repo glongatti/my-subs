@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import colors from '../../utils/colors';
 import fonts from '../../utils/fonts';
 
 export const CardContainer = styled.View`
@@ -9,7 +8,7 @@ export const CardContainer = styled.View`
   height:90;
   paddingHorizontal:10;
   marginTop:10;
-  background-color:${colors.secondGrey};
+  background-color:#F3F3F3;
   marginHorizontal:15;
   paddingTop:5;
   border-width: 1;

@@ -1,15 +1,18 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-alert */
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Alert } from 'react-native';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconE from 'react-native-vector-icons/Entypo';
 import IconMA from 'react-native-vector-icons/MaterialIcons';
 import { Input } from 'react-native-elements';
+import { StackActions } from 'react-navigation';
 
-import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
 import LogoImage from '../../components/LogoImage';
+import BackHeader from '../../components/BackHeader';
+import colors from '../../utils/colors';
 import {
   SafeAreaView, FormView, FormItem, CheckBoxTerms,
   TextTerms, ScrollView, AlreadyAccountText, AlreadyAccountButton,
@@ -25,8 +28,8 @@ export default function Register() {
   const [terms, setTerms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const dispatch = useDispatch();
 
-  // const verifyEmail = async () => {};
   const showAlert = (title, message, buttons = [{ text: 'Ok', onPress: () => {} }]) => {
     Alert.alert(
       title,
@@ -64,6 +67,12 @@ export default function Register() {
 
   return (
     <>
+      <BackHeader
+        color={colors.primaryGreen}
+        size={45}
+        onBackPress={() => dispatch(StackActions.pop())}
+      />
+
       <ScrollView>
         <SafeAreaView>
           <FormView>

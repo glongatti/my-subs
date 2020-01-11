@@ -1,15 +1,17 @@
 /* eslint-disable no-alert */
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Alert } from 'react-native';
 import IconE from 'react-native-vector-icons/Entypo';
 import IconMA from 'react-native-vector-icons/MaterialIcons';
 import { Input } from 'react-native-elements';
-import { useDispatch } from 'react-redux';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { StackActions } from 'react-navigation';
 
 import LogoImage from '../../components/LogoImage';
 import colors from '../../utils/colors';
 import ButtonDefault from '../../components/ButtonDefault';
+import BackHeader from '../../components/BackHeader';
 import {
   SafeAreaView, FormView, FormItem, ScrollView,
   NoAccountText
@@ -47,6 +49,13 @@ export default function Login() {
 
   return (
     <>
+
+      <BackHeader
+        color={colors.primaryGreen}
+        size={45}
+        onBackPress={() => dispatch(StackActions.pop())}
+      />
+
       <ScrollView>
         <SafeAreaView>
           <FormView>

@@ -69,7 +69,7 @@ const TabNavigator = createBottomTabNavigator({
     screen: NewSub,
     navigationOptions: {
       tabBarVisible: false,
-      tabBarIcon: ({ tintColor }) => <Icon name="ADD_BUTTON" color={tintColor} position="relative" top={0} left={0} size={25} />,
+      tabBarIcon: ({ tintColor }) => <Icon name="ADD_BUTTON" color={tintColor} position="relative" top={0} left={0} size={45} />,
       tabBarLabel: ' '
     },
   },
@@ -77,7 +77,7 @@ const TabNavigator = createBottomTabNavigator({
     screen: Register,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => <Icon name="PROFILE" color={tintColor} position="relative" top={2} left={0} size={23} />,
-      tabBarLabel: 'Registro'
+      tabBarLabel: 'Perfil'
     }
   }
 }, {
@@ -93,7 +93,7 @@ const TabNavigator = createBottomTabNavigator({
   tabBarComponent: (props) => (
     <BottomTabBar
       {...props}
-      style={{ backgroundColor: colors.primaryGreen, paddingBottom: 7, height: 55 }}
+      style={{ backgroundColor: colors.primaryGreen, paddingBottom: 7, height: 60, }}
     />
   ),
   headerShown: false,
@@ -103,6 +103,9 @@ const TabNavigator = createBottomTabNavigator({
 const RootNavigator = createStackNavigator({
   Initial: {
     screen: Initial,
+    navigationOptions: {
+      headerShown: false,
+    }
   },
   SubsList: {
     screen: SubsList,
@@ -113,7 +116,7 @@ const RootNavigator = createStackNavigator({
   Register: {
     screen: Register,
     navigationOptions: {
-      headerShown: false,
+      header: null,
     }
   },
   Login: {
@@ -134,7 +137,7 @@ const RootNavigator = createStackNavigator({
 },
 {
   initialRouteName: 'Initial',
-  headerMode: 'none',
+  // headerMode: 'none',
 });
 
 const AppWithNavigationState = createReduxContainer(RootNavigator, 'root');
