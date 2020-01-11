@@ -42,6 +42,8 @@ export default function Icon({
       return <IOIcon name="ios-arrow-back" {...props} />;
     case 'PROFILE':
       return <AIcon name="user" {...props} />;
+    case 'USER':
+      return <FAIcon name="user-o" {...props} />;
     case 'EMAIL':
       return <EIcon name="email" {...props} />;
     case 'PASSWORD':

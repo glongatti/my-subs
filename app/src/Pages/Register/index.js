@@ -3,23 +3,23 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Alert } from 'react-native';
-import IconFA from 'react-native-vector-icons/FontAwesome';
-import IconE from 'react-native-vector-icons/Entypo';
-import IconMA from 'react-native-vector-icons/MaterialIcons';
-import { Input } from 'react-native-elements';
 import { StackActions } from 'react-navigation';
 
+import TextInput from '../../components/TextInput';
 import ButtonDefault from '../../components/ButtonDefault';
 import LogoImage from '../../components/LogoImage';
 import BackHeader from '../../components/BackHeader';
+
+import { createUser } from '../../controllers/user';
+import { isRegisterFormValid } from '../../utils/validators';
+
 import colors from '../../utils/colors';
 import {
   SafeAreaView, FormView, FormItem, CheckBoxTerms,
   TextTerms, ScrollView, AlreadyAccountText, AlreadyAccountButton,
+  TermsCheckboxContainer
 } from './styles';
 
-import { createUser } from '../../controllers/user';
-import { isRegisterFormValid } from '../../utils/validators';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -30,7 +30,7 @@ export default function Register() {
 
   const dispatch = useDispatch();
 
-  const showAlert = (title, message, buttons = [{ text: 'Ok', onPress: () => {} }]) => {
+  const showAlert = (title, message, buttons = [{ text: 'Ok', onPress: () => { } }]) => {
     Alert.alert(
       title,
       message,
@@ -76,73 +76,78 @@ export default function Register() {
       <ScrollView>
         <SafeAreaView>
           <FormView>
-
             <LogoImage />
 
             <FormItem>
-              <Input
+              <TextInput
                 placeholder="Nome"
-                leftIcon={(
-                  <IconFA
-                    name="user-o"
-                    size={24}
-                    color={colors.primaryGreen}
-                  />
-                )}
                 value={name}
-                onChangeText={(text) => setName(text)}
+                onTextChange={(text) => setName(text)}
+                icon="USER"
+                iconPosition="absolute"
+                iconTop={13}
+                iconSize={25}
               />
             </FormItem>
 
             <FormItem>
-              <Input
+              <TextInput
                 placeholder="E-mail"
-                leftIcon={(
-                  <IconE
-                    name="email"
-                    size={24}
-                    color={colors.primaryGreen}
-                  />
-                )}
                 value={email}
-                onChangeText={(text) => setEmail(text)}
+                onTextChange={(text) => setEmail(text)}
+                icon="EMAIL"
+                iconPosition="absolute"
+                iconTop={13}
+                iconSize={25}
               />
             </FormItem>
 
             <FormItem>
-              <Input
+              <TextInput
                 placeholder="Senha"
-                secureTextEntry
-                leftIcon={(
-                  <IconMA
-                    name="lock-outline"
-                    size={24}
-                    color={colors.primaryGreen}
-                  />
-                )}
                 value={password}
-                onChangeText={(text) => setPassword(text)}
+                onTextChange={(text) => setPassword(text)}
+                icon="PASSWORD"
+                iconPosition="absolute"
+                iconTop={13}
+                iconSize={25}
+              />
+            </FormItem>
+
+            <FormItem>
+              <TextInput
+                placeholder="Confirmação da senha"
+                value={password}
+                onTextChange={(text) => setPassword(text)}
+                icon="PASSWORD"
+                iconPosition="absolute"
+                iconTop={13}
+                iconSize={25}
               />
             </FormItem>
 
 
             <FormItem>
-
-              <CheckBoxTerms
-                center
-                title="Ao utilizar o MySubs eu aceito os termos de condição e política de privacidade."
-                checkedColor={colors.primaryGreen}
-                checked={terms}
+              <TermsCheckboxContainer
                 onPress={() => setTerms(!terms)}
-              />
+              >
+                <CheckBoxTerms
+                  center
+                  checkedColor={colors.primaryGreen}
+                  checked={terms}
+                />
+                <TextTerms>
+                  Ao utilizar o MySubs eu aceito os termos de condição e política de privacidade.
+                </TextTerms>
+              </TermsCheckboxContainer>
             </FormItem>
 
-            <TextTerms>
+            {/* <TextTerms>
               Termos de Uso
-            </TextTerms>
+            </TextTerms> */}
 
             <FormItem>
-              <ButtonDefault text="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} type="second" />
+              <ButtonDefault text="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} color={colors.primaryGreen} />
             </FormItem>
 
             <AlreadyAccountButton>

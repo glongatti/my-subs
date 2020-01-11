@@ -13,6 +13,7 @@ const ScrollView = styled.ScrollView.attrs(() => ({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
+    paddingHorizontal: 20
   },
 }))``;
 
@@ -27,28 +28,33 @@ const FormView = styled.View`
 const FormItem = styled.View`
     marginTop:7;
     marginBottom:7;
-    width:90%;
     display: flex;
     flexDirection: row;
     justifyContent: center;
-`;
+    `;
 
 const LogoView = styled.View`
     display: flex;
     flexDirection: row;
     justifyContent: center;
     marginBottom: 20;   
+    `;
+
+const TermsCheckboxContainer = styled.TouchableOpacity`
+display:flex;
+flex-direction:row;
+alignItems:center;
+width:100%;
 `;
 
 const TextTerms = styled.Text`
     color: ${colors.primaryGreen};
-    textDecoration: underline;
-    fontFamily:${fonts.bold};
+    fontFamily:${fonts.regular};
     `;
 
 const CheckBoxTerms = styled(CheckBox).attrs(() => ({
   containerStyle: {
-    marginLeft: 30
+    width: 30,
   },
 }))``;
 
@@ -70,6 +76,7 @@ export {
   FormView,
   FormItem,
   CheckBoxTerms,
+  TermsCheckboxContainer,
   TextTerms,
   ScrollView,
   AlreadyAccountButton,
