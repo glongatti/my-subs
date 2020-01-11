@@ -19,7 +19,7 @@ export default function HeaderDefault({
     >
       {handleBack && (
         <BackButton onPress={() => handleBack()}>
-          <Icon name="ARROW_LEFT" color={colors.primaryWhite} />
+          <Icon name="ARROW_LEFT" color={colors.primaryWhite} size={45} top={10} left={10} />
         </BackButton>
       )}
       <PageTitleText>{title}</PageTitleText>
