@@ -9,13 +9,13 @@ import { connect } from 'react-redux';
 
 import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
 
-import Initial from '../../Pages/Initial';
-import Register from '../../Pages/Register';
-import Login from '../../Pages/Login';
-import NewSub from '../../Pages/NewSub';
-import EditSub from '../../Pages/EditSub';
-import SubsList from '../../Pages/SubsList';
-import Icon from '../../components/Icon';
+import Initial from '../../view/pages/initial';
+import Register from '../../view/pages/register';
+import Login from '../../view/pages/login';
+import NewSub from '../../view/pages/new-subs';
+import EditSub from '../../view/pages/edit-subs';
+import SubsList from '../../view/pages/subs-list';
+import Icon from '../../view/components/icon';
 import colors from '../../utils/colors';
 import fonts from '../../utils/fonts';
 
