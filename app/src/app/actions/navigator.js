@@ -61,7 +61,7 @@ const TabNavigator = createBottomTabNavigator({
     screen: SubsList,
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => <Icon name="LIST" color={tintColor} position="relative" top={3} size={25} />,
-      tabBarLabel: 'Lista',
+      tabBarLabel: 'List',
       headerShown: false,
     }
   },
@@ -85,10 +85,12 @@ const TabNavigator = createBottomTabNavigator({
   tabBarOptions: {
     labelStyle: {
       color: colors.primaryWhite,
-      fontFamily: fonts.regular
+      fontFamily: fonts.regular,
+      margin: 0,
+      padding: 0
     },
     activeTintColor: colors.primaryWhite,
-    inactiveTintColor: colors.primaryWhite
+    inactiveTintColor: colors.primaryWhite,
   },
   tabBarComponent: (props) => (
     <BottomTabBar
@@ -97,7 +99,10 @@ const TabNavigator = createBottomTabNavigator({
     />
   ),
   headerShown: false,
-  headerMode: 'none'
+  headerMode: 'none',
+  navigationOptions: {
+    header: null,
+  }
 });
 
 const RootNavigator = createStackNavigator({
