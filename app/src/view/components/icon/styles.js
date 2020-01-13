@@ -6,6 +6,7 @@ import IconMAC from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconA from 'react-native-vector-icons/AntDesign';
 import IconIO from 'react-native-vector-icons/Ionicons';
 import IconE from 'react-native-vector-icons/Entypo';
+import IconSL from 'react-native-vector-icons/SimpleLineIcons';
 import colors from '../../../utils/colors';
 
 export const CircleView = styled.View`
@@ -73,6 +74,14 @@ left:${(props) => props.left || '0'};
 `;
 
 export const IOIcon = styled(IconIO)`
+color:${(props) => props.color || colors.primaryGreen}
+fontSize:${(props) => props.size || '23'};
+position:${(props) => props.position || 'relative'};
+top:${(props) => props.top || '0'};
+left:${(props) => props.left || '0'};
+`;
+
+export const SLIcon = styled(IconSL)`
 color:${(props) => props.color || colors.primaryGreen}
 fontSize:${(props) => props.size || '23'};
 position:${(props) => props.position || 'relative'};

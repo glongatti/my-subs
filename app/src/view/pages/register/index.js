@@ -69,7 +69,7 @@ export default function Register() {
     <>
       <BackHeader
         color={colors.primaryGreen}
-        size={45}
+        size={30}
         onBackPress={() => dispatch(StackActions.pop())}
       />
 

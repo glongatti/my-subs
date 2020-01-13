@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import {
-  FA5Icon, FAIcon, MAIcon, MACIcon, AIcon, IOIcon, EIcon,
+  FA5Icon, FAIcon, MAIcon, MACIcon, AIcon, IOIcon, EIcon, SLIcon,
   CircleView
 } from './styles';
 
@@ -41,7 +41,7 @@ export default function Icon({
     case 'COINS':
       return <MACIcon name="coins" {...props} />;
     case 'ARROW_LEFT':
-      return <IOIcon name="ios-arrow-back" {...props} />;
+      return <SLIcon name="arrow-left" {...props} />;
     case 'PROFILE':
       return <AIcon name="user" {...props} />;
     case 'USER':
