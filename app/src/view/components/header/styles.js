@@ -1,13 +1,14 @@
 import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
 import colors from '../../../utils/colors';
+import fonts from '../../../utils/fonts';
 
 export const PageTitleText = styled.Text`
   color:${colors.primaryWhite};
   fontSize:26;
   marginLeft:15;
   paddingBottom:10;
-  fontFamily: Roboto-Medium
+  fontFamily: ${fonts.light}
   margin-bottom:${(props) => props.marginBottom || '0'}
 `;
 
