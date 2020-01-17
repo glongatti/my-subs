@@ -6,7 +6,7 @@ import {
 
 export default function TextInput({
   label, type, options, value, onTextChange,
-  placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType, iconSize
+  placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType, iconSize, isPassword = false
 }) {
   return (
     <ViewInput>
@@ -31,7 +31,7 @@ export default function TextInput({
             onTextChange(text);
           }}
           keyboardType={keyboardType}
-          secureTextEntry
+          secureTextEntry={isPassword}
         />
       )}
     </ViewInput>

@@ -25,6 +25,7 @@ export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [terms, setTerms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -42,16 +43,15 @@ export default function Register() {
     setIsLoading(true);
 
     const validateForm = await isRegisterFormValid({
-      name, email, password, terms
+      name, email, password, confirmPassword, terms
     });
 
     if (validateForm.isValid) {
-      dispatch(registerUser({ name, email, password }));
-      setIsLoading(false);
+      await dispatch(registerUser({ name, email, password }));
     } else {
       showAlert('Erro!', validateForm.errorMessage);
-      setIsLoading(false);
     }
+    setIsLoading(false);
   };
 
   return (
@@ -100,18 +100,20 @@ export default function Register() {
                 iconPosition="absolute"
                 iconTop={13}
                 iconSize={25}
+                isPassword
               />
             </FormItem>
 
             <FormItem>
               <TextInput
                 placeholder="Confirmação da senha"
-                value={password}
-                onTextChange={(text) => setPassword(text)}
+                value={confirmPassword}
+                onTextChange={(text) => setConfirmPassword(text)}
                 icon="PASSWORD"
                 iconPosition="absolute"
                 iconTop={13}
                 iconSize={25}
+                isPassword
               />
             </FormItem>
 

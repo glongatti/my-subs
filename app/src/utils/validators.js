@@ -5,9 +5,9 @@ function isEmailValid(email) {
   return (false);
 }
 async function isRegisterFormValid({
-  name, email, password, terms
+  name, email, password, confirmPassword, terms
 }) {
-  if (!name || !email || !password) {
+  if (!name || !email || !password || !confirmPassword) {
     return {
       isValid: false,
       errorMessage: 'Por favor, preencha todos os campos!',
@@ -23,6 +23,13 @@ async function isRegisterFormValid({
     return {
       isValid: false,
       errorMessage: 'O e-mail inserido é inválido!',
+    };
+  }
+
+  if (password !== confirmPassword) {
+    return {
+      isValid: false,
+      errorMessage: 'As senhas não coincidem',
     };
   }
   return {
