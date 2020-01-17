@@ -8,14 +8,16 @@ namespace MySubs.Domain.Models.Response
 {
     public class RegisterUserResponse : ResponseResult
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public static async Task<RegisterUserResponse> Create(int id, string name, string email) => new RegisterUserResponse
+        public string Token { get; set; }
+        public static async Task<RegisterUserResponse> Create(long id, string name, string email, string token) => new RegisterUserResponse
         {
             Id = id,
             Name = name,
-            Email = email
+            Email = email,
+            Token = token
         };
     }
 }

@@ -8,10 +8,10 @@ namespace MySubs.Domain.Models.Response
 {
     public class UpdateUserResponse : ResponseResult
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public static async Task<UpdateUserResponse> Create(int id = 0 , string name="", string email="") => new UpdateUserResponse
+        public static async Task<UpdateUserResponse> Create(long id = 0 , string name="", string email="") => new UpdateUserResponse
         {
             Id = id,
             Name = name,

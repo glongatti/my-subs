@@ -9,11 +9,11 @@ namespace MySubs.Domain.Entities.Entities
     [Table("PlanType")]
     public class PlanType
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public bool Active { get; set; }
 
-        public static async Task<PlanType> Create(int id, string name, bool active) => new PlanType
+        public static async Task<PlanType> Create(long id, string name, bool active) => new PlanType
         {
             Id = id,
             Name = name,

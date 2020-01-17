@@ -9,6 +9,9 @@ using SimpleInjector.Lifestyles;
 using System;
 using MySubs.Infra.CrossCutting;
 using MySubs.Infra.Data.Contesxt.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace MySubs.API
 {
@@ -34,7 +37,7 @@ namespace MySubs.API
             services.AddSingleton(_ => Configuration);
 
             InjectCors(services);
-
+            InjectAuthentication(services);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Subs", Version = "v1" }); });
             services.AddSingleton<IConfiguration>(Configuration);
@@ -76,6 +79,28 @@ namespace MySubs.API
             });
         }
 
+        private void InjectAuthentication(IServiceCollection services)
+        {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+             .AddJwtBearer(options =>
+             {
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuer = false,
+                     ValidIssuer = Configuration["Authentication:Issuer"],
+
+                     ValidateAudience = false,
+                     ValidAudience = Configuration["Authentication:Audience"],
+
+                     ValidateIssuerSigningKey = true,
+                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Authentication:SecretKey"])),
+
+                     RequireExpirationTime = true,
+                     ValidateLifetime = true,
+                     ClockSkew = TimeSpan.Zero
+                 };
+             });
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
