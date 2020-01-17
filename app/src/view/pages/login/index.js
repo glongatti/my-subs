@@ -1,7 +1,5 @@
-/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { Alert } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackActions } from 'react-navigation';
 
@@ -10,8 +8,8 @@ import ButtonDefault from '../../components/button';
 import BackHeader from '../../components/back-header';
 import TextInput from '../../components/text-input';
 
-// import { authenticateUser } from '../../../controllers/user';
-import { ACTION_OPEN_REGISTER, ACTION_OPEN_TABS_SCREEN } from '../../../app/actions/navigator';
+import { ACTION_OPEN_REGISTER } from '../../../app/actions/navigator';
+import { loginWithEmailPassword } from '../../../app/actions/user';
 
 import colors from '../../../utils/colors';
 import {
@@ -21,31 +19,18 @@ import {
 
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoading] = useState(false);
+  const [email, setEmail] = useState('string@string.com');
+  const [password, setPassword] = useState('string');
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
 
 
-  // const sendRequest = async () => {
-  //   setIsLoading(true);
-  //   dispatch({ action: ACTION_OPEN_TABS_SCREEN });
-
-  //   try {
-  //     const user = await authenticateUser({ email, password });
-  //     if (user.resultType) {
-  //       // logado
-  //     } else {
-  //       // deslogado
-  //     }
-  //   } catch (error) {
-  //     Alert('Erro!');
-  //     throw error;
-  //   } finally {
-  //     // setIsLoading(false);
-  //   }
-  // };
+  const sendRequest = async () => {
+    setIsLoading(true);
+    dispatch(loginWithEmailPassword({ email, password }));
+    setIsLoading(false);
+  };
 
   return (
     <>
@@ -89,7 +74,12 @@ export default function Login() {
             </FormItem>
 
             <FormFooter>
-              <ButtonDefault text="Fazer Login" color={colors.primaryGreen} isLoading={isLoading} onPress={() => dispatch({ type: ACTION_OPEN_TABS_SCREEN.action })} />
+              <ButtonDefault
+                text="Fazer Login"
+                color={colors.primaryGreen}
+                isLoading={isLoading}
+                onPress={() => sendRequest()}
+              />
             </FormFooter>
 
             <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_REGISTER.action })}>

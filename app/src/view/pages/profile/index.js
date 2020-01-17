@@ -1,10 +1,13 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { Avatar } from 'react-native-elements';
 
+import { useDispatch } from 'react-redux';
 import Header from '../../components/header';
 import Icon from '../../components/icon';
 import ButtonDefault from '../../components/button';
 
+import { logoutUser } from '../../../app/actions/user';
 import {
   Container, AvatarView, UserNameText, UserEmailText,
   EditButton, CardContainer, CardItemTitle, CardBody, CardTitle,
@@ -13,6 +16,7 @@ import {
 import colors from '../../../utils/colors';
 
 export default function Profile() {
+  const dispatch = useDispatch();
   return (
     <>
       <Header
@@ -75,6 +79,26 @@ export default function Profile() {
           <ButtonDefault
             text="Finalizar sessão"
             color={colors.primaryGreen}
+            onPress={() => Alert.alert(
+              'Atenção',
+              'Deseja realmente fazer loggof?',
+              [
+                {
+                  text: 'Sim',
+                  onPress: () => dispatch(logoutUser())
+                },
+                {
+                  text: 'Não',
+                  onPress: () => {}
+                },
+
+              ],
+              {
+                cancelable: true
+              }
+            )}
+
+
           />
         </ButtonContainer>
       </Container>

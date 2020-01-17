@@ -5,7 +5,13 @@ async function createUser({ name, email, password }) {
   return RestService.postRest('User/RegisterUser', user);
 }
 
+async function authenticateUser({ email, password }) {
+  const user = { email, password };
+  return RestService.postRest('Login/Login', user);
+}
+
 
 export default {
-  createUser
+  createUser,
+  authenticateUser
 };
