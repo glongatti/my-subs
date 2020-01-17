@@ -7,11 +7,12 @@ import Store from './app/store';
 
 const store = Store;
 
-export default class App extends React.Component {
+export default class App extends React.PureComponent {
   render() {
     return (
       <StoreProvider store={store}>
         <AppNavigator ref={() => NavigatorService.setContainer(store)} />
+        {/* <AppNavigator /> */}
       </StoreProvider>
     );
   }

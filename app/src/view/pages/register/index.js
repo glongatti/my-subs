@@ -10,7 +10,7 @@ import ButtonDefault from '../../components/button';
 import LogoImage from '../../components/logo-image';
 import BackHeader from '../../components/back-header';
 
-import { createUser } from '../../../controllers/user';
+import { registerUser } from '../../../app/actions/user';
 import { isRegisterFormValid } from '../../../utils/validators';
 
 import colors from '../../../utils/colors';
@@ -40,25 +40,14 @@ export default function Register() {
   };
   const sendRequest = async () => {
     setIsLoading(true);
+
     const validateForm = await isRegisterFormValid({
       name, email, password, terms
     });
 
     if (validateForm.isValid) {
-      try {
-        const { data } = await createUser({ name, email, password });
-        if (data.resultType) {
-          alert();
-          showAlert('Parabéns', 'Usuário criado com sucesso!');
-        } else {
-          showAlert('Erro!', 'O e-mail inserido já está sendo usado.');
-        }
-      } catch (error) {
-        showAlert('Erro!', 'Tente novamente mais tarde');
-        throw error;
-      } finally {
-        setIsLoading(false);
-      }
+      dispatch(registerUser({ name, email, password }));
+      setIsLoading(false);
     } else {
       showAlert('Erro!', validateForm.errorMessage);
       setIsLoading(false);
