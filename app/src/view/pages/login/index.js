@@ -78,7 +78,7 @@ export default function Login() {
                 text="Fazer Login"
                 color={colors.primaryGreen}
                 isLoading={isLoading}
-                onPress={() => sendRequest()}
+                onPress={sendRequest}
               />
             </FormFooter>
 
