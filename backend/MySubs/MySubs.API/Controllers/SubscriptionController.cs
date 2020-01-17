@@ -36,5 +36,23 @@ namespace MySubs.API.Controllers
                 throw;
             }
         }
+
+        [HttpPost]
+        [EnableCors("AnotherPolicy")]
+        [Route("SubscriptionFindByIdUser")]
+        public async Task<ActionResult<ListSubscriptionResponse>> SubscriptionFindByIdUser(long id)
+        {
+            try
+            {
+                //if (id < 0)
+                //    return BadRequest();
+
+                return Ok(await _subService.SubscriptionByIdUser(id));
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

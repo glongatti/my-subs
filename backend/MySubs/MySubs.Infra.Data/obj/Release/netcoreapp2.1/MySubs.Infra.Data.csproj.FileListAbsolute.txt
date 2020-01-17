@@ -9,3 +9,5 @@ C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Rel
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Release\netcoreapp2.1\MySubs.Infra.Data.csproj.CopyComplete
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Release\netcoreapp2.1\MySubs.Infra.Data.dll
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Release\netcoreapp2.1\MySubs.Infra.Data.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Release\netcoreapp2.1\MySubs.Infra.Data.runtimeconfig.json
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Release\netcoreapp2.1\MySubs.Infra.Data.runtimeconfig.dev.json

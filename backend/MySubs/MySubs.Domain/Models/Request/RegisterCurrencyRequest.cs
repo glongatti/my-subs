@@ -8,8 +8,8 @@ namespace MySubs.Domain.Models.Request
     {
         public string Symbol { get; set; }
         public string Name { get; set; }
-        public int DecimalDigits { get; set; }
-        public int Rounding { get; set; }
+        public long DecimalDigits { get; set; }
+        public long Rounding { get; set; }
         public string Code { get; set; }
     }
 }

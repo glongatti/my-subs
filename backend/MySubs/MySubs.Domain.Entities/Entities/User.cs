@@ -9,7 +9,7 @@ namespace MySubs.Domain.Entities.Entities
     [Table("Users")]
     public class User
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -25,7 +25,7 @@ namespace MySubs.Domain.Entities.Entities
             Active = active,
             DateAcceptTermsOfUse = data
         };
-        public static async Task<User> Create(int id, string name, string email, string password, bool accept, bool active, DateTime data) => new User
+        public static async Task<User> Create(long id, string name, string email, string password, bool accept, bool active, DateTime data) => new User
         {
             Id = id,
             Name = name,

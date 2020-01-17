@@ -36,5 +36,12 @@ namespace MySubs.Infra.Data.Repository
 
             return _connection.QueryFirstOrDefault<User>(sQuery, new { Email = email }, _transaction);
         }
+
+        public User FindByEmailPassword(string email, string password)
+        {
+            string sQuery = "SELECT * FROM Users WHERE Email = @Email AND Password = @Password";
+
+            return _connection.QueryFirstOrDefault<User>(sQuery, new { Email = email, Password = password }, _transaction);
+        }
     }
 }

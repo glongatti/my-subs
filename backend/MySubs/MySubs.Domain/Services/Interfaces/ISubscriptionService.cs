@@ -10,5 +10,6 @@ namespace MySubs.Domain.Services.Interfaces
     public interface ISubscriptionService
     {
         Task<RegisterSubResponse> Add(RegisterSubRequest entity);
+        Task<ListSubscriptionResponse> SubscriptionByIdUser(long idUser);
     }
 }

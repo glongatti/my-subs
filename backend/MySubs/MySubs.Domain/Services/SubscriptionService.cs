@@ -56,5 +56,34 @@ namespace MySubs.Domain.Services
                 return retorno;
             }
         }
+
+        public async Task<ListSubscriptionResponse> SubscriptionByIdUser(long idUser)
+        {
+            ListSubscriptionResponse listaRetorno;
+            List<SubscriptionResponse> listaSubscriptions = new List<SubscriptionResponse>();
+            try
+            {
+                var retorno = await _uow.SubscriptionRepository.SubscriptionByIdUser(idUser);
+                foreach (var item in retorno)
+                {
+                    listaSubscriptions.Add(await SubscriptionResponse.Create(item.Id, item.IdPlanType, item.Plan, item.IdService, item.Service,
+                        item.IdCurrency, item.Currency, item.Active, item.DateSignature.ToString(), item.CancelRenewal, item.Price.ToString()));
+                }
+               
+                listaRetorno = await ListSubscriptionResponse.Create(listaSubscriptions);
+                listaRetorno.ResultType = ResultType.Success;
+                listaRetorno.Message = "Busca realizada com sucesso.";
+                return listaRetorno;
+            }
+            catch (Exception ex) 
+            {
+                listaRetorno = await ListSubscriptionResponse.Create(null);
+                listaRetorno.ResultType = ResultType.Error;
+                listaRetorno.Error = ex;
+                listaRetorno.Message = "Não foi possivel listar suas assinaturas.";
+                return listaRetorno;
+            }
+            
+        }
     }
 }

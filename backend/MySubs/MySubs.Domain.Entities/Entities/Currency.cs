@@ -13,9 +13,9 @@ namespace MySubs.Domain.Entities.Entities
         public string Code { get; set; }
         public string Symbol { get; set; }
         public string Name { get; set; }
-        public int DecimalDigits { get; set; }
-        public int Rounding { get; set; }
-        public static async Task<Currency> Create(long id, string code, string symbol, string name, int decimalDigits, int rouding) => new Currency
+        public long DecimalDigits { get; set; }
+        public long Rounding { get; set; }
+        public static async Task<Currency> Create(long id, string code, string symbol, string name, long decimalDigits, long rouding) => new Currency
         {
             Id = id,
             Name = name,
