@@ -31,10 +31,19 @@ fontSize:22;
 fontFamily:${fonts.light};
 `;
 
+const PasswordButton = styled.TouchableOpacity`
+  width: 30;
+  height: 30;
+  position: absolute;
+  top: 13;
+  left: 270;
+`;
+
 
 export {
   InputTextWithMask,
   DefaultInputText,
   ViewInput,
   LabelInput,
+  PasswordButton
 };

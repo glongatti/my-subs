@@ -18,6 +18,10 @@ export default function Icon({
   switch (name) {
     case 'CREATE':
       return <IOIcon name="ios-checkmark" {...props} />;
+    case 'SHOW_EYE':
+      return <IOIcon name="md-eye" {...props} />;
+    case 'DONT_SHOW_EYE':
+      return <IOIcon name="md-eye-off" {...props} />;
     case 'ADD_BUTTON':
       return <CircleView><IOIcon name="ios-add" {...props} /></CircleView>;
     case 'CREDIT_CARD':
