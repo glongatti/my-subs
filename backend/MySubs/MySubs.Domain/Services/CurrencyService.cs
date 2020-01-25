@@ -32,7 +32,7 @@ namespace MySubs.Domain.Services
             List<CurrencyResponse> lstRetorno = new List<CurrencyResponse>();
             foreach (var item in result)
             {
-                lstRetorno.Add(await CurrencyResponse.Create(item.Id, item.Code));
+                lstRetorno.Add(await CurrencyResponse.Create(item.Id, item.Code, item.Symbol));
             }
             return lstRetorno;
         }

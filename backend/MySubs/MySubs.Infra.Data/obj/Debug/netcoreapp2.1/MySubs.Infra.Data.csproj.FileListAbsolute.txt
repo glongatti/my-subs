@@ -10,3 +10,16 @@ C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\net
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.pdb
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.dll
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.deps.json
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.runtimeconfig.json
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.runtimeconfig.dev.json
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Infra.Data.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.pdb
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.csprojAssemblyReference.cache
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.AssemblyInfo.cs
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.csproj.CopyComplete
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.dll
+C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.Infra.Data\obj\Debug\netcoreapp2.1\MySubs.Infra.Data.pdb

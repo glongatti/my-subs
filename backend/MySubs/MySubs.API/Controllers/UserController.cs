@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using MySubs.Domain.Models.Request;
@@ -10,7 +11,7 @@ using MySubs.Domain.Services.Interfaces;
 
 namespace MySubs.API.Controllers
 {
-
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -20,7 +21,7 @@ namespace MySubs.API.Controllers
         {
             _userService = userService;
         }
-
+        [AllowAnonymous]
         [HttpPost]
         //[EnableCors("AnotherPolicy")]
         [Route("RegisterUser")]

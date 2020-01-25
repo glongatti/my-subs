@@ -9,10 +9,12 @@ namespace MySubs.Domain.Models.Response
     {
         public long Id { get; set; }
         public string Code { get; set; }
-        public static async Task<CurrencyResponse> Create(long id, string symbol) => new CurrencyResponse
+        public string Symbol { get; set; }
+        public static async Task<CurrencyResponse> Create(long id, string code, string symbol) => new CurrencyResponse
         {
             Id = id,
-            Code = symbol
+            Code = code,
+            Symbol = symbol
         };
     }
 }
