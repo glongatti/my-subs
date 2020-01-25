@@ -86,7 +86,7 @@ async function postRest(uri, data, header) {
 
 async function authenticatedHeader(header = {}) {
   const auth = await Storage.getUserAuthData();
-  if (auth) header.Authorization = `Bearer ${auth.access_token}`;
+  if (auth) header.Authorization = `Bearer ${auth.token}`;
   return header;
 }
 

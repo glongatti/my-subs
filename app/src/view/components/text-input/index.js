@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '../icon';
 import {
   InputTextWithMask, ViewInput, LabelInput, DefaultInputText,
+  PasswordButton
 } from './styles';
 
 export default function TextInput({
   label, type, options, value, onTextChange,
-  placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType, iconSize, isPassword = false
+  placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType, iconSize, isPassword = false,
 }) {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <ViewInput>
       {label && (<LabelInput>{label}</LabelInput>)}
@@ -24,15 +26,29 @@ export default function TextInput({
           }}
         />
       ) : (
-        <DefaultInputText
-          value={value}
-          placeholder={placeholder}
-          onChangeText={(text) => {
-            onTextChange(text);
+        <>
+          <DefaultInputText
+            value={value}
+            placeholder={placeholder}
+            onChangeText={(text) => {
+              onTextChange(text);
+            }}
+            keyboardType={keyboardType}
+            secureTextEntry={isPassword && !showPassword}
+          />
+        </>
+      )}
+      {isPassword && (
+        <PasswordButton
+          style={{
+
           }}
-          keyboardType={keyboardType}
-          secureTextEntry={isPassword}
-        />
+          onPress={() => setShowPassword(!showPassword)}
+        >
+          {showPassword
+            ? (<Icon name="DONT_SHOW_EYE" position="absolute" size={28} />)
+            : (<Icon name="SHOW_EYE" position="absolute" size={28} />)}
+        </PasswordButton>
       )}
     </ViewInput>
 

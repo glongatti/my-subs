@@ -69,7 +69,7 @@ export default function Login() {
                 iconPosition="absolute"
                 iconTop={13}
                 iconSize={25}
-                secureTextEntry
+                isPassword
               />
             </FormItem>
 
@@ -78,7 +78,7 @@ export default function Login() {
                 text="Fazer Login"
                 color={colors.primaryGreen}
                 isLoading={isLoading}
-                onPress={() => sendRequest()}
+                onPress={sendRequest}
               />
             </FormFooter>
 

@@ -1,119 +1,93 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView } from 'react-native';
 import moment from 'moment';
+import { useSelector } from 'react-redux';
 import PickerDefault from '../picker';
 import TextInputDefault from '../text-input';
+
 import {
   FormView, FormItem,
 } from './styles';
 
-const currencies = [
-  {
-    id: 1,
-    label: 'BRL',
-    value: '1'
-  },
-  {
-    id: 2,
-    label: 'USD',
-    value: '2'
-  },
-];
-const options = [
-  {
-    id: 1,
-    label: 'Semanal',
-    value: '1'
-  },
-  {
-    id: 2,
-    label: 'Mensal',
-    value: '2'
-  },
-  {
-    id: 3,
-    label: 'Trimestral',
-    value: '3'
-  },
-  {
-    id: 4,
-    label: 'Semestral',
-    value: '4'
-  },
-  {
-    id: 5,
-    label: 'Anual',
-    value: '5'
-  },
-];
+
 export default function SubForm() {
+  const formSettings = useSelector((state) => state.settings);
+
   const [planName, setPlanName] = useState('');
-  const [planType, setplanType] = useState(options[0].value);
+  const [planType, setPlanType] = useState(formSettings.planTypes[0]);
+  const [currency, setCurrency] = useState(formSettings.currencies[0]);
   const [date, setDate] = useState(moment(Date.now()).format('DD/MM/YYYY'));
   const [planCost, setPlanCost] = useState('');
-  const [currency, setCurrency] = useState(currencies[0].value);
+  const [isLoading] = useState(false);
 
   return (
     <FormView>
-      <FormItem>
-        <TextInputDefault
-          label="Nome da assinatura"
-          placeholder="Ex: Spotify"
-          value={planName}
-          onTextChange={(text) => setPlanName(text)}
-          icon="CREDIT_CARD"
-          iconTop={30}
-          iconPosition="absolute"
-        />
-      </FormItem>
-      <FormItem>
-        <PickerDefault
-          label="Tipo de cobrança"
-          value={planType}
-          items={options}
-          icon="RETWEET"
-          iconTop={32}
-          iconPosition="absolute"
-          onSelectItem={(value) => setplanType(value)}
-        />
-      </FormItem>
-      <FormItem>
-        <TextInputDefault
-          label="Data da primeira cobrança"
-          type="datetime"
-          value={date}
-          icon="CALENDAR"
-          options={{
-            format: 'DD/MM/YYYY'
-          }}
-          iconTop={30}
-          iconPosition="absolute"
-          onTextChange={(text) => setDate(text)}
-        />
-      </FormItem>
+      {!isLoading && (
+        <>
+          <FormItem>
+            <TextInputDefault
+              label="Nome da assinatura"
+              placeholder="Ex: Spotify"
+              value={planName}
+              onTextChange={(text) => setPlanName(text)}
+              icon="CREDIT_CARD"
+              iconTop={30}
+              iconPosition="absolute"
+            />
+          </FormItem>
+          <FormItem>
+            <PickerDefault
+              label="Tipo de cobrança"
+              items={formSettings.planTypes}
+              selectedValue={planType}
+              itemKeyLabel="name"
+              icon="RETWEET"
+              iconTop={32}
+              iconPosition="absolute"
+              onSelectItem={(plan) => setPlanType(plan)}
+            />
+          </FormItem>
+          <FormItem>
+            <TextInputDefault
+              label="Data da primeira cobrança"
+              type="datetime"
+              value={date}
+              icon="CALENDAR"
+              options={{
+                format: 'DD/MM/YYYY'
+              }}
+              iconTop={30}
+              iconPosition="absolute"
+              onTextChange={(text) => setDate(text)}
+            />
+          </FormItem>
 
-      <KeyboardAvoidingView>
-        <FormItem>
-          <TextInputDefault
-            label="Valor"
-            value={planCost}
-            icon="MONEY"
-            iconTop={32}
-            iconPosition="absolute"
-            onTextChange={(text) => setPlanCost(text)}
-            keyboardType="numeric"
-          />
-          <PickerDefault
-            label="Tipo de moeda"
-            value={currency}
-            items={currencies}
-            icon="COINS"
-            iconTop={30}
-            iconPosition="absolute"
-            onSelectItem={(value) => setCurrency(value)}
-          />
-        </FormItem>
-      </KeyboardAvoidingView>
+          <KeyboardAvoidingView>
+            <FormItem>
+              <TextInputDefault
+                label="Valor"
+                icon="MONEY"
+                value={planCost}
+                iconTop={32}
+                iconPosition="absolute"
+                onTextChange={(text) => setPlanCost(text)}
+                keyboardType="numeric"
+              />
+              <PickerDefault
+                label="Tipo de moeda"
+                value={currency}
+                selectedValue={currency}
+                items={formSettings.currencies}
+                itemKeyLabel="code"
+                icon="COINS"
+                iconTop={30}
+                iconPosition="absolute"
+                onSelectItem={(value) => setCurrency(value)}
+              />
+            </FormItem>
+          </KeyboardAvoidingView>
+        </>
+      )}
     </FormView>
   );
 }
