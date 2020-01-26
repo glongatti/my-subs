@@ -9,6 +9,7 @@ namespace MySubs.Domain.Models.Request
         public long IdUser { get; set; }
         public long IdPlanType { get; set; }
         public long IdService { get; set; }
+        public string Service { get; set; }
         public long IdCurrency { get; set; }
         public double Price { get; set; }
         public bool CancelRenewal { get; set; }

@@ -7,6 +7,7 @@ namespace MySubs.Infra.Data.Repository.Interfaces
 {
     public interface IServiceRepository
     {
+        long Add(Service entity);
         IEnumerable<Service> FindAll();
         bool IsConnected();
     }

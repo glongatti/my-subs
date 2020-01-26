@@ -41,6 +41,27 @@ namespace MySubs.API.Controllers
             }
         }
 
+        [AllowAnonymous]
+        [HttpPost]
+        //[EnableCors("AnotherPolicy")]
+        [Route("RecoverPassword")]
+        public async Task<ActionResult<RecoverPasswordResponse>> RecoverPassword(string email)
+        {
+            try
+            {
+
+                if (String.IsNullOrEmpty(email))
+                    return null;
+                    ///return BadRequest(userRequest);
+
+                return Ok(await _userService.RecoverPassword(email));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         [HttpPost]
         //[EnableCors("AnotherPolicy")]
         [Route("FindByEmail")]

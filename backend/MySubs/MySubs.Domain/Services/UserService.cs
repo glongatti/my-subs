@@ -200,5 +200,30 @@ namespace MySubs.Domain.Services
             loginResponse.Message = msgErro;
             return loginResponse;
         }
+
+        public async Task<RecoverPasswordResponse> RecoverPassword(string email)
+        {
+            RecoverPasswordResponse retorno;
+            string password = Util.GeneratePassword();
+            var user = _uow.UserRepository.FindByEmail(email);
+            if (user != null)
+            {
+                EmailService.SendEmail(EmailTypeEnum.ForgotPassword, email, password, user.Name);
+                user.Password = Util.Hash(password);
+                _uow.UserRepository.Update(user);
+                _uow.Commit();
+                retorno = await RecoverPasswordResponse.Create(user.Name, email);
+                retorno.ResultType = ResultType.Error;
+                retorno.Message = "E-mail não cadastrado";
+            }
+            else 
+            {
+                retorno = await RecoverPasswordResponse.Create();
+                retorno.ResultType = ResultType.Error;
+                retorno.Message = "E-mail não cadastrado";
+            }
+            
+            return retorno;
+        }
     }
 }

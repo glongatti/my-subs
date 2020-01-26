@@ -20,4 +20,39 @@ namespace MySubs.Domain.Entities.Entities
             Active = active,
         };
     }
+    public class ServiceComparer : IComparer<Service>
+    {
+        public int Compare(Service x, Service y)
+        {
+            if (x == null)
+            {
+                if (y == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (y == null)
+                {
+                    return 1;
+                }
+                else
+                {
+                    if (x.Name.ToUpper() != y.Name.ToUpper())
+                    {
+                        return x.Name.CompareTo(y.Name);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
 }

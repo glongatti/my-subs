@@ -3,7 +3,6 @@ C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\MySubs.API.runtimeconfig.dev.json
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\MySubs.API.dll
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.csprojAssemblyReference.cache
-C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.csproj.CoreCompileInputs.cache
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.RazorAssemblyInfo.cache
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.RazorAssemblyInfo.cs
 C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.AssemblyInfoInputs.cache
@@ -42,3 +41,10 @@ C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.API\obj\Debug\netc
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.csproj.CopyComplete
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.dll
 C:\Users\kamil\Documents\GitHub\my-subs\backend\MySubs\MySubs.API\obj\Debug\netcoreapp2.1\MySubs.API.pdb
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\MySubs.Domain.dll
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.dll
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\MySubs.Domain.pdb
+C:\Users\Kamila\Documents\my-subs\backend\MySubs\MySubs.API\bin\Debug\netcoreapp2.1\MySubs.Domain.Entities.pdb

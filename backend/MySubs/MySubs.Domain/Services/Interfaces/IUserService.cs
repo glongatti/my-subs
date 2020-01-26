@@ -12,6 +12,7 @@ namespace MySubs.Domain.Services.Interfaces
     {
         Task<CheckMailUserResponse> FindByEmail(string email);
         Task<RegisterUserResponse> Add(RegisterUserRequest entity);
+        Task<RecoverPasswordResponse> RecoverPassword(string email);
         Task<UpdateUserResponse> Update(UpdateUserRequest entity);
         Task<LoginResponse> Login(LoginRequest login);
     }

@@ -6,6 +6,7 @@ using MySubs.Domain.Services.Interfaces;
 using MySubs.Infra.Data.UnitOfWork.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,7 +31,25 @@ namespace MySubs.Domain.Services
         {
             try
             {
-                var sub = await Subscription.Create(entity.IdUser, entity.IdPlanType, entity.IdService, entity.IdCurrency, true, entity.DateSignature, true, entity.Price);
+                var listService = _uow.ServiceRepository.FindAll();
+                var service = await Service.Create(0, entity.Service, true);
+                long idService = 0;
+                int indexService = 0;
+
+                var newList = listService.OrderBy(x => x.Name).ToList(); // ToList optional
+
+
+                indexService = newList.BinarySearch(service, new ServiceComparer());
+
+                if (indexService >= 0)
+                {
+                    idService = newList[indexService].Id;
+                }
+                else 
+                {
+                    idService = _uow.ServiceRepository.Add(service);
+                }
+                var sub = await Subscription.Create(entity.IdUser, entity.IdPlanType, idService, entity.IdCurrency, true, entity.DateSignature, true, entity.Price);
                 var id = _uow.SubscriptionRepository.Add(sub);
                 if (id > 0)
                 {

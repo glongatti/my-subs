@@ -27,19 +27,16 @@ namespace MySubs.Domain.Common
             }
         }
 
-        //public static DateTime DateTimeBrazil()
-        //{
-        //    #if DEBUG
-        //        DateTime dateTime = DateTime.UtcNow;
-        //        TimeZoneInfo hrBrasilia = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
-        //        return TimeZoneInfo.ConvertTimeFromUtc(dateTime, hrBrasilia);
-        //    #else
-        //        var finalResult = ConvertTimeZone(DateTime.UtcNow, "E. South America Standard Time");
-
-        //        return finalResult;
-        //    #endif
-        //}
-
+        public static string GeneratePassword()
+        {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var result = new string(
+                Enumerable.Repeat(chars, 10)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
+            return result;
+        }
         public static string GerarToken(User usuario, DateTime dataToken, byte[] key)
         {
             var claims = new[]
