@@ -13,3 +13,8 @@ font-size:24;
 font-family:${fonts.regular};
 color:${colors.primaryBlack}
 `;
+
+export const ActivityIndicator = styled.ActivityIndicator`
+  margin-top:40;
+  color:${colors.primaryGreen}
+`;
