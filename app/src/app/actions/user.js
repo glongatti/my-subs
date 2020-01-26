@@ -15,6 +15,7 @@ export function registerUser({ name, email, password }) {
         name: user.name,
         email: user.email,
       });
+      await dispatch(loadSettings());
       dispatch({ type: ACTION_OPEN_TABS_SCREEN.action });
     } catch (error) { /** */ }
   };
@@ -48,9 +49,9 @@ export function logoutUser() {
 export function initialFlowVerification() {
   return async (dispatch) => {
     const isAuthenticated = await StorageService.isAuthenticated();
-    await dispatch(loadSettings());
     if (isAuthenticated) {
       // endpoint user
+      await dispatch(loadSettings());
       dispatch({ type: ACTION_OPEN_TABS_SCREEN.action });
     } else {
       dispatch({ type: ACTION_OPEN_INITIAL.action });
