@@ -1,0 +1,13 @@
+.vs/
+MySubs/.vs/
+MySubs/MySubs.API/bin/
+MySubs/MySubs.API/obj/
+MySubs/MySubs.Domain.Entities/bin/
+MySubs/MySubs.Domain.Entities/obj/
+MySubs/MySubs.Domain/bin/
+MySubs/MySubs.Domain/obj/
+MySubs/MySubs.Infra.CrossCutting/bin/
+MySubs/MySubs.Infra.CrossCutting/obj/
+MySubs/MySubs.Infra.Data/bin/
+MySubs/MySubs.Infra.Data/obj/
+MySubs/MySubs.Infra.Enviroment/
