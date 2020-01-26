@@ -16,12 +16,17 @@ import NewSub from '../../view/pages/new-subs';
 import EditSub from '../../view/pages/edit-subs';
 import SubsList from '../../view/pages/subs-list';
 import Profile from '../../view/pages/profile';
+import Splash from '../../view/pages/splash';
 
 import Icon from '../../view/components/icon';
 
 import colors from '../../utils/colors';
 import fonts from '../../utils/fonts';
 
+export const ACTION_OPEN_SPLASH = {
+  action: 'ACTION_OPEN_SPLASH',
+  routeName: 'Splash'
+};
 export const ACTION_OPEN_NEW_SUB = {
   action: 'ACTION_OPEN_NEW_SUB',
   routeName: 'NewSub'
@@ -108,6 +113,12 @@ const TabNavigator = createBottomTabNavigator({
 });
 
 const RootNavigator = createStackNavigator({
+  Splash: {
+    screen: Splash,
+    navigationOptions: {
+      headerShown: false,
+    }
+  },
   Initial: {
     screen: Initial,
     navigationOptions: {
@@ -143,7 +154,7 @@ const RootNavigator = createStackNavigator({
   }
 },
 {
-  initialRouteName: 'Initial',
+  initialRouteName: 'Splash',
   // headerMode: 'none',
 });
 

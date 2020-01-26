@@ -44,3 +44,16 @@ export function logoutUser() {
     dispatch({ type: ACTION_OPEN_INITIAL.action });
   };
 }
+
+export function initialFlowVerification() {
+  return async (dispatch) => {
+    const isAuthenticated = await StorageService.isAuthenticated();
+    await dispatch(loadSettings());
+    if (isAuthenticated) {
+      // endpoint user
+      dispatch({ type: ACTION_OPEN_TABS_SCREEN.action });
+    } else {
+      dispatch({ type: ACTION_OPEN_INITIAL.action });
+    }
+  };
+}
