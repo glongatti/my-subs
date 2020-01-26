@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { Alert } from 'react-native';
 import Icon from '../../components/icon';

@@ -12,7 +12,7 @@ export default function Splash() {
     // initial flow verification
     setTimeout(() => {
       dispatch(initialFlowVerification());
-    }, 3000);
+    }, 1000);
   }, []);
   return (
     <Container>
