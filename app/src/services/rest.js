@@ -4,7 +4,7 @@ import fetch from 'react-native-fetch-polyfill';
 import Storage from './storage';
 // import AuthService from '../server/auth';
 
-const ENDPOINT_URL = 'https://mysubs.azurewebsites.net/api/';
+const ENDPOINT_URL = 'https://mysubsapi.azurewebsites.net/api/';
 
 function showAlertError(title, message) {
   setTimeout(() => {

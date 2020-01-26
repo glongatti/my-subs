@@ -9,6 +9,7 @@ import TextInput from '../../components/text-input';
 import ButtonDefault from '../../components/button';
 import LogoImage from '../../components/logo-image';
 import BackHeader from '../../components/back-header';
+import ModalLoading from '../../components/modal-loading';
 
 import { registerUser } from '../../../app/actions/user';
 import { isRegisterFormValid } from '../../../utils/validators';
@@ -61,7 +62,7 @@ export default function Register() {
         size={30}
         onBackPress={() => dispatch(StackActions.pop())}
       />
-
+      {isLoading && (<ModalLoading />)}
       <ScrollView>
         <SafeAreaView>
           <FormView>
@@ -138,7 +139,7 @@ export default function Register() {
             </TextTerms> */}
 
             <FormItem>
-              <ButtonDefault text="Cadastrar" isLoading={isLoading} onPress={() => sendRequest()} color={colors.primaryGreen} />
+              <ButtonDefault text="Cadastrar" onPress={() => sendRequest()} color={colors.primaryGreen} />
             </FormItem>
 
             <AlreadyAccountButton>

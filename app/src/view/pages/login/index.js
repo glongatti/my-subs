@@ -7,6 +7,7 @@ import LogoImage from '../../components/logo-image';
 import ButtonDefault from '../../components/button';
 import BackHeader from '../../components/back-header';
 import TextInput from '../../components/text-input';
+import ModalLoading from '../../components/modal-loading';
 
 import { ACTION_OPEN_REGISTER } from '../../../app/actions/navigator';
 import { loginWithEmailPassword } from '../../../app/actions/user';
@@ -19,8 +20,8 @@ import {
 
 
 export default function Login() {
-  const [email, setEmail] = useState('string@string.com');
-  const [password, setPassword] = useState('string');
+  const [email, setEmail] = useState('gabriel@gmail.com');
+  const [password, setPassword] = useState('123456');
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
@@ -28,13 +29,13 @@ export default function Login() {
 
   const sendRequest = async () => {
     setIsLoading(true);
-    dispatch(loginWithEmailPassword({ email, password }));
+    await dispatch(loginWithEmailPassword({ email, password }));
     setIsLoading(false);
   };
 
   return (
     <>
-
+      {isLoading && (<ModalLoading />)}
       <BackHeader
         color={colors.primaryGreen}
         size={30}
@@ -77,8 +78,9 @@ export default function Login() {
               <ButtonDefault
                 text="Fazer Login"
                 color={colors.primaryGreen}
-                isLoading={isLoading}
-                onPress={sendRequest}
+                onPress={async () => {
+                  sendRequest();
+                }}
               />
             </FormFooter>
 

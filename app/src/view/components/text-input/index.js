@@ -7,7 +7,7 @@ import {
 
 export default function TextInput({
   label, type, options, value, onTextChange,
-  placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType, iconSize, isPassword = false,
+  placeholder, icon, iconTop, iconLeft, iconPosition, keyboardType, iconSize, isPassword = false, max
 }) {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -35,6 +35,7 @@ export default function TextInput({
             }}
             keyboardType={keyboardType}
             secureTextEntry={isPassword && !showPassword}
+            maxLength={max || 120}
           />
         </>
       )}
