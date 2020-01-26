@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  KeyboardAvoidingView,
+  KeyboardAvoidingView, Switch,
 } from 'react-native';
 import moment from 'moment';
 import { useSelector } from 'react-redux';
@@ -8,8 +8,9 @@ import PickerDefault from '../picker';
 import TextInputDefault from '../text-input';
 import ModalLoading from '../modal-loading';
 import {
-  FormView, FormItem,
+  FormView, FormItem, LabelSwitch, SwitchContainer
 } from './styles';
+import colors from '../../../utils/colors';
 
 
 export default function SubForm() {
@@ -20,7 +21,8 @@ export default function SubForm() {
   const [currency, setCurrency] = useState(formSettings.currencies[0]);
   const [date, setDate] = useState(moment(Date.now()).format('DD/MM/YYYY'));
   const [planCost, setPlanCost] = useState('00,00');
-  const [isLoading] = useState(true);
+  const [active, setActive] = useState(true);
+  const [isLoading] = useState(false);
 
   return (
     <>
@@ -62,6 +64,15 @@ export default function SubForm() {
             iconPosition="absolute"
             onTextChange={(text) => setDate(text)}
           />
+          <SwitchContainer>
+            <LabelSwitch>Ativo?</LabelSwitch>
+            <Switch
+              value={active}
+              thumbColor={colors.primaryGreen}
+              trackColor="blue"
+              onValueChange={(value) => setActive(value)}
+            />
+          </SwitchContainer>
         </FormItem>
         <KeyboardAvoidingView>
           <FormItem>
