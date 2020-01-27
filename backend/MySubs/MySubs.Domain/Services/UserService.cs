@@ -213,8 +213,8 @@ namespace MySubs.Domain.Services
                 _uow.UserRepository.Update(user);
                 _uow.Commit();
                 retorno = await RecoverPasswordResponse.Create(user.Name, email);
-                retorno.ResultType = ResultType.Error;
-                retorno.Message = "E-mail não cadastrado";
+                retorno.ResultType = ResultType.Success;
+                retorno.Message = "Foi enviada uma nova senha para o seu e-mail.";
             }
             else 
             {
