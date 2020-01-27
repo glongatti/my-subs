@@ -55,8 +55,12 @@ const NoAccountText = styled.Text`
     fontFamily:${fonts.regular}
 `;
 
-const ForgotPasswordView = styled.View`
-  margin-bottom:30
+const PageTitle = styled.Text`
+    fontFamily:${fonts.regular}
+    color:${colors.primaryGreen}
+    fontSize:20;
+    textAlign:center
+    margin-bottom:30
 `;
 
 export {
@@ -67,5 +71,5 @@ export {
   ScrollView,
   NoAccountText,
   FormFooter,
-  ForgotPasswordView
+  PageTitle
 };

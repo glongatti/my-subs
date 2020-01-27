@@ -3,25 +3,24 @@ import { useDispatch } from 'react-redux';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackActions } from 'react-navigation';
 
+import { Alert } from 'react-native';
 import LogoImage from '../../components/logo-image';
 import ButtonDefault from '../../components/button';
 import BackHeader from '../../components/back-header';
 import TextInput from '../../components/text-input';
 import ModalLoading from '../../components/modal-loading';
 
-import { ACTION_OPEN_REGISTER } from '../../../app/actions/navigator';
-import { loginWithEmailPassword } from '../../../app/actions/user';
+import { ACTION_OPEN_REGISTER, ACTION_OPEN_LOGIN } from '../../../app/actions/navigator';
 
 import colors from '../../../utils/colors';
 import {
   SafeAreaView, FormView, FormItem, ScrollView,
-  NoAccountText, FormFooter, ForgotPasswordView
+  NoAccountText, FormFooter, PageTitle
 } from './styles';
 
 
-export default function Login() {
-  const [email, setEmail] = useState('gabriel@gmail.com');
-  const [password, setPassword] = useState('123456');
+export default function ForgotPassword() {
+  const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
@@ -29,7 +28,8 @@ export default function Login() {
 
   const sendRequest = async () => {
     setIsLoading(true);
-    await dispatch(loginWithEmailPassword({ email, password }));
+    Alert.alert('Acabamos de enviar um e-mail com uma senha temporaria');
+    dispatch({ type: ACTION_OPEN_LOGIN.action });
     setIsLoading(false);
   };
 
@@ -48,6 +48,9 @@ export default function Login() {
 
             <LogoImage />
 
+            <PageTitle>
+                            Esqueceu sua senha? não tem problema, insira o seu e-mail para que possamos lhe ajudar
+            </PageTitle>
 
             <FormItem>
               <TextInput
@@ -61,34 +64,13 @@ export default function Login() {
               />
             </FormItem>
 
-            <FormItem>
-              <TextInput
-                placeholder="Senha"
-                value={password}
-                onTextChange={(text) => setPassword(text)}
-                icon="PASSWORD"
-                iconPosition="absolute"
-                iconTop={13}
-                iconSize={25}
-                isPassword
-              />
-            </FormItem>
-
             <FormFooter>
               <ButtonDefault
-                text="Fazer Login"
+                text="Enviar"
                 color={colors.primaryGreen}
-                onPress={async () => {
-                  sendRequest();
-                }}
+                onPress={async () => sendRequest()}
               />
             </FormFooter>
-
-            <ForgotPasswordView>
-              <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_REGISTER.action })}>
-                <NoAccountText>Esqueci minha senha</NoAccountText>
-              </TouchableOpacity>
-            </ForgotPasswordView>
 
             <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_REGISTER.action })}>
               <NoAccountText>Ainda não tem uma conta? Clique aqui</NoAccountText>

@@ -17,16 +17,23 @@ import EditSub from '../../view/pages/edit-subs';
 import SubsList from '../../view/pages/subs-list';
 import Profile from '../../view/pages/profile';
 import Splash from '../../view/pages/splash';
+import ForgotPassword from '../../view/pages/forgot-password';
 
 import Icon from '../../view/components/icon';
 
 import colors from '../../utils/colors';
 import fonts from '../../utils/fonts';
 
+export const ACTION_OPEN_FORGOT_PASSWORD = {
+  action: 'ACTION_OPEN_FORGOT_PASSWORD',
+  routeName: 'ForgotPassword'
+};
+
 export const ACTION_OPEN_SPLASH = {
   action: 'ACTION_OPEN_SPLASH',
   routeName: 'Splash'
 };
+
 export const ACTION_OPEN_NEW_SUB = {
   action: 'ACTION_OPEN_NEW_SUB',
   routeName: 'NewSub'
@@ -139,6 +146,12 @@ const RootNavigator = createStackNavigator({
   },
   Login: {
     screen: Login,
+    navigationOptions: {
+      headerShown: false,
+    }
+  },
+  ForgotPassword: {
+    screen: ForgotPassword,
     navigationOptions: {
       headerShown: false,
     }
