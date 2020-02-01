@@ -52,5 +52,44 @@ namespace MySubs.Infra.Data.Repository
 
             return _connection.QueryAsync<SubscriptionScreen>(sQuery.ToString(), new { IdUser = idUser}, _transaction).Result;
         }
+
+        public async Task<long> CountSubscriptionsCreatedByIdUser(long idUser)
+        {
+            StringBuilder sQuery = new StringBuilder();
+            sQuery.AppendLine(" SELECT                  ");
+            sQuery.AppendLine(" 	COUNT(*) AS Created ");
+            sQuery.AppendLine(" FROM MySubs MS ");
+            sQuery.AppendLine(" WHERE MS.IdUser = @IdUser ");
+
+            var result = await _connection.QueryFirstOrDefaultAsync<long>(sQuery.ToString(), new { IdUser = idUser }, _transaction);
+            return result;
+        }
+
+        public async Task<long> CountSubscriptionsActiveByIdUser(long idUser)
+        {
+            StringBuilder sQuery = new StringBuilder();
+            sQuery.AppendLine(" SELECT                  ");
+            sQuery.AppendLine(" 	COUNT(*) AS Active ");
+            sQuery.AppendLine(" FROM MySubs MS ");
+            sQuery.AppendLine(" WHERE MS.IdUser = @IdUser ");
+            sQuery.AppendLine(" AND MS.Active = 1 ");
+
+            var result = await _connection.QueryFirstOrDefaultAsync<long>(sQuery.ToString(), new { IdUser = idUser }, _transaction);
+            return result;
+        }
+
+        public async Task<long> CountSubscriptionsRenewByIdUser(long idUser)
+        {
+
+            StringBuilder sQuery = new StringBuilder();
+            sQuery.AppendLine(" SELECT                  ");
+            sQuery.AppendLine(" 	COUNT(*) AS Active ");
+            sQuery.AppendLine(" FROM MySubs MS ");
+            sQuery.AppendLine(" WHERE MS.IdUser = @IdUser ");
+            sQuery.AppendLine(" AND MS.Active = 1 ");
+
+            var result = await _connection.QueryFirstOrDefaultAsync<long>(sQuery.ToString(), new { IdUser = idUser }, _transaction);
+            return result;
+        }
     }
 }

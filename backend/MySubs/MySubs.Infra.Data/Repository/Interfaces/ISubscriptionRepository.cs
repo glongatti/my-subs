@@ -9,6 +9,10 @@ namespace MySubs.Infra.Data.Repository.Interfaces
     public interface ISubscriptionRepository
     {
         long Add(Subscription entity);
+        Task<long> CountSubscriptionsCreatedByIdUser(long idUser);
+        Task<long> CountSubscriptionsActiveByIdUser(long idUser);
+        Task<long> CountSubscriptionsRenewByIdUser(long idUser);
+        
         Task<IEnumerable<SubscriptionScreen>> SubscriptionByIdUser(long idUser);
         bool IsConnected();
     }

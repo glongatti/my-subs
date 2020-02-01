@@ -98,5 +98,24 @@ namespace MySubs.API.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        [HttpPost]
+        //[EnableCors("AnotherPolicy")]
+        [Route("GetProfileUser")]
+        public async Task<ActionResult<ProfileUserResponse>> GetProfileUser(int idUser)
+        {
+            try
+            {
+
+                //if (!ModelState.IsValid)
+                //    return BadRequest(userRequest);
+
+                return Ok(await _userService.GetProfileUser(idUser));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

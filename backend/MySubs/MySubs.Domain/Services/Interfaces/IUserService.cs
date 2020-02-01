@@ -11,6 +11,7 @@ namespace MySubs.Domain.Services.Interfaces
     public interface IUserService
     {
         Task<CheckMailUserResponse> FindByEmail(string email);
+        Task<ProfileUserResponse> GetProfileUser(int idUser);
         Task<RegisterUserResponse> Add(RegisterUserRequest entity);
         Task<RecoverPasswordResponse> RecoverPassword(string email);
         Task<UpdateUserResponse> Update(UpdateUserRequest entity);

@@ -116,7 +116,6 @@ namespace MySubs.Domain.Services
             }
 
         }
-
         public async Task<UpdateUserResponse> Update(UpdateUserRequest entity)
         {
             try
@@ -152,7 +151,6 @@ namespace MySubs.Domain.Services
             }
 
         }
-
         public async Task<LoginResponse> Login(LoginRequest login)
         {
             bool erro = false;
@@ -200,7 +198,6 @@ namespace MySubs.Domain.Services
             loginResponse.Message = msgErro;
             return loginResponse;
         }
-
         public async Task<RecoverPasswordResponse> RecoverPassword(string email)
         {
             RecoverPasswordResponse retorno;
@@ -223,6 +220,39 @@ namespace MySubs.Domain.Services
                 retorno.Message = "E-mail não cadastrado";
             }
             
+            return retorno;
+        }
+
+        public async Task<ProfileUserResponse> GetProfileUser(int idUser)
+        {
+            ProfileUserResponse retorno;
+            try
+            {
+                if (idUser > 0)
+                {
+                    var user = _uow.UserRepository.FindById(idUser);
+                    var countCreated = await _uow.SubscriptionRepository.CountSubscriptionsCreatedByIdUser(idUser);
+                    var countActive = await _uow.SubscriptionRepository.CountSubscriptionsActiveByIdUser(idUser);
+                    var countRenew = await _uow.SubscriptionRepository.CountSubscriptionsRenewByIdUser(idUser);
+                    retorno = await ProfileUserResponse.Create(user.Id, user.Name, user.Email, countCreated, countActive, countRenew);
+                    retorno.ResultType = ResultType.Success;
+                }
+                else 
+                {
+                    retorno = await ProfileUserResponse.Create();
+                    retorno.ResultType = ResultType.Error;
+                    retorno.Message = "O Id: " + idUser + "é inválido.";
+                }
+                
+            }
+            catch (Exception ex) 
+            {
+                retorno = await ProfileUserResponse.Create();
+                retorno.ResultType = ResultType.Error;
+                retorno.Error = ex;
+                retorno.Message = ex.Message;
+            }
+           
             return retorno;
         }
     }
