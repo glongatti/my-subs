@@ -43,5 +43,10 @@ namespace MySubs.Infra.Data.Repository
 
             return _connection.QueryFirstOrDefault<User>(sQuery, new { Email = email, Password = password }, _transaction);
         }
+
+        public bool DeleteAccount(int idUser)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

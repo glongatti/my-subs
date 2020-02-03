@@ -117,5 +117,24 @@ namespace MySubs.API.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        [HttpPost]
+        //[EnableCors("AnotherPolicy")]
+        [Route("DeleteAccount")]
+        public async Task<ActionResult<DeleteAccountReponse>> DeleteAccount(int idUser)
+        {
+            try
+            {
+
+                //if (!ModelState.IsValid)
+                //    return BadRequest(userRequest);
+
+                return Ok(await _userService.DeleteAccount(idUser));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

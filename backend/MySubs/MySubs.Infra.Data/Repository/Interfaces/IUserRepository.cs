@@ -14,5 +14,6 @@ namespace MySubs.Infra.Data.Repository.Interfaces
         User FindById(long id);
         User Update(User entity);
         bool IsConnected();
+        bool DeleteAccount(int idUser);
     }
 }

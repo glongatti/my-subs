@@ -255,5 +255,9 @@ namespace MySubs.Domain.Services
            
             return retorno;
         }
+        public Task<DeleteAccountReponse> DeleteAccount(int idUser)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
