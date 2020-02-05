@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 const SubsListCard = ({
-  status, title, price, date
+  id, status, title, price, date
 }) => {
   const dispatch = useDispatch();
   return (
@@ -26,7 +26,7 @@ const SubsListCard = ({
         <CardText>{`${price}`}</CardText>
       </SubInfosView>
 
-      <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_EDIT_SUBS.action })}>
+      <TouchableOpacity onPress={() => dispatch({ type: ACTION_OPEN_EDIT_SUBS.action, payload: id })}>
         <Icon name="MENU_DOTS" size={35} color={colors.primaryGrey} />
       </TouchableOpacity>
     </CardContainer>

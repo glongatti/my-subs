@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import {
-  KeyboardAvoidingView, Switch,
+  KeyboardAvoidingView, Switch, Alert
 } from 'react-native';
 import moment from 'moment';
 import { useSelector } from 'react-redux';
 import PickerDefault from '../picker';
 import TextInputDefault from '../text-input';
 import ModalLoading from '../modal-loading';
+import HeaderDefault from '../header';
+import Icon from '../icon';
 import {
-  FormView, FormItem, LabelSwitch, SwitchContainer
+  FormView, FormItem, LabelSwitch, SwitchContainer, AddButton, DeleteButton
 } from './styles';
 import colors from '../../../utils/colors';
 
 
-export default function SubForm() {
+export default function SubForm({ navigation, isEditing }) {
   const formSettings = useSelector((state) => state.settings);
 
   const [planName, setPlanName] = useState('');
@@ -26,6 +28,36 @@ export default function SubForm() {
 
   return (
     <>
+      <HeaderDefault
+        title={!isEditing ? 'Cadastro de assinatura' : 'Edição de assinatura'}
+        handleBack={() => navigation.goBack()}
+        renderCtaButton={() => (
+          <>
+            {isEditing && (
+            <DeleteButton onPress={() => {
+              Alert.alert(
+                'Atenção',
+                'Tem certeza que deseja excluir essa assinatura?',
+                [
+                  { text: 'SIM', onPress: () => {} },
+                  {
+                    text: 'CANCELAR',
+                    onPress: () => {},
+                  },
+                ],
+                { cancelable: false },
+              );
+            }}
+            >
+              <Icon name="TRASH" size={30} color={colors.primaryWhite} />
+            </DeleteButton>
+            )}
+            <AddButton onPress={() => { }}>
+              <Icon name="CREATE" size={45} color={colors.primaryWhite} />
+            </AddButton>
+          </>
+        )}
+      />
       {isLoading && (<ModalLoading />)}
       <FormView>
         <FormItem>

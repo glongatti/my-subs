@@ -10,6 +10,7 @@ export const FormView = styled.View`
     alignItems: center;   
 `;
 
+
 export const FormItem = styled.View`
     marginTop:7;
     marginBottom:7;
@@ -31,3 +32,26 @@ export const LabelSwitch = styled.Text`
     fontSize:16;
     margin-bottom:10
 `;
+
+export const AddButton = styled.TouchableOpacity`
+shadowColor: ${'#000'};
+shadowOpacity: 0.55;
+shadowRadius: 14.78;
+elevation: 22;
+alignItems: center;
+justifyContent: center;
+width: 45;
+position: absolute;
+top: 100;
+right: 10;
+height: 45;
+backgroundColor: ${colors.secondGreen};
+borderRadius: 100;
+
+ `;
+
+export const DeleteButton = styled.TouchableOpacity`
+position: absolute;
+top: 15;
+right: 20;
+ `;

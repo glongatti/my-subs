@@ -52,7 +52,18 @@ export default function navigation(state = initialState, action) {
     case Actions.ACTION_OPEN_EDIT_SUBS.action:
       nextState = router.getStateForAction(
         NavigationActions.navigate({
-          routeName: Actions.ACTION_OPEN_EDIT_SUBS.routeName
+          routeName: Actions.ACTION_OPEN_EDIT_SUBS.routeName,
+          params: {
+            subsId: action.payload,
+          }
+        }),
+        state
+      );
+      break;
+    case Actions.ACTION_OPEN_NEW_SUB.action:
+      nextState = router.getStateForAction(
+        NavigationActions.navigate({
+          routeName: Actions.ACTION_OPEN_NEW_SUB.routeName,
         }),
         state
       );

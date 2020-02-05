@@ -54,6 +54,7 @@ export default function SubsList() {
           data={subsList}
           renderItem={({ item }) => (
             <SubsListCard
+              id={item.id}
               title={item.title}
               date={item.date}
               status={item.status}
