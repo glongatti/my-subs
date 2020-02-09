@@ -3,7 +3,7 @@ import {
   KeyboardAvoidingView, Switch, Alert
 } from 'react-native';
 import moment from 'moment';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PickerDefault from '../picker';
 import TextInputDefault from '../text-input';
 import ModalLoading from '../modal-loading';
@@ -14,17 +14,46 @@ import {
 } from './styles';
 import colors from '../../../utils/colors';
 
+import { createSubscription } from '../../../app/actions/subscriptions';
 
 export default function SubForm({ navigation, isEditing }) {
   const formSettings = useSelector((state) => state.settings);
+  const dispatch = useDispatch();
 
-  const [planName, setPlanName] = useState('');
+  const [planName, setPlanName] = useState('Spotify');
   const [planType, setPlanType] = useState(formSettings.planTypes[0]);
   const [currency, setCurrency] = useState(formSettings.currencies[0]);
   const [date, setDate] = useState(moment(Date.now()).format('DD/MM/YYYY'));
   const [planCost, setPlanCost] = useState('00,00');
   const [active, setActive] = useState(true);
-  const [isLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function onSubmitButton() {
+    setIsLoading(true);
+    try {
+      await dispatch(createSubscription(
+        planType.id,
+        planName,
+        currency.id,
+        planCost,
+        true,
+        date,
+        active
+      ));
+
+      Alert.alert(
+        'Sucesso!',
+        'Sua assinatura foi criada com sucesso.',
+        [
+          { text: 'OK', onPress: () => navigation.goBack() },
+        ],
+        { cancelable: false },
+      );
+    } catch (error) {
+      /** */
+    }
+    setIsLoading(false);
+  }
 
   return (
     <>
@@ -34,25 +63,25 @@ export default function SubForm({ navigation, isEditing }) {
         renderCtaButton={() => (
           <>
             {isEditing && (
-            <DeleteButton onPress={() => {
-              Alert.alert(
-                'Atenção',
-                'Tem certeza que deseja excluir essa assinatura?',
-                [
-                  { text: 'SIM', onPress: () => {} },
-                  {
-                    text: 'CANCELAR',
-                    onPress: () => {},
-                  },
-                ],
-                { cancelable: false },
-              );
-            }}
-            >
-              <Icon name="TRASH" size={30} color={colors.primaryWhite} />
-            </DeleteButton>
+              <DeleteButton onPress={() => {
+                Alert.alert(
+                  'Atenção',
+                  'Tem certeza que deseja excluir essa assinatura?',
+                  [
+                    { text: 'SIM', onPress: () => { } },
+                    {
+                      text: 'CANCELAR',
+                      onPress: () => { },
+                    },
+                  ],
+                  { cancelable: false },
+                );
+              }}
+              >
+                <Icon name="TRASH" size={30} color={colors.primaryWhite} />
+              </DeleteButton>
             )}
-            <AddButton onPress={() => { }}>
+            <AddButton onPress={() => { onSubmitButton(); }}>
               <Icon name="CREATE" size={45} color={colors.primaryWhite} />
             </AddButton>
           </>
