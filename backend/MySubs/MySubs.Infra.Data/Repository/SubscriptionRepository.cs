@@ -91,5 +91,13 @@ namespace MySubs.Infra.Data.Repository
             var result = await _connection.QueryFirstOrDefaultAsync<long>(sQuery.ToString(), new { IdUser = idUser }, _transaction);
             return result;
         }
+
+        public int DeleteSub(long idSub)
+        {
+            StringBuilder sQuery = new StringBuilder();
+            sQuery.AppendLine(" DELETE FROM MySubs WHERE Id = @IdMySubs  ");
+
+            return _connection.ExecuteAsync(sQuery.ToString(), new { IdMySubs = idSub }, _transaction).Result;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MySubs.Domain.Models.Request;
+﻿using MySubs.Domain.Common;
+using MySubs.Domain.Models.Request;
 using MySubs.Domain.Models.Response;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace MySubs.Domain.Services.Interfaces
     public interface ISubscriptionService
     {
         Task<RegisterSubResponse> Add(RegisterSubRequest entity);
-        Task<ListSubscriptionResponse> SubscriptionByIdUser(long idUser);
+        Task<ListSubscriptionResponse> SubscriptionByIdUser(long idUser); 
+        Task<ResponseResult> DeleteSub(long idSub); 
     }
 }

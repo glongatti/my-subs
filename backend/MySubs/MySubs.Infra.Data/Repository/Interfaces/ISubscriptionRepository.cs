@@ -14,6 +14,7 @@ namespace MySubs.Infra.Data.Repository.Interfaces
         Task<long> CountSubscriptionsRenewByIdUser(long idUser);
         
         Task<IEnumerable<SubscriptionScreen>> SubscriptionByIdUser(long idUser);
+        int DeleteSub(long idSub);
         bool IsConnected();
     }
 }

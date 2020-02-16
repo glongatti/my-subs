@@ -35,35 +35,52 @@ namespace MySubs.Domain.Services
                 var service = await Service.Create(0, entity.Service, true);
                 long idService = 0;
                 int indexService = 0;
-
-                var newList = listService.OrderBy(x => x.Name).ToList(); // ToList optional
-
-
-                indexService = newList.BinarySearch(service, new ServiceComparer());
-
-                if (indexService >= 0)
+                DateTime data = DateTime.Now;
+                string msgErro = "";
+                bool erro = false;
+                if (!Util.ValidarData(true, "Data Assinatura", entity.DateSignature, ref data, ref msgErro)) 
                 {
-                    idService = newList[indexService].Id;
+                    erro = true;
                 }
-                else 
+
+                if (!erro)
                 {
-                    idService = _uow.ServiceRepository.Add(service);
-                }
-                var sub = await Subscription.Create(entity.IdUser, entity.IdPlanType, idService, entity.IdCurrency, true, entity.DateSignature, true, entity.Price);
-                var id = _uow.SubscriptionRepository.Add(sub);
-                if (id > 0)
-                {
-                    _uow.Commit();
-                    var retorno = await RegisterSubResponse.Create(id);
-                    retorno.ResultType = ResultType.Success;
-                    retorno.Message = "Cadastro realizado com sucesso.";
-                    return retorno;
+                    var newList = listService.OrderBy(x => x.Name).ToList(); // ToList optional
+
+
+                    indexService = newList.BinarySearch(service, new ServiceComparer());
+
+                    if (indexService >= 0)
+                    {
+                        idService = newList[indexService].Id;
+                    }
+                    else
+                    {
+                        idService = _uow.ServiceRepository.Add(service);
+                    }
+                    var sub = await Subscription.Create(entity.IdUser, entity.IdPlanType, idService, entity.IdCurrency, true, data, true, entity.Price);
+                    var id = _uow.SubscriptionRepository.Add(sub);
+                    if (id > 0)
+                    {
+                        _uow.Commit();
+                        var retorno = await RegisterSubResponse.Create(id);
+                        retorno.ResultType = ResultType.Success;
+                        retorno.Message = "Cadastro realizado com sucesso.";
+                        return retorno;
+                    }
+                    else
+                    {
+                        var retorno = await RegisterSubResponse.Create(0);
+                        retorno.ResultType = ResultType.Error;
+                        retorno.Message = "Cadastro não realizado.";
+                        return retorno;
+                    }
                 }
                 else
                 {
                     var retorno = await RegisterSubResponse.Create(0);
                     retorno.ResultType = ResultType.Error;
-                    retorno.Message = "Cadastro não realizado.";
+                    retorno.Message = msgErro;
                     return retorno;
                 }
             }
@@ -103,6 +120,21 @@ namespace MySubs.Domain.Services
                 return listaRetorno;
             }
             
+        }
+
+        public async Task<ResponseResult> DeleteSub(long idSub)
+        {
+            ResponseResult responseResult;
+            var retorno = _uow.SubscriptionRepository.DeleteSub(idSub);
+            if (retorno > 0) 
+            {
+                responseResult = ResponseResult.Create("Assinatura excluída com sucesso.", ResultType.Success);
+            }
+            else 
+            {
+                responseResult = ResponseResult.Create("Não foi possível excluir a assinatura.", ResultType.Success);
+            }
+            return responseResult;
         }
     }
 }

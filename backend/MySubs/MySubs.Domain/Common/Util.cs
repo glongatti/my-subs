@@ -69,5 +69,32 @@ namespace MySubs.Domain.Common
             return jwtToken.token;
 
         }
+
+        public static bool ValidarData(bool obrigatorio, string nomeCampo, string valorCampo, ref DateTime dataValidada, ref string erro)
+        {
+            if (String.IsNullOrEmpty(valorCampo) && obrigatorio)
+            {
+                erro = String.Concat("O Campo ", nomeCampo, " é obrigatório. ");
+                return false;
+            }
+
+            else
+            {
+                DateTime data;
+                DateTime dt = DateTime.ParseExact(valorCampo, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //Console.WriteLine(dt.ToString("yyyy-MM-dd"));
+                valorCampo = dt.ToString("yyyy-MM-dd");
+                if (!DateTime.TryParse(valorCampo, out data))
+                {
+
+                    erro = String.Concat("O Campo ", valorCampo, " não é uma data válida. ");
+
+                    return false;
+                }
+                string dataString = data.ToString("yyyy-MM-dd");
+                dataValidada = DateTime.Parse(dataString);
+                return true;
+            }
+        }
     }
 }

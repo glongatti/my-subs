@@ -13,7 +13,7 @@ namespace MySubs.Domain.Models.Request
         public long IdCurrency { get; set; }
         public double Price { get; set; }
         public bool CancelRenewal { get; set; }
-        public DateTime DateSignature { get; set; }
+        public string  DateSignature { get; set; }
         public bool Active { get; set; }
     }
 }
